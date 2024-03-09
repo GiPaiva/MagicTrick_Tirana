@@ -43,8 +43,15 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.pnlCriarPartida = new System.Windows.Forms.Panel();
+            this.pnlEntrarNaPartida = new System.Windows.Forms.Panel();
+            this.txtSenhaDaPartida = new System.Windows.Forms.TextBox();
+            this.lblSenhaDaPartida = new System.Windows.Forms.Label();
+            this.txtNomeJogador = new System.Windows.Forms.TextBox();
+            this.lblNomeJogador = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.pnlListar = new System.Windows.Forms.Panel();
             this.pnlCriarPartida.SuspendLayout();
+            this.pnlEntrarNaPartida.SuspendLayout();
             this.pnlListar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,6 +172,7 @@
             this.btnEntrarPartida.TabIndex = 8;
             this.btnEntrarPartida.Text = "Entrar na Partida";
             this.btnEntrarPartida.UseVisualStyleBackColor = false;
+            this.btnEntrarPartida.Click += new System.EventHandler(this.btnEntrarPartida_Click);
             // 
             // btnCriar
             // 
@@ -228,11 +236,79 @@
             this.pnlCriarPartida.Controls.Add(this.txtNomePartida);
             this.pnlCriarPartida.Controls.Add(this.lblNomePartida);
             this.pnlCriarPartida.Controls.Add(this.btnCriar);
-            this.pnlCriarPartida.Location = new System.Drawing.Point(502, 289);
+            this.pnlCriarPartida.Location = new System.Drawing.Point(391, 74);
             this.pnlCriarPartida.Name = "pnlCriarPartida";
             this.pnlCriarPartida.Size = new System.Drawing.Size(269, 181);
             this.pnlCriarPartida.TabIndex = 14;
             this.pnlCriarPartida.Visible = false;
+            // 
+            // pnlEntrarNaPartida
+            // 
+            this.pnlEntrarNaPartida.BackColor = System.Drawing.Color.Black;
+            this.pnlEntrarNaPartida.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlEntrarNaPartida.Controls.Add(this.txtSenhaDaPartida);
+            this.pnlEntrarNaPartida.Controls.Add(this.lblSenhaDaPartida);
+            this.pnlEntrarNaPartida.Controls.Add(this.txtNomeJogador);
+            this.pnlEntrarNaPartida.Controls.Add(this.lblNomeJogador);
+            this.pnlEntrarNaPartida.Controls.Add(this.btnEntrar);
+            this.pnlEntrarNaPartida.Location = new System.Drawing.Point(391, 298);
+            this.pnlEntrarNaPartida.Name = "pnlEntrarNaPartida";
+            this.pnlEntrarNaPartida.Size = new System.Drawing.Size(269, 181);
+            this.pnlEntrarNaPartida.TabIndex = 15;
+            this.pnlEntrarNaPartida.Visible = false;
+            // 
+            // txtSenhaDaPartida
+            // 
+            this.txtSenhaDaPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaDaPartida.Location = new System.Drawing.Point(11, 116);
+            this.txtSenhaDaPartida.Name = "txtSenhaDaPartida";
+            this.txtSenhaDaPartida.Size = new System.Drawing.Size(123, 32);
+            this.txtSenhaDaPartida.TabIndex = 13;
+            // 
+            // lblSenhaDaPartida
+            // 
+            this.lblSenhaDaPartida.AutoSize = true;
+            this.lblSenhaDaPartida.BackColor = System.Drawing.Color.Transparent;
+            this.lblSenhaDaPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenhaDaPartida.ForeColor = System.Drawing.Color.White;
+            this.lblSenhaDaPartida.Location = new System.Drawing.Point(12, 89);
+            this.lblSenhaDaPartida.Name = "lblSenhaDaPartida";
+            this.lblSenhaDaPartida.Size = new System.Drawing.Size(147, 24);
+            this.lblSenhaDaPartida.TabIndex = 12;
+            this.lblSenhaDaPartida.Text = "Senha da Partida";
+            // 
+            // txtNomeJogador
+            // 
+            this.txtNomeJogador.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeJogador.Location = new System.Drawing.Point(11, 40);
+            this.txtNomeJogador.Name = "txtNomeJogador";
+            this.txtNomeJogador.Size = new System.Drawing.Size(243, 32);
+            this.txtNomeJogador.TabIndex = 11;
+            // 
+            // lblNomeJogador
+            // 
+            this.lblNomeJogador.AutoSize = true;
+            this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeJogador.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeJogador.ForeColor = System.Drawing.Color.White;
+            this.lblNomeJogador.Location = new System.Drawing.Point(12, 13);
+            this.lblNomeJogador.Name = "lblNomeJogador";
+            this.lblNomeJogador.Size = new System.Drawing.Size(152, 24);
+            this.lblNomeJogador.TabIndex = 10;
+            this.lblNomeJogador.Text = "Nome do Jogador";
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.BackColor = System.Drawing.Color.Black;
+            this.btnEntrar.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.ForeColor = System.Drawing.Color.White;
+            this.btnEntrar.Location = new System.Drawing.Point(147, 116);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(107, 32);
+            this.btnEntrar.TabIndex = 9;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // pnlListar
             // 
@@ -257,6 +333,7 @@
             this.ClientSize = new System.Drawing.Size(1052, 585);
             this.Controls.Add(this.pnlCriarPartida);
             this.Controls.Add(this.pnlListar);
+            this.Controls.Add(this.pnlEntrarNaPartida);
             this.Controls.Add(this.btnEntrarPartida);
             this.Controls.Add(this.btnCriarPartida);
             this.Controls.Add(this.lblGrupoProjeto);
@@ -272,6 +349,8 @@
             this.Text = "Form1";
             this.pnlCriarPartida.ResumeLayout(false);
             this.pnlCriarPartida.PerformLayout();
+            this.pnlEntrarNaPartida.ResumeLayout(false);
+            this.pnlEntrarNaPartida.PerformLayout();
             this.pnlListar.ResumeLayout(false);
             this.pnlListar.PerformLayout();
             this.ResumeLayout(false);
@@ -297,6 +376,12 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Panel pnlCriarPartida;
         private System.Windows.Forms.Panel pnlListar;
+        private System.Windows.Forms.Panel pnlEntrarNaPartida;
+        private System.Windows.Forms.TextBox txtSenhaDaPartida;
+        private System.Windows.Forms.Label lblSenhaDaPartida;
+        private System.Windows.Forms.TextBox txtNomeJogador;
+        private System.Windows.Forms.Label lblNomeJogador;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
 
