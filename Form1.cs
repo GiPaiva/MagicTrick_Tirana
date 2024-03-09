@@ -20,29 +20,37 @@ namespace MagicTrick_Tirana
             lblGrupoProjeto.Text = "Grupo: Tirana";
         }
 
+        private Tratamento retorno = new Tratamento();
+
         private void btnListarPartidas_Click(object sender, EventArgs e)
         {
-            lblPartidasTitulo.Visible = true;
-            lstPartidas.Visible = true;
+            pnlCriarPartida.Visible = false;
+            pnlListar.Visible = true;
 
             string BuscarPartidas = Jogo.ListarPartidas("T");
-            BuscarPartidas = BuscarPartidas.Replace("\r", "");
-            BuscarPartidas = BuscarPartidas.Substring(0, BuscarPartidas.Length - 1);
-            string[] Partidas = BuscarPartidas.Split('\n');
-
-            lstPartidas.Items.Clear();
-            lstJogadores.Items.Clear();
-            for (int i = 0; i < Partidas.Length - 1; i++)
+            if(BuscarPartidas.Substring(0,4) == "ERRO")
             {
-                lstPartidas.Items.Add(Partidas[i]);
+                //Tratamento de erro
+                retorno.Error(BuscarPartidas);
             }
+            else
+            {
+                //Fazer tratamento de dados
+                string[] Partidas = retorno.TratarDados(BuscarPartidas);
 
-            lblJogadoresTitulo.Visible = true;
-            lstJogadores.Visible = true;
+                lstPartidas.Items.Clear();
+                lstJogadores.Items.Clear();
+                for (int i = 0; i < Partidas.Length - 1; i++)
+                {
+                    lstPartidas.Items.Add(Partidas[i]);
+                }
+            }
         }
 
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lstJogadores.Items.Clear();
+
             string Partida = lstPartidas.SelectedItem.ToString();
             string[] DadosPartida = Partida.Split(',');
 
@@ -52,15 +60,34 @@ namespace MagicTrick_Tirana
             string StatusPartida = DadosPartida[3];
 
             string JogadoresDaPartida = Jogo.ListarJogadores(IdPartida);
-            JogadoresDaPartida = JogadoresDaPartida.Replace("\r", "");
-            string[] Jogadores = JogadoresDaPartida.Split('\n');
-
-            lstJogadores.Items.Clear();
-            for(int i = 0; i < Jogadores.Length; i++)
+            if (JogadoresDaPartida.Length == 0)
             {
-                lstJogadores.Items.Add(Jogadores[i]);
+                lstJogadores.Items.Add("Não há Jogadores na partida: ");
+                lstJogadores.Items.Add(NomePartida);
+            }
+            else
+            {
+                string[] Jogadores = retorno.TratarDados(JogadoresDaPartida);
+
+                for(int i = 0; i < Jogadores.Length; i++)
+                {
+                    lstJogadores.Items.Add(Jogadores[i]);
+                }
             }
 
+        }
+
+        private void btnCriarPartida_Click(object sender, EventArgs e)
+        {
+            pnlListar.Visible = false;
+            pnlCriarPartida.Visible = true;
+
+            
+        }
+
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            Jogo.CriarPartida(txtNomePartida.Text, txtSenha.Text, "Tirana");
         }
     }
 }
