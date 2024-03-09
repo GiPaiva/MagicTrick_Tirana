@@ -62,7 +62,7 @@
             this.btnListarPartidas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListarPartidas.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPartidas.ForeColor = System.Drawing.Color.White;
-            this.btnListarPartidas.Location = new System.Drawing.Point(136, 289);
+            this.btnListarPartidas.Location = new System.Drawing.Point(31, 277);
             this.btnListarPartidas.Name = "btnListarPartidas";
             this.btnListarPartidas.Size = new System.Drawing.Size(220, 47);
             this.btnListarPartidas.TabIndex = 0;
@@ -151,7 +151,7 @@
             this.btnCriarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCriarPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriarPartida.ForeColor = System.Drawing.Color.White;
-            this.btnCriarPartida.Location = new System.Drawing.Point(136, 357);
+            this.btnCriarPartida.Location = new System.Drawing.Point(31, 345);
             this.btnCriarPartida.Name = "btnCriarPartida";
             this.btnCriarPartida.Size = new System.Drawing.Size(220, 47);
             this.btnCriarPartida.TabIndex = 7;
@@ -166,7 +166,7 @@
             this.btnEntrarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrarPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrarPartida.ForeColor = System.Drawing.Color.White;
-            this.btnEntrarPartida.Location = new System.Drawing.Point(136, 423);
+            this.btnEntrarPartida.Location = new System.Drawing.Point(31, 411);
             this.btnEntrarPartida.Name = "btnEntrarPartida";
             this.btnEntrarPartida.Size = new System.Drawing.Size(220, 47);
             this.btnEntrarPartida.TabIndex = 8;
@@ -236,7 +236,7 @@
             this.pnlCriarPartida.Controls.Add(this.txtNomePartida);
             this.pnlCriarPartida.Controls.Add(this.lblNomePartida);
             this.pnlCriarPartida.Controls.Add(this.btnCriar);
-            this.pnlCriarPartida.Location = new System.Drawing.Point(391, 74);
+            this.pnlCriarPartida.Location = new System.Drawing.Point(552, 277);
             this.pnlCriarPartida.Name = "pnlCriarPartida";
             this.pnlCriarPartida.Size = new System.Drawing.Size(269, 181);
             this.pnlCriarPartida.TabIndex = 14;
@@ -251,7 +251,7 @@
             this.pnlEntrarNaPartida.Controls.Add(this.txtNomeJogador);
             this.pnlEntrarNaPartida.Controls.Add(this.lblNomeJogador);
             this.pnlEntrarNaPartida.Controls.Add(this.btnEntrar);
-            this.pnlEntrarNaPartida.Location = new System.Drawing.Point(391, 298);
+            this.pnlEntrarNaPartida.Location = new System.Drawing.Point(267, 277);
             this.pnlEntrarNaPartida.Name = "pnlEntrarNaPartida";
             this.pnlEntrarNaPartida.Size = new System.Drawing.Size(269, 181);
             this.pnlEntrarNaPartida.TabIndex = 15;
