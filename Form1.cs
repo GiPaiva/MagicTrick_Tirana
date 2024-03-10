@@ -41,7 +41,7 @@ namespace MagicTrick_Tirana
 
                 lstPartidas.Items.Clear();
                 lstJogadores.Items.Clear();
-                for (int i = 0; i < Partidas.Length - 1; i++)
+                for (int i = 0; i < Partidas.Length; i++)
                 {
                     lstPartidas.Items.Add(Partidas[i]);
                 }
@@ -96,6 +96,7 @@ namespace MagicTrick_Tirana
         {
             string NomePartida = txtNomePartida.Text;
             string SenhaPartida = txtSenha.Text;
+
             string retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
 
             if(retorno.Substring(0,4) == "ERRO")
@@ -104,10 +105,10 @@ namespace MagicTrick_Tirana
             }
             else
             {
-                MessageBox.Show("Partida Criada com Sucesso!\nId da Partida", "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnListarPartidas_Click(sender, e);
+                MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNomePartida.Clear();
-                txtSenha.Clear(); 
+                txtSenha.Clear();
+                btnListarPartidas_Click(sender, e);
             }
         }
 
@@ -116,32 +117,41 @@ namespace MagicTrick_Tirana
             pnlCriarPartida.Visible = false;
             pnlListar.Visible = true;
             pnlEntrarNaPartida.Visible = true;
+            if (lstPartidas.SelectedItem == null)
+            {
+                MessageBox.Show($"Selecione uma partida", "Selecionar Partida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            string Partida = lstPartidas.SelectedItem.ToString();
-            string[] DadosPartida = Partida.Split(',');
-
-            string NomePartida = DadosPartida[1];
-
-            int IdPartida = Convert.ToInt32(DadosPartida[0]);
-
-            string NomeDoJogador = txtNomeJogador.Text;
-            string SenhaDaPartida = txtSenhaDaPartida.Text;
-
-            string retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
-            if (retorno.Substring(0, 4) == "ERRO")
+            if (lstPartidas.SelectedItem != null)
             {
-                r.Error(retorno);
+                string Partida = lstPartidas.SelectedItem.ToString();
+                string NomeDoJogador = txtNomeJogador.Text;
+                string SenhaDaPartida = txtSenhaDaPartida.Text;
+                string[] DadosPartida = Partida.Split(',');
+
+                string NomePartida = DadosPartida[1];
+
+                int IdPartida = Convert.ToInt32(DadosPartida[0]);
+
+                string retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
+                if (retorno.Substring(0, 4) == "ERRO")
+                {
+                    r.Error(retorno);
+                }
+                else
+                {
+                    MessageBox.Show($"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}", "Jogador Entrou", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtNomeJogador.Clear();
+                    txtSenhaDaPartida.Clear();
+                }
             }
             else
             {
-                MessageBox.Show($"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}", "Jogador Entrou", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnListarPartidas_Click(sender, e);
-                txtNomeJogador.Clear();
-                txtSenhaDaPartida.Clear();
-            } 
+                btnEntrarPartida_Click(sender, e);
+            }
         }
     }
 }
