@@ -42,16 +42,13 @@ namespace MagicTrick_Tirana
             string[] PrimeiroJogador = JogadoresAtuais[primeiro].Split(',');
             MessageBox.Show($"O primeiro Jogador é \nId:{PrimeiroJogador[0]} \nNome:{PrimeiroJogador[1]}", "Jogada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            if (btnJ_Click())
-            {
-                if (primeiro == 4) primeiro = 0;
-                else primeiro++;
-            }
+            //if (primeiro == 4) primeiro = 0;
+            //else primeiro++;
         }
 
-        private bool btnJ_Click()
+        private void btnJ_Click(object sender, EventArgs e)
         {
-            return true;
+            
         }
     }
 }
