@@ -50,6 +50,7 @@
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pnlListar = new System.Windows.Forms.Panel();
+            this.btnTeste = new System.Windows.Forms.Button();
             this.pnlCriarPartida.SuspendLayout();
             this.pnlEntrarNaPartida.SuspendLayout();
             this.pnlListar.SuspendLayout();
@@ -323,6 +324,16 @@
             this.pnlListar.TabIndex = 15;
             this.pnlListar.Visible = false;
             // 
+            // btnTeste
+            // 
+            this.btnTeste.Location = new System.Drawing.Point(441, 531);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(75, 23);
+            this.btnTeste.TabIndex = 16;
+            this.btnTeste.Text = "Partida";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,6 +342,7 @@
             this.BackgroundImage = global::MagicTrick_Tirana.Properties.Resources.Magic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 585);
+            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.pnlCriarPartida);
             this.Controls.Add(this.pnlListar);
             this.Controls.Add(this.pnlEntrarNaPartida);
@@ -382,6 +394,7 @@
         private System.Windows.Forms.TextBox txtNomeJogador;
         private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button btnTeste;
     }
 }
 

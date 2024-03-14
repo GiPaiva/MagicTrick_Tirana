@@ -6,7 +6,7 @@ class Tratamento
 {
     public void Error(string msg)
     {
-        MessageBox.Show("Ocorreu um erro: \n" + msg.Substring(5), "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("Ocorreu um erro: \n" + msg, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 
     //Tratamento de string

@@ -12,7 +12,7 @@ using MagicTrickServer;
 namespace MagicTrick_Tirana
 {
     public partial class Form1 : Form
-    {
+    { 
         public Form1()
         {
             InitializeComponent();
@@ -29,23 +29,33 @@ namespace MagicTrick_Tirana
             pnlListar.Visible = true;
 
             string BuscarPartidas = Jogo.ListarPartidas("T");
-            if(BuscarPartidas.Substring(0,4) == "ERRO")
+            if(BuscarPartidas != "")
             {
-                //Tratamento de erro
-                r.Error(BuscarPartidas);
+                if (BuscarPartidas.Substring(0, 4) == "ERRO")
+                {
+                    //Tratamento de erro
+                    r.Error(BuscarPartidas);
+                }
+                else
+                {
+                    //Fazer tratamento de dados
+                    string[] Partidas = r.TratarDados(BuscarPartidas);
+
+                    lstPartidas.Items.Clear();
+                    lstJogadores.Items.Clear();
+                    for (int i = 0; i < Partidas.Length; i++)
+                    {
+                        lstPartidas.Items.Add(Partidas[i]);
+                    }
+                }
             }
             else
             {
-                //Fazer tratamento de dados
-                string[] Partidas = r.TratarDados(BuscarPartidas);
-
-                lstPartidas.Items.Clear();
-                lstJogadores.Items.Clear();
-                for (int i = 0; i < Partidas.Length; i++)
-                {
-                    lstPartidas.Items.Add(Partidas[i]);
-                }
+                lstPartidas.Items.Add("NENHUMA PARTIDA ENCONTRADA");
+                lstJogadores.Visible = false;
+                lblJogadoresTitulo.Visible = false;
             }
+            
         }
 
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,28 +70,32 @@ namespace MagicTrick_Tirana
             }
             else
             {
-                string[] DadosPartida = Partida.Split(',');
+                if(Partida.IndexOf(',') != -1)
+                { 
+                    string[] DadosPartida = Partida.Split(',');
 
-                int IdPartida = Convert.ToInt32(DadosPartida[0]);
-                string NomePartida = DadosPartida[1];
-                string DataPartida = DadosPartida[2];
-                string StatusPartida = DadosPartida[3];
+                    int IdPartida = Convert.ToInt32(DadosPartida[0]);
+                    string NomePartida = DadosPartida[1];
+                    string DataPartida = DadosPartida[2];
+                    string StatusPartida = DadosPartida[3];
 
-                string JogadoresDaPartida = Jogo.ListarJogadores(IdPartida);
-                if (JogadoresDaPartida.Length == 0)
-                {
-                    lstJogadores.Items.Add("Não há Jogadores na partida: ");
-                    lstJogadores.Items.Add(NomePartida);
-                }
-                else
-                {
-                    string[] Jogadores = r.TratarDados(JogadoresDaPartida);
-
-                    for (int i = 0; i < Jogadores.Length; i++)
+                    string JogadoresDaPartida = Jogo.ListarJogadores(IdPartida);
+                    if (JogadoresDaPartida.Length == 0)
                     {
-                        lstJogadores.Items.Add(Jogadores[i]);
+                        lstJogadores.Items.Add("Não há Jogadores na partida: ");
+                        lstJogadores.Items.Add(NomePartida);
                     }
-                } 
+                    else
+                    {
+                        string[] Jogadores = r.TratarDados(JogadoresDaPartida);
+
+                        for (int i = 0; i < Jogadores.Length; i++)
+                        {
+                            lstJogadores.Items.Add(Jogadores[i]);
+                        }
+                    }
+                }
+
             }
         }
 
@@ -127,10 +141,10 @@ namespace MagicTrick_Tirana
         {
             if (lstPartidas.SelectedItem != null)
             {
-                string Partida = lstPartidas.SelectedItem.ToString();
+                string PartidaEscolhida = lstPartidas.SelectedItem.ToString();
                 string NomeDoJogador = txtNomeJogador.Text;
                 string SenhaDaPartida = txtSenhaDaPartida.Text;
-                string[] DadosPartida = Partida.Split(',');
+                string[] DadosPartida = PartidaEscolhida.Split(',');
 
                 string NomePartida = DadosPartida[1];
 
@@ -146,12 +160,27 @@ namespace MagicTrick_Tirana
                     MessageBox.Show($"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}", "Jogador Entrou", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNomeJogador.Clear();
                     txtSenhaDaPartida.Clear();
+
+                    Partida Partida = new Partida();
+                    Partida.Versao = Jogo.Versao;
+                    Partida.Jogadores = Jogo.ListarJogadores(IdPartida);
+                    Partida.PartidaAtual = DadosPartida;
+                    Partida.AtualizarTela();
+                    Partida.Show();
                 }
             }
             else
             {
                 btnEntrarPartida_Click(sender, e);
             }
+        }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            Partida Partida = new Partida();
+            Partida.Versao = Jogo.Versao;
+            Partida.AtualizarTela();
+            Partida.Show();
         }
     }
 }
