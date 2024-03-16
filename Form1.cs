@@ -39,7 +39,7 @@ namespace MagicTrick_Tirana
                 else
                 {
                     //Fazer tratamento de dados
-                    string[] Partidas = r.TratarDados(BuscarPartidas);
+                    string[] Partidas = r.TratarDadosEmArray(BuscarPartidas);
 
                     lstPartidas.Items.Clear();
                     lstJogadores.Items.Clear();
@@ -87,7 +87,7 @@ namespace MagicTrick_Tirana
                     }
                     else
                     {
-                        string[] Jogadores = r.TratarDados(JogadoresDaPartida);
+                        string[] Jogadores = r.TratarDadosEmArray(JogadoresDaPartida);
 
                         for (int i = 0; i < Jogadores.Length; i++)
                         {
@@ -113,10 +113,11 @@ namespace MagicTrick_Tirana
 
             string retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
 
-            if(retorno.Substring(0,4) == "ERRO")
+            if (retorno.Length > 4 && retorno.Substring(0,4) == "ERRO")
             {
                 r.Error(retorno);
             }
+
             else
             {
                 MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);

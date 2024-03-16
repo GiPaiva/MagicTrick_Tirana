@@ -50,7 +50,6 @@
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.pnlListar = new System.Windows.Forms.Panel();
-            this.btnTeste = new System.Windows.Forms.Button();
             this.pnlCriarPartida.SuspendLayout();
             this.pnlEntrarNaPartida.SuspendLayout();
             this.pnlListar.SuspendLayout();
@@ -61,7 +60,7 @@
             this.btnListarPartidas.BackColor = System.Drawing.Color.Black;
             this.btnListarPartidas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnListarPartidas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListarPartidas.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPartidas.ForeColor = System.Drawing.Color.White;
             this.btnListarPartidas.Location = new System.Drawing.Point(31, 277);
             this.btnListarPartidas.Name = "btnListarPartidas";
@@ -75,11 +74,11 @@
             // 
             this.lblVersao.AutoSize = true;
             this.lblVersao.BackColor = System.Drawing.Color.Transparent;
-            this.lblVersao.Font = new System.Drawing.Font("Roboto Condensed", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersao.ForeColor = System.Drawing.Color.White;
             this.lblVersao.Location = new System.Drawing.Point(12, 547);
             this.lblVersao.Name = "lblVersao";
-            this.lblVersao.Size = new System.Drawing.Size(37, 15);
+            this.lblVersao.Size = new System.Drawing.Size(44, 16);
             this.lblVersao.TabIndex = 5;
             this.lblVersao.Text = "label3";
             // 
@@ -87,11 +86,11 @@
             // 
             this.lblPartidasTitulo.AutoSize = true;
             this.lblPartidasTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblPartidasTitulo.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartidasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPartidasTitulo.ForeColor = System.Drawing.Color.White;
             this.lblPartidasTitulo.Location = new System.Drawing.Point(145, 46);
             this.lblPartidasTitulo.Name = "lblPartidasTitulo";
-            this.lblPartidasTitulo.Size = new System.Drawing.Size(77, 24);
+            this.lblPartidasTitulo.Size = new System.Drawing.Size(83, 25);
             this.lblPartidasTitulo.TabIndex = 3;
             this.lblPartidasTitulo.Text = "Partidas";
             // 
@@ -99,23 +98,23 @@
             // 
             this.lstJogadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(221)))), ((int)(((byte)(39)))));
             this.lstJogadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstJogadores.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstJogadores.FormattingEnabled = true;
-            this.lstJogadores.ItemHeight = 24;
+            this.lstJogadores.ItemHeight = 25;
             this.lstJogadores.Location = new System.Drawing.Point(11, 315);
             this.lstJogadores.Name = "lstJogadores";
-            this.lstJogadores.Size = new System.Drawing.Size(363, 192);
+            this.lstJogadores.Size = new System.Drawing.Size(363, 175);
             this.lstJogadores.TabIndex = 2;
             // 
             // lblJogadoresTitulo
             // 
             this.lblJogadoresTitulo.AutoSize = true;
             this.lblJogadoresTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblJogadoresTitulo.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJogadoresTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJogadoresTitulo.ForeColor = System.Drawing.Color.White;
             this.lblJogadoresTitulo.Location = new System.Drawing.Point(88, 288);
             this.lblJogadoresTitulo.Name = "lblJogadoresTitulo";
-            this.lblJogadoresTitulo.Size = new System.Drawing.Size(182, 24);
+            this.lblJogadoresTitulo.Size = new System.Drawing.Size(198, 25);
             this.lblJogadoresTitulo.TabIndex = 4;
             this.lblJogadoresTitulo.Text = "Jogadores da Partida";
             // 
@@ -123,13 +122,13 @@
             // 
             this.lstPartidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(221)))), ((int)(((byte)(39)))));
             this.lstPartidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstPartidas.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPartidas.ForeColor = System.Drawing.Color.Black;
             this.lstPartidas.FormattingEnabled = true;
-            this.lstPartidas.ItemHeight = 24;
+            this.lstPartidas.ItemHeight = 25;
             this.lstPartidas.Location = new System.Drawing.Point(11, 73);
             this.lstPartidas.Name = "lstPartidas";
-            this.lstPartidas.Size = new System.Drawing.Size(363, 192);
+            this.lstPartidas.Size = new System.Drawing.Size(363, 175);
             this.lstPartidas.TabIndex = 1;
             this.lstPartidas.SelectedIndexChanged += new System.EventHandler(this.lstPartidas_SelectedIndexChanged);
             // 
@@ -137,11 +136,11 @@
             // 
             this.lblGrupoProjeto.AutoSize = true;
             this.lblGrupoProjeto.BackColor = System.Drawing.Color.Transparent;
-            this.lblGrupoProjeto.Font = new System.Drawing.Font("Roboto Condensed", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupoProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrupoProjeto.ForeColor = System.Drawing.Color.White;
             this.lblGrupoProjeto.Location = new System.Drawing.Point(12, 562);
             this.lblGrupoProjeto.Name = "lblGrupoProjeto";
-            this.lblGrupoProjeto.Size = new System.Drawing.Size(37, 15);
+            this.lblGrupoProjeto.Size = new System.Drawing.Size(44, 16);
             this.lblGrupoProjeto.TabIndex = 6;
             this.lblGrupoProjeto.Text = "label3";
             // 
@@ -150,7 +149,7 @@
             this.btnCriarPartida.BackColor = System.Drawing.Color.Black;
             this.btnCriarPartida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCriarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCriarPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriarPartida.ForeColor = System.Drawing.Color.White;
             this.btnCriarPartida.Location = new System.Drawing.Point(31, 345);
             this.btnCriarPartida.Name = "btnCriarPartida";
@@ -165,7 +164,7 @@
             this.btnEntrarPartida.BackColor = System.Drawing.Color.Black;
             this.btnEntrarPartida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEntrarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrarPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrarPartida.ForeColor = System.Drawing.Color.White;
             this.btnEntrarPartida.Location = new System.Drawing.Point(31, 411);
             this.btnEntrarPartida.Name = "btnEntrarPartida";
@@ -178,7 +177,7 @@
             // btnCriar
             // 
             this.btnCriar.BackColor = System.Drawing.Color.Black;
-            this.btnCriar.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriar.ForeColor = System.Drawing.Color.White;
             this.btnCriar.Location = new System.Drawing.Point(147, 116);
             this.btnCriar.Name = "btnCriar";
@@ -192,40 +191,40 @@
             // 
             this.lblNomePartida.AutoSize = true;
             this.lblNomePartida.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomePartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomePartida.ForeColor = System.Drawing.Color.White;
             this.lblNomePartida.Location = new System.Drawing.Point(12, 13);
             this.lblNomePartida.Name = "lblNomePartida";
-            this.lblNomePartida.Size = new System.Drawing.Size(144, 24);
+            this.lblNomePartida.Size = new System.Drawing.Size(157, 25);
             this.lblNomePartida.TabIndex = 10;
             this.lblNomePartida.Text = "Nome da Partida";
             // 
             // txtNomePartida
             // 
-            this.txtNomePartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomePartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomePartida.Location = new System.Drawing.Point(11, 40);
             this.txtNomePartida.Name = "txtNomePartida";
-            this.txtNomePartida.Size = new System.Drawing.Size(243, 32);
+            this.txtNomePartida.Size = new System.Drawing.Size(243, 30);
             this.txtNomePartida.TabIndex = 11;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
-            this.lblSenha.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.White;
             this.lblSenha.Location = new System.Drawing.Point(12, 89);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(59, 24);
+            this.lblSenha.Size = new System.Drawing.Size(70, 25);
             this.lblSenha.TabIndex = 12;
             this.lblSenha.Text = "Senha";
             // 
             // txtSenha
             // 
-            this.txtSenha.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(11, 116);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(123, 32);
+            this.txtSenha.Size = new System.Drawing.Size(123, 30);
             this.txtSenha.TabIndex = 13;
             // 
             // pnlCriarPartida
@@ -260,48 +259,48 @@
             // 
             // txtSenhaDaPartida
             // 
-            this.txtSenhaDaPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaDaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaDaPartida.Location = new System.Drawing.Point(11, 116);
             this.txtSenhaDaPartida.Name = "txtSenhaDaPartida";
-            this.txtSenhaDaPartida.Size = new System.Drawing.Size(123, 32);
+            this.txtSenhaDaPartida.Size = new System.Drawing.Size(123, 30);
             this.txtSenhaDaPartida.TabIndex = 13;
             // 
             // lblSenhaDaPartida
             // 
             this.lblSenhaDaPartida.AutoSize = true;
             this.lblSenhaDaPartida.BackColor = System.Drawing.Color.Transparent;
-            this.lblSenhaDaPartida.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenhaDaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenhaDaPartida.ForeColor = System.Drawing.Color.White;
             this.lblSenhaDaPartida.Location = new System.Drawing.Point(12, 89);
             this.lblSenhaDaPartida.Name = "lblSenhaDaPartida";
-            this.lblSenhaDaPartida.Size = new System.Drawing.Size(147, 24);
+            this.lblSenhaDaPartida.Size = new System.Drawing.Size(163, 25);
             this.lblSenhaDaPartida.TabIndex = 12;
             this.lblSenhaDaPartida.Text = "Senha da Partida";
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeJogador.Location = new System.Drawing.Point(11, 40);
             this.txtNomeJogador.Name = "txtNomeJogador";
-            this.txtNomeJogador.Size = new System.Drawing.Size(243, 32);
+            this.txtNomeJogador.Size = new System.Drawing.Size(243, 30);
             this.txtNomeJogador.TabIndex = 11;
             // 
             // lblNomeJogador
             // 
             this.lblNomeJogador.AutoSize = true;
             this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeJogador.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeJogador.ForeColor = System.Drawing.Color.White;
             this.lblNomeJogador.Location = new System.Drawing.Point(12, 13);
             this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(152, 24);
+            this.lblNomeJogador.Size = new System.Drawing.Size(168, 25);
             this.lblNomeJogador.TabIndex = 10;
             this.lblNomeJogador.Text = "Nome do Jogador";
             // 
             // btnEntrar
             // 
             this.btnEntrar.BackColor = System.Drawing.Color.Black;
-            this.btnEntrar.Font = new System.Drawing.Font("Roboto Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
             this.btnEntrar.Location = new System.Drawing.Point(147, 116);
             this.btnEntrar.Name = "btnEntrar";
@@ -324,16 +323,6 @@
             this.pnlListar.TabIndex = 15;
             this.pnlListar.Visible = false;
             // 
-            // btnTeste
-            // 
-            this.btnTeste.Location = new System.Drawing.Point(441, 531);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(75, 23);
-            this.btnTeste.TabIndex = 16;
-            this.btnTeste.Text = "Partida";
-            this.btnTeste.UseVisualStyleBackColor = true;
-            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -342,7 +331,6 @@
             this.BackgroundImage = global::MagicTrick_Tirana.Properties.Resources.Magic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 585);
-            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.pnlCriarPartida);
             this.Controls.Add(this.pnlListar);
             this.Controls.Add(this.pnlEntrarNaPartida);
@@ -394,7 +382,6 @@
         private System.Windows.Forms.TextBox txtNomeJogador;
         private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.Button btnTeste;
     }
 }
 

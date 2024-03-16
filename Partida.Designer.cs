@@ -48,7 +48,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersao2 = new System.Windows.Forms.Label();
-            this.btnJ = new System.Windows.Forms.Button();
+            this.btnComecar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lstJogadores = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -65,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -269,15 +273,46 @@
             this.lblVersao2.TabIndex = 1;
             this.lblVersao2.Text = "Versão";
             // 
-            // btnJ
+            // btnComecar
             // 
-            this.btnJ.Location = new System.Drawing.Point(759, 417);
-            this.btnJ.Name = "btnJ";
-            this.btnJ.Size = new System.Drawing.Size(75, 23);
-            this.btnJ.TabIndex = 2;
-            this.btnJ.Text = "Jogar";
-            this.btnJ.UseVisualStyleBackColor = true;
-            this.btnJ.Click += new System.EventHandler(this.btnJ_Click);
+            this.btnComecar.Location = new System.Drawing.Point(759, 417);
+            this.btnComecar.Name = "btnComecar";
+            this.btnComecar.Size = new System.Drawing.Size(75, 23);
+            this.btnComecar.TabIndex = 2;
+            this.btnComecar.Text = "Jogar";
+            this.btnComecar.UseVisualStyleBackColor = true;
+            this.btnComecar.Click += new System.EventHandler(this.btnComecar_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lstJogadores);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(25, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(206, 156);
+            this.panel3.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(31, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 16);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Jogadores em Partida";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lstJogadores
+            // 
+            this.lstJogadores.FormattingEnabled = true;
+            this.lstJogadores.ItemHeight = 16;
+            this.lstJogadores.Location = new System.Drawing.Point(14, 19);
+            this.lstJogadores.Name = "lstJogadores";
+            this.lstJogadores.Size = new System.Drawing.Size(176, 116);
+            this.lstJogadores.TabIndex = 19;
+            this.lstJogadores.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Partida
             // 
@@ -285,7 +320,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1052, 585);
-            this.Controls.Add(this.btnJ);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btnComecar);
             this.Controls.Add(this.lblVersao2);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1070, 632);
@@ -293,6 +329,7 @@
             this.Name = "Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Partida";
+            this.Load += new System.EventHandler(this.Partida_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -310,6 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,6 +376,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAposta;
         private System.Windows.Forms.Label lblVersao2;
-        private System.Windows.Forms.Button btnJ;
+        private System.Windows.Forms.Button btnComecar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lstJogadores;
     }
 }

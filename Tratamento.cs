@@ -10,7 +10,7 @@ class Tratamento
     }
 
     //Tratamento de string
-    public string[] TratarDados(string variavel)
+    public string[] TratarDadosEmArray(string variavel)
     {
         variavel = variavel.Replace("\r", "");
         variavel = variavel.Substring(0, variavel.Length - 1);
