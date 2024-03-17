@@ -164,7 +164,7 @@ namespace MagicTrick_Tirana
 
                     Partida Partida = new Partida();
                     Partida.Versao = Jogo.Versao;
-                    Partida.Jogadores = Jogo.ListarJogadores(IdPartida);
+                    Partida.Jogadores = retorno;
                     Partida.PartidaAtual = DadosPartida;
                     Partida.AtualizarTela();
                     Partida.Show();

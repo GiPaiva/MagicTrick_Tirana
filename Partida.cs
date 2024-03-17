@@ -33,10 +33,7 @@ namespace MagicTrick_Tirana
         public void AtualizarTela()
         {
             lblVersao2.Text = Versao;
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogadores);
-            primeiro = rnd.Next(0,JogadoresAtuais.Length);
-            string[] PrimeiroJogador = JogadoresAtuais[primeiro].Split(',');
-            JogoAtual(primeiro, JogadoresAtuais);
+            string [] Jogadoress = Jogadores.Split(',');
         }
 
         public void JogoAtual(int primeiro, string[] JogadoresAtuais)
@@ -47,32 +44,20 @@ namespace MagicTrick_Tirana
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogadores);
-            string[] PrimeiroJogador = JogadoresAtuais[primeiro].Split(',');
-            MessageBox.Show($"O primeiro Jogador é \nId:{PrimeiroJogador[0]} \nNome:{PrimeiroJogador[1]}", "Jogada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
+            string[] Jogadoress = Jogadores.Split(',');
+            int IdJogador = Convert.ToInt32(Jogadoress[0]);
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+            string retorno = Jogo.IniciarPartida(IdJogador, Jogadoress[1]);
 
-        }
-
-        private void Partida_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogadores);
-            for(int i = 0; i < JogadoresAtuais.Length; i++)
+            for(int i = 0;  i < JogadoresAtuais.Length; i++)
             {
-                lstJogadores.Items.Add(JogadoresAtuais[i]);
+                string[] j = JogadoresAtuais[i].Split(',');
+
+                if (j[0] == retorno)
+                {
+                    MessageBox.Show("O primeiro jogador é: " + j[1] + "\n Id: " + retorno);
+                }
             }
         }
     }
