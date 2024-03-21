@@ -16,7 +16,7 @@ namespace MagicTrick_Tirana
     public partial class Partida : Form
     {
         public string Versao { get; set; }
-        public string Jogadores { get; set; }
+        public string Jogador { get; set; }
         public string[] PartidaAtual { get; set; }
 
         public Random rnd = new Random();
@@ -33,10 +33,9 @@ namespace MagicTrick_Tirana
         public void AtualizarTela()
         {
             lblVersao2.Text = Versao;
-            string [] Jogadoress = Jogadores.Split(',');
         }
 
-        public void JogoAtual(int primeiro, string[] JogadoresAtuais)
+        public void JogoAtual()
         { 
             //if (primeiro == 4) primeiro = 0;
             //else primeiro++;
@@ -45,10 +44,10 @@ namespace MagicTrick_Tirana
         private void btnComecar_Click(object sender, EventArgs e)
         {
             string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
-            string[] Jogadoress = Jogadores.Split(',');
-            int IdJogador = Convert.ToInt32(Jogadoress[0]);
+            string[] DadosJogador = Jogador.Split(',');
+            int IdJogador = Convert.ToInt32(DadosJogador[0]);
 
-            string retorno = Jogo.IniciarPartida(IdJogador, Jogadoress[1]);
+            string retorno = Jogo.IniciarPartida(IdJogador, DadosJogador[1]);
 
             for(int i = 0;  i < JogadoresAtuais.Length; i++)
             {

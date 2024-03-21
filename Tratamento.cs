@@ -1,12 +1,19 @@
-﻿using System;
+﻿using MagicTrickServer;
+using System;
 using System.Windows.Forms;
 
 
 class Tratamento
 {
-    public void Error(string msg)
+
+    public bool Error(string msg)
     {
-        MessageBox.Show("Ocorreu um erro: \n" + msg, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        if(msg.Substring(0, 4) == "ERRO" || msg.Substring(0, 4) == "Erro")
+        {
+            MessageBox.Show("Ocorreu um erro: \n" + msg, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return true;
+        }
+        return false;
     }
 
     //Tratamento de string
