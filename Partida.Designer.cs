@@ -50,7 +50,8 @@
             this.btnComecar = new System.Windows.Forms.Button();
             this.btnConsultarMao = new System.Windows.Forms.Button();
             this.grpBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnApostar = new System.Windows.Forms.Button();
+            this.btnJogar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
@@ -112,7 +113,6 @@
             this.pictureBox41 = new System.Windows.Forms.PictureBox();
             this.pictureBox42 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnApostar = new System.Windows.Forms.Button();
             this.pnlCartas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -394,7 +394,7 @@
             // 
             this.grpBox1.BackColor = System.Drawing.Color.Black;
             this.grpBox1.Controls.Add(this.btnApostar);
-            this.grpBox1.Controls.Add(this.button1);
+            this.grpBox1.Controls.Add(this.btnJogar);
             this.grpBox1.Controls.Add(this.listBox1);
             this.grpBox1.Controls.Add(this.lblAposta);
             this.grpBox1.Controls.Add(this.label1);
@@ -408,16 +408,28 @@
             this.grpBox1.TabStop = false;
             this.grpBox1.Text = "Nome Jogador";
             // 
-            // button1
+            // btnApostar
             // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(34, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Jogar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnApostar.ForeColor = System.Drawing.Color.Black;
+            this.btnApostar.Location = new System.Drawing.Point(34, 102);
+            this.btnApostar.Name = "btnApostar";
+            this.btnApostar.Size = new System.Drawing.Size(75, 23);
+            this.btnApostar.TabIndex = 25;
+            this.btnApostar.Text = "Apostar";
+            this.btnApostar.UseVisualStyleBackColor = true;
+            this.btnApostar.Visible = false;
+            this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
+            // 
+            // btnJogar
+            // 
+            this.btnJogar.ForeColor = System.Drawing.Color.Black;
+            this.btnJogar.Location = new System.Drawing.Point(34, 73);
+            this.btnJogar.Name = "btnJogar";
+            this.btnJogar.Size = new System.Drawing.Size(75, 23);
+            this.btnJogar.TabIndex = 24;
+            this.btnJogar.Text = "Jogar";
+            this.btnJogar.UseVisualStyleBackColor = true;
+            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
             // 
             // listBox1
             // 
@@ -1043,18 +1055,6 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Pontos";
             // 
-            // btnApostar
-            // 
-            this.btnApostar.ForeColor = System.Drawing.Color.Black;
-            this.btnApostar.Location = new System.Drawing.Point(34, 102);
-            this.btnApostar.Name = "btnApostar";
-            this.btnApostar.Size = new System.Drawing.Size(75, 23);
-            this.btnApostar.TabIndex = 25;
-            this.btnApostar.Text = "Apostar";
-            this.btnApostar.UseVisualStyleBackColor = true;
-            this.btnApostar.Visible = false;
-            this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
-            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1230,7 +1230,7 @@
         private System.Windows.Forms.PictureBox pictureBox41;
         private System.Windows.Forms.PictureBox pictureBox42;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.Button btnApostar;
     }
 }

@@ -110,7 +110,8 @@ namespace MagicTrick_Tirana
             }
 
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnJogar_Click(object sender, EventArgs e)
         {
             //IdJogador | senhaJogador | posição
 
