@@ -8,10 +8,13 @@ class Tratamento
 
     public bool Error(string msg)
     {
-        if(msg.Substring(0, 4) == "ERRO" || msg.Substring(0, 4) == "Erro")
+        if(msg.Length > 4)
         {
-            MessageBox.Show("Ocorreu um erro: \n" + msg, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return true;
+            if(msg.Substring(0, 4) == "ERRO" || msg.Substring(0, 4) == "Erro")
+            {
+                MessageBox.Show("Ocorreu um erro: \n" + msg, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
         }
         return false;
     }

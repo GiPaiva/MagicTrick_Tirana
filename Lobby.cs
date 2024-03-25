@@ -3,6 +3,7 @@ using MagicTrickServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,10 +32,9 @@ class Lobby
         {
             BuscarPartidas = Jogo.ListarPartidas("T");
         }
-        catch (Exception ex)
+        catch(Exception ex)
         {
             r.Error(ex.Message);
-            throw;
         }
         finally
         {
@@ -48,8 +48,8 @@ class Lobby
                 }
             }
         }
-
         return ok;
+
     }
 
     public bool LobbyListarJogadores(string PartidaSelecionada)
@@ -64,28 +64,18 @@ class Lobby
                 Partida.IdPartida = Convert.ToInt32(DadosPartida[0]);
                 Partida.NomePartida = DadosPartida[1];
 
-                string BuscarJogadores = "";
-                try
+                string BuscarJogadores = Jogo.ListarJogadores(Partida.IdPartida);
+
+                if (BuscarJogadores.Length != 0)
                 {
-                    BuscarJogadores = Jogo.ListarJogadores(Partida.IdPartida);
-                }
-                catch (Exception ex)
-                {
-                    r.Error(ex.Message);
-                    throw;
-                }
-                finally
-                {
-                    if (BuscarJogadores.Length != 0)
+                    if (!r.Error(BuscarJogadores))
                     {
-                        if (!r.Error(BuscarJogadores))
-                        {
-                            //Fazer tratamento de dados
-                            Jogadores = r.TratarDadosEmArray(BuscarJogadores);
-                            ok = true;
-                        }
+                        //Fazer tratamento de dados
+                        Jogadores = r.TratarDadosEmArray(BuscarJogadores);
+                        ok = true;
                     }
                 }
+                
             }
         }
 
@@ -94,59 +84,40 @@ class Lobby
 
     public bool LobbyCriarPartida(string NomePartida,string SenhaPartida)
     {
-        string retorno = "";
         bool ok = false;
-        try
+        string retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
+
+        if (retorno.Length > 4 && retorno.Substring(0, 4) == "ERRO")
         {
-            retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
+            r.Error(retorno);
         }
-        catch(Exception ex)
+        else
         {
-            r.Error(ex.Message);
+            MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ok = true;
         }
-        finally
-        {
-            if (retorno.Length > 4 && retorno.Substring(0, 4) == "ERRO")
-            {
-                r.Error(retorno);
-            }
-            else
-            {
-                MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ok = true;
-            }
-        }
+        
         return ok;
     }
 
     public string LobbyEntrarPartida(int IdPartida, string NomeDoJogador, string SenhaDaPartida, string NomePartida)
     {
-        string retorno = "";
-        try
+        string retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
+
+        if (!r.Error(retorno))
         {
-            retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
+            MessageBox.Show(
+                $"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}",
+                "Jogador Entrou",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
-        catch(Exception ex)
+        else
         {
-            r.Error(ex.Message);
-            throw;
+            retorno = "";
         }
-        finally
-        {
-            if (!r.Error(retorno))
-            {
-                MessageBox.Show(
-                    $"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}",
-                    "Jogador Entrou",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-            }
-            else
-            {
-                retorno = "";
-            }
-        }
+        
         return retorno;
     }
 

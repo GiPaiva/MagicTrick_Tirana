@@ -42,6 +42,7 @@ namespace MagicTrick_Tirana
             else
             {
                 lstPartidas.Items.Add("PARTIDA NÃO ENCONTRADA");
+                lstPartidas.SetSelected(0, false);
                 lstJogadores.Visible = false;
                 lblJogadoresTitulo.Visible = false;
             }
@@ -51,9 +52,11 @@ namespace MagicTrick_Tirana
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
             lstJogadores.Items.Clear();
+            string PartidaSelecionada = "";
 
-            string PartidaSelecionada = lstPartidas.SelectedItem.ToString();
-            if (lobby.LobbyListarJogadores(PartidaSelecionada))
+            PartidaSelecionada = lstPartidas.SelectedItem.ToString();
+
+            if (lobby.LobbyListarJogadores(PartidaSelecionada) && PartidaSelecionada != "")
             {
                 for (int i = 0; i < lobby.Jogadores.Length; i++)
                 {
@@ -65,6 +68,7 @@ namespace MagicTrick_Tirana
                 lstJogadores.Items.Add("Não há Jogadores na partida: ");
                 lstJogadores.Items.Add(Lobby.Partida.NomePartida);
             }
+            
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
@@ -107,9 +111,8 @@ namespace MagicTrick_Tirana
                 string SenhaDaPartida = txtSenhaDaPartida.Text;
                 string[] DadosPartida = PartidaEscolhida.Split(',');
 
-                string NomePartida = DadosPartida[1];
                 int IdPartida = Convert.ToInt32(DadosPartida[0]);
-
+                string NomePartida = DadosPartida[1];
 
                 string retorno = lobby.LobbyEntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida, NomePartida);
                 if(retorno != "")
