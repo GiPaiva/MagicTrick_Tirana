@@ -21,11 +21,6 @@ namespace MagicTrick_Tirana
 
         public string[] PartidaAtual { get; set; }
 
-
-        public Random rnd = new Random();
-        public int primeiro;
-
-
         private Tratamento r = new Tratamento();
 
         public Partida()
@@ -53,26 +48,16 @@ namespace MagicTrick_Tirana
         public void AtualizarTela()
         {
             lblVersao2.Text = Versao;
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
-            string[] DadosJogador = Jogador.Split(',');
-
-            for (int i = 0; i < JogadoresAtuais.Length; i++)
-            {
-                string[] aux = JogadoresAtuais[i].Split(',');
-                if (aux[0] == DadosJogador[0])
-                {
-                    grpBox1.Text = aux[1];
-                }
-            }
         }
+
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
             string[] DadosJogador = Jogador.Split(',');
             int IdJogador = Convert.ToInt32(DadosJogador[0]);
-
             string retorno = Jogo.IniciarPartida(IdJogador, DadosJogador[1]);
+            
+            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
 
             for(int i = 0;  i < JogadoresAtuais.Length; i++)
             {
@@ -83,8 +68,6 @@ namespace MagicTrick_Tirana
                     MessageBox.Show("O primeiro jogador é: " + j[1] + "\n Id: " + retorno);
                 }
             }
-
-
         }
 
         private void btnConsultarMao_Click(object sender, EventArgs e)
@@ -92,12 +75,8 @@ namespace MagicTrick_Tirana
             listBox1.Items.Clear();
             string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
             string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
+
             string[] DadosJogador = Jogador.Split(',');
-
-            List<GroupBox> list = new List<GroupBox> {grpBox1, groupBox1, groupBox2, groupBox3 };
-            List<ListBox> list2 = new List<ListBox> {listBox1, listBox2, listBox3, listBox5};
-
 
             listBox1.Items.Add("Posição | Naipe");
             for (int i = 0; i < DadosConsultarMao.Length; i++)
@@ -108,6 +87,47 @@ namespace MagicTrick_Tirana
                     listBox1.Items.Add(aux[1] + " | " + aux[2]);
                 }
             }
+
+            MostrarGalera(DadosJogador[0], DadosConsultarMao);
+        }
+
+        private void MostrarGalera(string idDoJogador, string[] DadosConsultarMao)
+        {
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox5.Items.Clear();
+
+            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
+
+            List<GroupBox> list = new List<GroupBox> { grpBox1, groupBox2, groupBox1, groupBox3 };
+            List<ListBox> list2 = new List<ListBox> { listBox1, listBox2, listBox5, listBox3 };
+
+            for (int i = 0; i < JogadoresAtuais.Length; i++)
+            {
+                string[] aux = JogadoresAtuais[i].Split(',');
+
+                if (aux[0] != idDoJogador)
+                {
+                    list[i].Text = aux[1];
+                    list2[i].Items.Add("Posição | Naipe");
+                    for (int j = 0; j < DadosConsultarMao.Length; j++)
+                    {
+                        string[] aux2 = DadosConsultarMao[j].Split(',');
+                        if (aux2[0] == aux[0])
+                        {
+                            list2[i].Items.Add(aux2[1] + " | " + aux2[2]);
+                        }
+                    }
+                }
+                else
+                {
+                    list[0].Text = aux[1];
+                }
+            }
+        }
+        
+        private void MostrarCartas()
+        {
 
         }
 
