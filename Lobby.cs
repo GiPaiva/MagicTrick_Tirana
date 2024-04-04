@@ -35,6 +35,7 @@ class Lobby
         catch(Exception ex)
         {
             r.Error(ex.Message);
+            LobbyListarPartidas();
         }
         finally
         {

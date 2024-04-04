@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,47 +18,54 @@ namespace MagicTrick_Tirana
     public partial class Partida : Form
     {
         public string Versao { get; set; }
+
         public string Jogador { get; set; }
+        public string[] JogadoresAtuais { get; set; }
 
         public string[] PartidaAtual { get; set; }
+        public string PartidaSelecionada { get; set; }
 
         private Tratamento r = new Tratamento();
+        private Lobby lobby = new Lobby();
 
+        public bool estado = false;
         public Partida()
         {
             InitializeComponent();
-            PictureBox[] cards = new PictureBox[]
-            {
-                pictureBox1, 
-                pictureBox2, 
-                pictureBox3, 
-                pictureBox4, 
-                pictureBox5, 
-                pictureBox6, 
-                pictureBox7, 
-                pictureBox8, 
-                pictureBox9, 
-                pictureBox10, 
-                pictureBox11, 
-                pictureBox12, 
-                pictureBox13, 
-                pictureBox14
-            };
         }
 
         public void AtualizarTela()
         {
             lblVersao2.Text = Versao;
+            ReloAsync();
         }
 
+        public async Task ReloAsync()
+        {
+            int quantidade = 0;
+            while (!estado && quantidade < 5)
+            {
+                quantidade = JogadoresAtuais.Length;
+                lblQJ.Visible = true;
+                lblQJogadores.Visible = true;
+
+                lblQJ.Text = Convert.ToString(quantidade);
+
+                lobby.LobbyListarJogadores(PartidaSelecionada);
+                JogadoresAtuais = lobby.Jogadores;
+
+                await Task.Delay(6000);
+            }
+
+            lblQJ.Visible = false;
+            lblQJogadores.Visible = false;
+        }
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
             string[] DadosJogador = Jogador.Split(',');
             int IdJogador = Convert.ToInt32(DadosJogador[0]);
             string retorno = Jogo.IniciarPartida(IdJogador, DadosJogador[1]);
-            
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
 
             for(int i = 0;  i < JogadoresAtuais.Length; i++)
             {
@@ -68,74 +76,91 @@ namespace MagicTrick_Tirana
                     MessageBox.Show("O primeiro jogador é: " + j[1] + "\n Id: " + retorno);
                 }
             }
+            estado = true;
+            btnComecar.Visible = false;
         }
 
         private void btnConsultarMao_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+
             string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
             string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
 
             string[] DadosJogador = Jogador.Split(',');
-
-            listBox1.Items.Add("Posição | Naipe");
-            for (int i = 0; i < DadosConsultarMao.Length; i++)
-            {
-                string[] aux = DadosConsultarMao[i].Split(',');
-                if (aux[0] == DadosJogador[0])
-                {
-                    listBox1.Items.Add(aux[1] + " | " + aux[2]);
-                }
-            }
 
             MostrarGalera(DadosJogador[0], DadosConsultarMao);
         }
 
         private void MostrarGalera(string idDoJogador, string[] DadosConsultarMao)
         {
-            listBox2.Items.Clear();
-            listBox3.Items.Clear();
-            listBox5.Items.Clear();
-
-            string[] JogadoresAtuais = r.TratarDadosEmArray(Jogo.ListarJogadores(Convert.ToInt32(PartidaAtual[0])));
-
-            List<GroupBox> list = new List<GroupBox> { grpBox1, groupBox2, groupBox1, groupBox3 };
-            List<ListBox> list2 = new List<ListBox> { listBox1, listBox2, listBox5, listBox3 };
+            bool primeiro = true;
 
             for (int i = 0; i < JogadoresAtuais.Length; i++)
             {
                 string[] aux = JogadoresAtuais[i].Split(',');
-
+                
                 if (aux[0] != idDoJogador)
                 {
-                    list[i].Text = aux[1];
-                    list2[i].Items.Add("Posição | Naipe");
-                    for (int j = 0; j < DadosConsultarMao.Length; j++)
+                    if(i == 0)
                     {
-                        string[] aux2 = DadosConsultarMao[j].Split(',');
-                        if (aux2[0] == aux[0])
-                        {
-                            list2[i].Items.Add(aux2[1] + " | " + aux2[2]);
-                        }
+                        i++;
+                        primeiro = false;
+                    }
+
+                    MostrarCartas(aux, DadosConsultarMao, i);
+
+                    if (!primeiro)
+                    {
+                        i--;
                     }
                 }
                 else
                 {
-                    list[0].Text = aux[1];
+                    MostrarCartas(aux, DadosConsultarMao, 0);
                 }
             }
         }
         
-        private void MostrarCartas()
+        private void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i)
         {
+            List<GroupBox> groupBoxes = new List<GroupBox> { grbPlayer1, grbPlayer2, grbPlayer3, grbPlayer4 };
+            List<ListBox> listBoxes = new List<ListBox> { lsbPlayer1, lsbPlayer2, lsbPlayer3, lsbPlayer4 };
 
+            //List<Panel> pictureBoxes = new List<Panel> {pnlCarta1P1, pnlCarta2P1, pnlCarta3P1, pnlCarta4P1, pnlCarta5P1, pnlCarta6P1, pnlCarta7P1, pnlCarta8P1, pnlCarta9P1, pnlCarta10P1, pnlCarta11P1, pnlCarta12P1, pnlCarta13P1, pnlCarta14P1 };
+            //List<List<Panel>> nome = new List<List<Panel>>();
+
+            //List<string> imagens = new List<string> {
+            //    "./Cartas/Copas1.png",        //C
+            //    "./Cartas/Espadas1.png",      //E
+            //    "./Cartas/Estrelas1.png",     //S
+            //    "./Cartas/Lua1.png",          //L
+            //    "./Cartas/Ouros1.png",        //O
+            //    "./Cartas/Paus1.png",         //P
+            //    "./Cartas/Triângulos1.png",   //T
+            //};
+
+            groupBoxes[i].Visible = true;
+            listBoxes[i].Items.Clear();
+
+            groupBoxes[i].Text = aux[1];
+            listBoxes[i].Items.Add("Posição | Naipe");
+
+            for (int j = 0; j < DadosConsultarMao.Length; j++)
+            {
+                string[] aux2 = DadosConsultarMao[j].Split(',');
+                if (aux2[0] == aux[0])
+                {
+                    listBoxes[i].Items.Add(aux2[1] + " | " + aux2[2]);
+                    //Paneis dinamicos (https://youtu.be/4KGBtGdH7tw?si=ecSoSNZiPwuC7KYO)
+                }
+            }
         }
 
         private void btnJogar_Click(object sender, EventArgs e)
         {
             //IdJogador | senhaJogador | posição
 
-            string list = listBox1.Text;
+            string list = lsbPlayer1.Text;
             string[] Dadoslist = list.Split('|');
 
             //Posição
@@ -173,7 +198,7 @@ namespace MagicTrick_Tirana
         private void Apostar()
         {
             btnApostar.Visible = true;
-            if (listBox1.SelectedItem == null)
+            if (lsbPlayer1.SelectedItem == null)
             {
                 MessageBox.Show($"Selecione uma carta", "Apostar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -182,9 +207,9 @@ namespace MagicTrick_Tirana
         private void btnApostar_Click(object sender, EventArgs e)
         {
             string[] DadosJogador = Jogador.Split(',');
-            if (listBox1.SelectedItem != null)
+            if (lsbPlayer1.SelectedItem != null)
             {
-                string list = listBox1.Text;
+                string list = lsbPlayer1.Text;
                 string[] Dadoslist = list.Split('|');
 
                 //Posição
@@ -201,5 +226,6 @@ namespace MagicTrick_Tirana
                 Apostar();
             }
         }
+
     }
 }

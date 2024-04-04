@@ -17,6 +17,8 @@ namespace MagicTrick_Tirana
         
         private Lobby lobby = new Lobby();
 
+        private bool estado = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace MagicTrick_Tirana
                 {
                     lstPartidas.Items.Add(lobby.Partidas[i]);
                 }
+                estado = true;
             }
             else
             {
@@ -51,22 +54,27 @@ namespace MagicTrick_Tirana
 
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lstJogadores.Visible = true;
+            lblJogadoresTitulo.Visible = true;
             lstJogadores.Items.Clear();
             string PartidaSelecionada = "";
 
-            PartidaSelecionada = lstPartidas.SelectedItem.ToString();
+            if (estado)
+            {
+                PartidaSelecionada = lstPartidas.SelectedItem.ToString();
 
-            if (lobby.LobbyListarJogadores(PartidaSelecionada) && PartidaSelecionada != "")
-            {
-                for (int i = 0; i < lobby.Jogadores.Length; i++)
+                if (lobby.LobbyListarJogadores(PartidaSelecionada) && PartidaSelecionada != "")
                 {
-                    lstJogadores.Items.Add(lobby.Jogadores[i]);
+                    for (int i = 0; i < lobby.Jogadores.Length; i++)
+                    {
+                        lstJogadores.Items.Add(lobby.Jogadores[i]);
+                    }
                 }
-            }
-            else
-            {
-                lstJogadores.Items.Add("Não há Jogadores na partida: ");
-                lstJogadores.Items.Add(Lobby.Partida.NomePartida);
+                else
+                {
+                    lstJogadores.Items.Add("Não há Jogadores na partida: ");
+                    lstJogadores.Items.Add(Lobby.Partida.NomePartida);
+                }
             }
             
         }
@@ -120,9 +128,13 @@ namespace MagicTrick_Tirana
                     txtNomeJogador.Clear();
                     txtSenhaDaPartida.Clear();
 
+                    lobby.LobbyListarJogadores(PartidaEscolhida);
+
                     Partida Partida = new Partida();
                     Partida.Versao = Jogo.Versao;
                     Partida.Jogador = retorno;
+                    Partida.JogadoresAtuais = lobby.Jogadores;
+                    Partida.PartidaSelecionada = PartidaEscolhida;
                     Partida.PartidaAtual = DadosPartida;
                     Partida.AtualizarTela();
                     Partida.Show();
