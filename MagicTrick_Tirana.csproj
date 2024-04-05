@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cartas.cs" />
     <Compile Include="Lobby.cs" />
     <Compile Include="Partida.cs">
       <SubType>Form</SubType>
@@ -96,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PartidaBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
