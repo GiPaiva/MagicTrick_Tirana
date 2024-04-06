@@ -17,7 +17,7 @@ class Lobby
     {
         public static int IdPartida;
         public static string NomePartida;
-        public static string StatusPartida;
+        //public static string StatusPartida;
     }
 
     public string[] Partidas;

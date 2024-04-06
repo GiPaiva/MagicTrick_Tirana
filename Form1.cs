@@ -13,8 +13,6 @@ namespace MagicTrick_Tirana
 {
     public partial class Form1 : Form
     { 
-        private Tratamento r = new Tratamento();
-        
         private Lobby lobby = new Lobby();
 
         private bool estado = false;

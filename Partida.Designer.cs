@@ -57,7 +57,7 @@
             this.lsbPlayer3 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCartas3 = new System.Windows.Forms.Panel();
             this.pnlCarta13P3 = new System.Windows.Forms.Panel();
             this.pnlCarta1P3 = new System.Windows.Forms.Panel();
             this.pnlCarta6P3 = new System.Windows.Forms.Panel();
@@ -77,7 +77,7 @@
             this.lsbPlayer4 = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlCartas4 = new System.Windows.Forms.Panel();
             this.pnlCarta13P4 = new System.Windows.Forms.Panel();
             this.pnlCarta10P4 = new System.Windows.Forms.Panel();
             this.pnlCarta14P4 = new System.Windows.Forms.Panel();
@@ -97,9 +97,10 @@
             this.lsbPlayer2 = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlCartas2 = new System.Windows.Forms.Panel();
             this.pnlCarta13P2 = new System.Windows.Forms.Panel();
             this.pnlCarta1P2 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pnlCarta10P2 = new System.Windows.Forms.Panel();
             this.pnlCarta3P2 = new System.Windows.Forms.Panel();
             this.pnlCarta14P2 = new System.Windows.Forms.Panel();
@@ -116,21 +117,23 @@
             this.lblQJogadores = new System.Windows.Forms.Label();
             this.lblQJ = new System.Windows.Forms.Label();
             this.pnlCartaP1 = new System.Windows.Forms.Panel();
-            this.pnlCartaP2 = new System.Windows.Forms.Panel();
-            this.pnlCartaP4 = new System.Windows.Forms.Panel();
-            this.pnlCartaP3 = new System.Windows.Forms.Panel();
-            this.lblCartaP2 = new System.Windows.Forms.Label();
             this.lblCartaP1 = new System.Windows.Forms.Label();
+            this.pnlCartaP2 = new System.Windows.Forms.Panel();
+            this.lblCartaP2 = new System.Windows.Forms.Label();
+            this.pnlCartaP4 = new System.Windows.Forms.Panel();
             this.lblCartaP4 = new System.Windows.Forms.Label();
+            this.pnlCartaP3 = new System.Windows.Forms.Panel();
             this.lblCartaP3 = new System.Windows.Forms.Label();
+            this.lblParticipantes = new System.Windows.Forms.Label();
             this.pnlCartas.SuspendLayout();
             this.grbPlayer1.SuspendLayout();
             this.grbPlayer3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlCartas3.SuspendLayout();
             this.grbPlayer4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlCartas4.SuspendLayout();
             this.grbPlayer2.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlCartas2.SuspendLayout();
+            this.pnlCarta1P2.SuspendLayout();
             this.pnlCartaP1.SuspendLayout();
             this.pnlCartaP2.SuspendLayout();
             this.pnlCartaP4.SuspendLayout();
@@ -190,7 +193,6 @@
             this.pnlCartas.Name = "pnlCartas";
             this.pnlCartas.Size = new System.Drawing.Size(324, 122);
             this.pnlCartas.TabIndex = 14;
-            this.pnlCartas.Visible = false;
             // 
             // pnlCarta13P1
             // 
@@ -331,7 +333,7 @@
             // 
             // btnComecar
             // 
-            this.btnComecar.Location = new System.Drawing.Point(759, 417);
+            this.btnComecar.Location = new System.Drawing.Point(759, 368);
             this.btnComecar.Name = "btnComecar";
             this.btnComecar.Size = new System.Drawing.Size(89, 23);
             this.btnComecar.TabIndex = 2;
@@ -341,7 +343,7 @@
             // 
             // btnConsultarMao
             // 
-            this.btnConsultarMao.Location = new System.Drawing.Point(633, 417);
+            this.btnConsultarMao.Location = new System.Drawing.Point(633, 368);
             this.btnConsultarMao.Name = "btnConsultarMao";
             this.btnConsultarMao.Size = new System.Drawing.Size(120, 23);
             this.btnConsultarMao.TabIndex = 3;
@@ -351,7 +353,7 @@
             // 
             // grbPlayer1
             // 
-            this.grbPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.grbPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.grbPlayer1.Controls.Add(this.btnApostar);
             this.grbPlayer1.Controls.Add(this.btnJogar);
             this.grbPlayer1.Controls.Add(this.lsbPlayer1);
@@ -360,7 +362,7 @@
             this.grbPlayer1.Controls.Add(this.pnlCartas);
             this.grbPlayer1.Controls.Add(this.lblPontos);
             this.grbPlayer1.ForeColor = System.Drawing.Color.White;
-            this.grbPlayer1.Location = new System.Drawing.Point(227, 446);
+            this.grbPlayer1.Location = new System.Drawing.Point(227, 397);
             this.grbPlayer1.Name = "grbPlayer1";
             this.grbPlayer1.Size = new System.Drawing.Size(627, 136);
             this.grbPlayer1.TabIndex = 4;
@@ -401,14 +403,14 @@
             // 
             // grbPlayer3
             // 
-            this.grbPlayer3.BackColor = System.Drawing.Color.Transparent;
+            this.grbPlayer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.grbPlayer3.Controls.Add(this.lsbPlayer3);
             this.grbPlayer3.Controls.Add(this.label4);
             this.grbPlayer3.Controls.Add(this.label5);
-            this.grbPlayer3.Controls.Add(this.panel1);
+            this.grbPlayer3.Controls.Add(this.pnlCartas3);
             this.grbPlayer3.Controls.Add(this.label6);
             this.grbPlayer3.ForeColor = System.Drawing.Color.White;
-            this.grbPlayer3.Location = new System.Drawing.Point(227, 9);
+            this.grbPlayer3.Location = new System.Drawing.Point(227, 44);
             this.grbPlayer3.Name = "grbPlayer3";
             this.grbPlayer3.Size = new System.Drawing.Size(627, 136);
             this.grbPlayer3.TabIndex = 19;
@@ -447,27 +449,26 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "/";
             // 
-            // panel1
+            // pnlCartas3
             // 
-            this.panel1.Controls.Add(this.pnlCarta13P3);
-            this.panel1.Controls.Add(this.pnlCarta1P3);
-            this.panel1.Controls.Add(this.pnlCarta6P3);
-            this.panel1.Controls.Add(this.pnlCarta2P3);
-            this.panel1.Controls.Add(this.pnlCarta10P3);
-            this.panel1.Controls.Add(this.pnlCarta8P3);
-            this.panel1.Controls.Add(this.pnlCarta3P3);
-            this.panel1.Controls.Add(this.pnlCarta5P3);
-            this.panel1.Controls.Add(this.pnlCarta14P3);
-            this.panel1.Controls.Add(this.pnlCarta9P3);
-            this.panel1.Controls.Add(this.pnlCarta11P3);
-            this.panel1.Controls.Add(this.pnlCarta4P3);
-            this.panel1.Controls.Add(this.pnlCarta7P3);
-            this.panel1.Controls.Add(this.pnlCarta12P3);
-            this.panel1.Location = new System.Drawing.Point(142, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 124);
-            this.panel1.TabIndex = 14;
-            this.panel1.Visible = false;
+            this.pnlCartas3.Controls.Add(this.pnlCarta13P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta1P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta6P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta2P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta10P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta8P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta3P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta5P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta14P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta9P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta11P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta4P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta7P3);
+            this.pnlCartas3.Controls.Add(this.pnlCarta12P3);
+            this.pnlCartas3.Location = new System.Drawing.Point(142, 10);
+            this.pnlCartas3.Name = "pnlCartas3";
+            this.pnlCartas3.Size = new System.Drawing.Size(324, 124);
+            this.pnlCartas3.TabIndex = 14;
             // 
             // pnlCarta13P3
             // 
@@ -608,12 +609,13 @@
             // 
             // grbPlayer4
             // 
-            this.grbPlayer4.BackColor = System.Drawing.Color.Transparent;
+            this.grbPlayer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.grbPlayer4.Controls.Add(this.lsbPlayer4);
             this.grbPlayer4.Controls.Add(this.label10);
             this.grbPlayer4.Controls.Add(this.label11);
-            this.grbPlayer4.Controls.Add(this.panel3);
+            this.grbPlayer4.Controls.Add(this.pnlCartas4);
             this.grbPlayer4.Controls.Add(this.label12);
+            this.grbPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbPlayer4.ForeColor = System.Drawing.Color.White;
             this.grbPlayer4.Location = new System.Drawing.Point(878, 44);
             this.grbPlayer4.Name = "grbPlayer4";
@@ -654,27 +656,26 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "/";
             // 
-            // panel3
+            // pnlCartas4
             // 
-            this.panel3.Controls.Add(this.pnlCarta13P4);
-            this.panel3.Controls.Add(this.pnlCarta10P4);
-            this.panel3.Controls.Add(this.pnlCarta14P4);
-            this.panel3.Controls.Add(this.pnlCarta4P4);
-            this.panel3.Controls.Add(this.pnlCarta11P4);
-            this.panel3.Controls.Add(this.pnlCarta5P4);
-            this.panel3.Controls.Add(this.pnlCarta7P4);
-            this.panel3.Controls.Add(this.pnlCarta12P4);
-            this.panel3.Controls.Add(this.pnlCarta1P4);
-            this.panel3.Controls.Add(this.pnlCarta8P4);
-            this.panel3.Controls.Add(this.pnlCarta6P4);
-            this.panel3.Controls.Add(this.pnlCarta9P4);
-            this.panel3.Controls.Add(this.pnlCarta2P4);
-            this.panel3.Controls.Add(this.pnlCarta3P4);
-            this.panel3.Location = new System.Drawing.Point(6, 53);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(136, 314);
-            this.panel3.TabIndex = 14;
-            this.panel3.Visible = false;
+            this.pnlCartas4.Controls.Add(this.pnlCarta13P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta10P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta14P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta4P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta11P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta5P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta7P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta12P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta1P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta8P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta6P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta9P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta2P4);
+            this.pnlCartas4.Controls.Add(this.pnlCarta3P4);
+            this.pnlCartas4.Location = new System.Drawing.Point(6, 53);
+            this.pnlCartas4.Name = "pnlCartas4";
+            this.pnlCartas4.Size = new System.Drawing.Size(136, 314);
+            this.pnlCartas4.TabIndex = 14;
             // 
             // pnlCarta13P4
             // 
@@ -815,11 +816,11 @@
             // 
             // grbPlayer2
             // 
-            this.grbPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.grbPlayer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.grbPlayer2.Controls.Add(this.lsbPlayer2);
             this.grbPlayer2.Controls.Add(this.label7);
             this.grbPlayer2.Controls.Add(this.label8);
-            this.grbPlayer2.Controls.Add(this.panel2);
+            this.grbPlayer2.Controls.Add(this.pnlCartas2);
             this.grbPlayer2.Controls.Add(this.label9);
             this.grbPlayer2.ForeColor = System.Drawing.Color.White;
             this.grbPlayer2.Location = new System.Drawing.Point(56, 44);
@@ -861,27 +862,26 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "/";
             // 
-            // panel2
+            // pnlCartas2
             // 
-            this.panel2.Controls.Add(this.pnlCarta13P2);
-            this.panel2.Controls.Add(this.pnlCarta1P2);
-            this.panel2.Controls.Add(this.pnlCarta10P2);
-            this.panel2.Controls.Add(this.pnlCarta3P2);
-            this.panel2.Controls.Add(this.pnlCarta14P2);
-            this.panel2.Controls.Add(this.pnlCarta2P2);
-            this.panel2.Controls.Add(this.pnlCarta4P2);
-            this.panel2.Controls.Add(this.pnlCarta9P2);
-            this.panel2.Controls.Add(this.pnlCarta11P2);
-            this.panel2.Controls.Add(this.pnlCarta6P2);
-            this.panel2.Controls.Add(this.pnlCarta5P2);
-            this.panel2.Controls.Add(this.pnlCarta8P2);
-            this.panel2.Controls.Add(this.pnlCarta7P2);
-            this.panel2.Controls.Add(this.pnlCarta12P2);
-            this.panel2.Location = new System.Drawing.Point(6, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(132, 314);
-            this.panel2.TabIndex = 14;
-            this.panel2.Visible = false;
+            this.pnlCartas2.Controls.Add(this.pnlCarta13P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta1P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta10P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta3P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta14P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta2P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta4P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta9P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta11P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta6P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta5P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta8P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta7P2);
+            this.pnlCartas2.Controls.Add(this.pnlCarta12P2);
+            this.pnlCartas2.Location = new System.Drawing.Point(6, 53);
+            this.pnlCartas2.Name = "pnlCartas2";
+            this.pnlCartas2.Size = new System.Drawing.Size(132, 314);
+            this.pnlCartas2.TabIndex = 14;
             // 
             // pnlCarta13P2
             // 
@@ -895,11 +895,21 @@
             // pnlCarta1P2
             // 
             this.pnlCarta1P2.BackColor = System.Drawing.Color.White;
+            this.pnlCarta1P2.Controls.Add(this.listBox1);
             this.pnlCarta1P2.Location = new System.Drawing.Point(3, 9);
             this.pnlCarta1P2.Name = "pnlCarta1P2";
             this.pnlCarta1P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta1P2.TabIndex = 57;
             this.pnlCarta1P2.Visible = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(-50, -41);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(149, 116);
+            this.listBox1.TabIndex = 26;
             // 
             // pnlCarta10P2
             // 
@@ -1030,68 +1040,26 @@
             this.lblQJogadores.Size = new System.Drawing.Size(165, 16);
             this.lblQJogadores.TabIndex = 23;
             this.lblQJogadores.Text = "Quantidade de Jogadores";
-            this.lblQJogadores.Visible = false;
             // 
             // lblQJ
             // 
             this.lblQJ.AutoSize = true;
             this.lblQJ.BackColor = System.Drawing.Color.Transparent;
             this.lblQJ.ForeColor = System.Drawing.Color.White;
-            this.lblQJ.Location = new System.Drawing.Point(19, 26);
+            this.lblQJ.Location = new System.Drawing.Point(23, 28);
             this.lblQJ.Name = "lblQJ";
             this.lblQJ.Size = new System.Drawing.Size(0, 16);
             this.lblQJ.TabIndex = 24;
-            this.lblQJ.Visible = false;
             // 
             // pnlCartaP1
             // 
             this.pnlCartaP1.BackColor = System.Drawing.Color.White;
             this.pnlCartaP1.Controls.Add(this.lblCartaP1);
-            this.pnlCartaP1.Location = new System.Drawing.Point(515, 346);
+            this.pnlCartaP1.Location = new System.Drawing.Point(515, 318);
             this.pnlCartaP1.Name = "pnlCartaP1";
             this.pnlCartaP1.Size = new System.Drawing.Size(38, 54);
             this.pnlCartaP1.TabIndex = 26;
             this.pnlCartaP1.Visible = false;
-            // 
-            // pnlCartaP2
-            // 
-            this.pnlCartaP2.BackColor = System.Drawing.Color.White;
-            this.pnlCartaP2.Controls.Add(this.lblCartaP2);
-            this.pnlCartaP2.Location = new System.Drawing.Point(427, 286);
-            this.pnlCartaP2.Name = "pnlCartaP2";
-            this.pnlCartaP2.Size = new System.Drawing.Size(38, 54);
-            this.pnlCartaP2.TabIndex = 63;
-            this.pnlCartaP2.Visible = false;
-            // 
-            // pnlCartaP4
-            // 
-            this.pnlCartaP4.BackColor = System.Drawing.Color.White;
-            this.pnlCartaP4.Controls.Add(this.lblCartaP4);
-            this.pnlCartaP4.Location = new System.Drawing.Point(603, 286);
-            this.pnlCartaP4.Name = "pnlCartaP4";
-            this.pnlCartaP4.Size = new System.Drawing.Size(38, 54);
-            this.pnlCartaP4.TabIndex = 51;
-            this.pnlCartaP4.Visible = false;
-            // 
-            // pnlCartaP3
-            // 
-            this.pnlCartaP3.BackColor = System.Drawing.Color.White;
-            this.pnlCartaP3.Controls.Add(this.lblCartaP3);
-            this.pnlCartaP3.Location = new System.Drawing.Point(515, 226);
-            this.pnlCartaP3.Name = "pnlCartaP3";
-            this.pnlCartaP3.Size = new System.Drawing.Size(38, 54);
-            this.pnlCartaP3.TabIndex = 43;
-            this.pnlCartaP3.Visible = false;
-            // 
-            // lblCartaP2
-            // 
-            this.lblCartaP2.AutoSize = true;
-            this.lblCartaP2.Location = new System.Drawing.Point(-3, 22);
-            this.lblCartaP2.Name = "lblCartaP2";
-            this.lblCartaP2.Size = new System.Drawing.Size(44, 16);
-            this.lblCartaP2.TabIndex = 0;
-            this.lblCartaP2.Text = "label2";
-            this.lblCartaP2.Visible = false;
             // 
             // lblCartaP1
             // 
@@ -1103,6 +1071,36 @@
             this.lblCartaP1.Text = "label3";
             this.lblCartaP1.Visible = false;
             // 
+            // pnlCartaP2
+            // 
+            this.pnlCartaP2.BackColor = System.Drawing.Color.White;
+            this.pnlCartaP2.Controls.Add(this.lblCartaP2);
+            this.pnlCartaP2.Location = new System.Drawing.Point(427, 258);
+            this.pnlCartaP2.Name = "pnlCartaP2";
+            this.pnlCartaP2.Size = new System.Drawing.Size(38, 54);
+            this.pnlCartaP2.TabIndex = 63;
+            this.pnlCartaP2.Visible = false;
+            // 
+            // lblCartaP2
+            // 
+            this.lblCartaP2.AutoSize = true;
+            this.lblCartaP2.Location = new System.Drawing.Point(-3, 22);
+            this.lblCartaP2.Name = "lblCartaP2";
+            this.lblCartaP2.Size = new System.Drawing.Size(44, 16);
+            this.lblCartaP2.TabIndex = 0;
+            this.lblCartaP2.Text = "label2";
+            this.lblCartaP2.Visible = false;
+            // 
+            // pnlCartaP4
+            // 
+            this.pnlCartaP4.BackColor = System.Drawing.Color.White;
+            this.pnlCartaP4.Controls.Add(this.lblCartaP4);
+            this.pnlCartaP4.Location = new System.Drawing.Point(603, 258);
+            this.pnlCartaP4.Name = "pnlCartaP4";
+            this.pnlCartaP4.Size = new System.Drawing.Size(38, 54);
+            this.pnlCartaP4.TabIndex = 51;
+            this.pnlCartaP4.Visible = false;
+            // 
             // lblCartaP4
             // 
             this.lblCartaP4.AutoSize = true;
@@ -1112,6 +1110,16 @@
             this.lblCartaP4.TabIndex = 2;
             this.lblCartaP4.Text = "label13";
             this.lblCartaP4.Visible = false;
+            // 
+            // pnlCartaP3
+            // 
+            this.pnlCartaP3.BackColor = System.Drawing.Color.White;
+            this.pnlCartaP3.Controls.Add(this.lblCartaP3);
+            this.pnlCartaP3.Location = new System.Drawing.Point(515, 198);
+            this.pnlCartaP3.Name = "pnlCartaP3";
+            this.pnlCartaP3.Size = new System.Drawing.Size(38, 54);
+            this.pnlCartaP3.TabIndex = 43;
+            this.pnlCartaP3.Visible = false;
             // 
             // lblCartaP3
             // 
@@ -1123,6 +1131,16 @@
             this.lblCartaP3.Text = "label14";
             this.lblCartaP3.Visible = false;
             // 
+            // lblParticipantes
+            // 
+            this.lblParticipantes.AutoSize = true;
+            this.lblParticipantes.BackColor = System.Drawing.Color.Transparent;
+            this.lblParticipantes.ForeColor = System.Drawing.Color.White;
+            this.lblParticipantes.Location = new System.Drawing.Point(23, 54);
+            this.lblParticipantes.Name = "lblParticipantes";
+            this.lblParticipantes.Size = new System.Drawing.Size(0, 16);
+            this.lblParticipantes.TabIndex = 64;
+            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1131,6 +1149,7 @@
             this.BackgroundImage = global::MagicTrick_Tirana.Properties.Resources.PartidaBack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 585);
+            this.Controls.Add(this.lblParticipantes);
             this.Controls.Add(this.pnlCartaP3);
             this.Controls.Add(this.pnlCartaP4);
             this.Controls.Add(this.pnlCartaP2);
@@ -1155,13 +1174,14 @@
             this.grbPlayer1.PerformLayout();
             this.grbPlayer3.ResumeLayout(false);
             this.grbPlayer3.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnlCartas3.ResumeLayout(false);
             this.grbPlayer4.ResumeLayout(false);
             this.grbPlayer4.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.pnlCartas4.ResumeLayout(false);
             this.grbPlayer2.ResumeLayout(false);
             this.grbPlayer2.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlCartas2.ResumeLayout(false);
+            this.pnlCarta1P2.ResumeLayout(false);
             this.pnlCartaP1.ResumeLayout(false);
             this.pnlCartaP1.PerformLayout();
             this.pnlCartaP2.ResumeLayout(false);
@@ -1182,20 +1202,12 @@
         private System.Windows.Forms.Label lblVersao2;
         private System.Windows.Forms.Button btnComecar;
         private System.Windows.Forms.Button btnConsultarMao;
-        private System.Windows.Forms.GroupBox grbPlayer1;
-        private System.Windows.Forms.ListBox lsbPlayer1;
-        private System.Windows.Forms.GroupBox grbPlayer3;
-        private System.Windows.Forms.ListBox lsbPlayer3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox grbPlayer4;
-        private System.Windows.Forms.ListBox lsbPlayer4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox grbPlayer2;
-        private System.Windows.Forms.ListBox lsbPlayer2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -1260,9 +1272,9 @@
         public System.Windows.Forms.Panel pnlCarta7P2;
         public System.Windows.Forms.Panel pnlCarta12P2;
         public System.Windows.Forms.Panel pnlCartas;
-        public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Panel pnlCartas3;
+        public System.Windows.Forms.Panel pnlCartas4;
+        public System.Windows.Forms.Panel pnlCartas2;
         public System.Windows.Forms.Panel pnlCartaP1;
         public System.Windows.Forms.Panel pnlCartaP2;
         public System.Windows.Forms.Panel pnlCartaP4;
@@ -1271,5 +1283,15 @@
         public System.Windows.Forms.Label lblCartaP2;
         public System.Windows.Forms.Label lblCartaP4;
         public System.Windows.Forms.Label lblCartaP3;
+        public System.Windows.Forms.GroupBox grbPlayer1;
+        public System.Windows.Forms.ListBox lsbPlayer1;
+        public System.Windows.Forms.GroupBox grbPlayer3;
+        public System.Windows.Forms.ListBox lsbPlayer3;
+        public System.Windows.Forms.GroupBox grbPlayer4;
+        public System.Windows.Forms.ListBox lsbPlayer4;
+        public System.Windows.Forms.GroupBox grbPlayer2;
+        public System.Windows.Forms.ListBox lsbPlayer2;
+        public System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lblParticipantes;
     }
 }
