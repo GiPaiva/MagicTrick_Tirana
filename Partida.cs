@@ -65,6 +65,7 @@ namespace MagicTrick_Tirana
                 if(quantidade != lobby.Jogadores.Length)
                 {
                     JogadoresAtuais = lobby.Jogadores;
+                    lblParticipantes.Text = "";
 
                     foreach (string JogadoresAtuais in JogadoresAtuais)
                     {
@@ -212,5 +213,39 @@ namespace MagicTrick_Tirana
             }
         }
 
+        private void pnlCarta1P1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlCarta2P1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlCarta3P1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lsbPlayer1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsbPlayer2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsbPlayer4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsbPlayer3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

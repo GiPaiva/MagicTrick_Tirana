@@ -40,6 +40,7 @@ namespace MagicTrick_Tirana
 
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
+            this.cartinhas.Clear();
 
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
@@ -50,6 +51,7 @@ namespace MagicTrick_Tirana
                     {
                         this.cartinhas.Add(aux2[1], ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i));
                         listBoxes[i].Items.Add(aux2[1] + " | " + cartinhas[aux2[1]][0]);
+
                     }
                     else
                     {
@@ -133,7 +135,7 @@ namespace MagicTrick_Tirana
             return aux;
         }
         
-        /* Enviar Carta Pelas Imagens
+        //Enviar Carta Pelas Imagens
         public bool VerificandoCartas(int x, int y, int width, int height)
         {
             Point mousePos = Control.MousePosition;
@@ -153,13 +155,14 @@ namespace MagicTrick_Tirana
             foreach(var carta in cartinhas)
             {
                 
-                if (VerificandoCartas())
+                if (VerificandoCartas(14, 3, 38, 54))
                 {
+                    MessageBox.Show("foi");
                     return Convert.ToInt32(carta.Key);
                 }
             }
             return 0;
         }
-        */
+        
     }
 }

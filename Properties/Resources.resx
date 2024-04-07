@@ -118,10 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Estrela2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Estrela2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paus2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Paus2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lua2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Lua2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ouros1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Ouros1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Estrela1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Estrela1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ouros2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Ouros2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lua1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Lua1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PartidaBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\PartidaBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Copas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Espadas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Espadas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Triângulo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Triângulo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Copas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Paus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Triângulo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Triângulo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lua11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Cartas\Lua1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
