@@ -16,8 +16,11 @@ namespace MagicTrick_Tirana
     {
         string pasta_imagens = "";
         public Dictionary<string, string[]> cartinhas = new Dictionary<string, string[]>();
+        public Dictionary<string, int> local = new Dictionary<string, int>();
+        public Dictionary<string, string> dic = new Dictionary<string, string>();
 
         Partida p;
+        Lobby lobby = new Lobby();
 
 
         public Cartas(Partida partida)
@@ -27,7 +30,7 @@ namespace MagicTrick_Tirana
 
         public void ExibirCartas()
         {
-            p.AtualizarTela();
+            _ = p.AtualizarTela();
         }
 
         public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador)
@@ -41,7 +44,7 @@ namespace MagicTrick_Tirana
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
             this.cartinhas.Clear();
-
+            int k = 0;
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
                 string[] aux2 = DadosConsultarMao[j].Split(',');
@@ -57,6 +60,12 @@ namespace MagicTrick_Tirana
                     {
                         listBoxes[i].Items.Add(aux2[1] + " | " + aux2[2]);
                         ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i);
+                    }
+
+                    if(k == 0)
+                    {
+                        local.Add(aux2[0].Trim(),i);
+                        k++;
                     }
                 }
             }
@@ -75,67 +84,31 @@ namespace MagicTrick_Tirana
             nome.Add(CartasP3);
             nome.Add(CartasP4);
 
-            List<string> imagens = new List<string> {
-                "Copas1.png",        //C
-                "Espadas1.png",      //E
-                "Estrela1.png",     //S
-                "Lua1.png",          //L
-                "Ouros1.png",        //O
-                "Paus1.png",         //P
-                "Triângulo1.png",   //T
-            };
-
             string[] aux = new string[2];
             int imagemPosicao = 0;
             pasta_imagens = Path.Combine(Application.StartupPath, "Cartas/");
-            switch (naipe)
-            {
-                case "C":
-                    imagemPosicao = 0;
-                    break;
+            
+            this.dic.Clear();
+            dic.Add("C", "Copas1.png");
+            dic.Add("E", "Espadas1.png");
+            dic.Add("S", "Estrela1.png");
+            dic.Add("L", "Lua1.png");
+            dic.Add("O", "Ouros1.png");
+            dic.Add("P", "Paus1.png");
+            dic.Add("T", "Triângulo1.png");
 
-                case "E":
-                    imagemPosicao = 1;
-                    break;
-
-                case "S":
-                    imagemPosicao = 2;
-                    break;
-
-                case "L":
-                    imagemPosicao = 3;
-                    break;
-
-                case "O":
-                    imagemPosicao = 4;
-                    break;
-
-                case "P":
-                    imagemPosicao = 5;
-                    break;
-
-                case "T":
-                    imagemPosicao = 6;
-                    break;
-
-                default:
-                    imagemPosicao = 42;
-                    break;
-
-            }
             if (imagemPosicao != 42)
             {
-                nome[i][posicao - 1].BackgroundImage = Image.FromFile(pasta_imagens + imagens[imagemPosicao]);
+                nome[i][posicao - 1].BackgroundImage = Image.FromFile(pasta_imagens + dic[naipe]);
                 nome[i][posicao - 1].BackgroundImageLayout = ImageLayout.Stretch;
                 nome[i][posicao - 1].Visible = true;
             }
 
             aux[0] = naipe;
-            aux[1] = imagens[imagemPosicao];
+            aux[1] = dic[naipe];
             return aux;
         }
         
-        //Enviar Carta Pelas Imagens
         public bool VerificandoCartas(int x, int y, int width, int height)
         {
             Point mousePos = Control.MousePosition;
@@ -164,5 +137,35 @@ namespace MagicTrick_Tirana
             return 0;
         }
         
+
+        public string[] VerificarJogadaDosPlayers(string idJogador)
+        {
+            List<Panel> panelCartasMeio = new List<Panel> { p.pnlCartaP1, p.pnlCartaP2, p.pnlCartaP3, p.pnlCartaP4};
+            List<Label> labelCartasMeio = new List<Label> { p.lblCartaP1, p.lblCartaP2, p.lblCartaP3, p.lblCartaP4 };
+
+            string[] retorno = lobby.LobbyExibirJogadas();
+
+            int posicao = local[idJogador];
+            p.grbPlayer4.Visible = true;
+            p.lsbPlayer4.Visible = true;
+            p.lsbPlayer4.Items.Clear();
+            foreach(string jogadas in retorno)
+            {
+                string[] aux = jogadas.Split(',');
+                if (aux[1] == idJogador)
+                {
+                    panelCartasMeio[posicao].Visible = true;
+                    labelCartasMeio[posicao].Visible = true;
+
+                    panelCartasMeio[posicao].BackgroundImage = Image.FromFile(pasta_imagens + dic[aux[2]]);
+                    panelCartasMeio[posicao].BackgroundImageLayout = ImageLayout.Stretch;
+                    labelCartasMeio[posicao].Text = aux[3];
+                }
+
+                p.lsbPlayer4.Items.Add(jogadas);
+            }
+
+            return retorno;
+        }
     }
 }

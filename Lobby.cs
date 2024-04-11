@@ -35,7 +35,6 @@ class Lobby
         catch(Exception ex)
         {
             r.Error(ex.Message);
-            LobbyListarPartidas();
         }
         finally
         {
@@ -88,11 +87,7 @@ class Lobby
         bool ok = false;
         string retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
 
-        if (retorno.Length > 4 && retorno.Substring(0, 4) == "ERRO")
-        {
-            r.Error(retorno);
-        }
-        else
+        if(!r.Error(retorno))
         {
             MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ok = true;
@@ -114,13 +109,19 @@ class Lobby
                 MessageBoxIcon.Information
             );
         }
-        else
-        {
-            retorno = "";
-        }
-        
         return retorno;
     }
 
+    public string[] LobbyExibirJogadas()
+    {
+        string retono = Jogo.ExibirJogadas(Partida.IdPartida);
+        if (!r.Error(retono))
+        {
+            string[] strings = r.TratarDadosEmArray(retono);
+            return strings;
+        }
+
+        return default;
+    }
 }
 
