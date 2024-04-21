@@ -39,7 +39,8 @@ namespace MagicTrick_Tirana
         public int jogadas = 0;
         public bool vez = false;
 
-        
+        int vezesESuaVez = 0;
+
 
         //Inicializador
         public Partida()
@@ -104,13 +105,14 @@ namespace MagicTrick_Tirana
         {
             int TamRetorno = 1;
             int jogadas = 0;
-            int vezesESuaVez = 0;
+            
             while (estado == "J")
             {
+                
                 int idPartida = Convert.ToInt32(PartidaAtual[0]);
                 string retorno = Jogo.VerificarVez2(idPartida);
-                label3.Text = "";
-                label3.Text = retorno;
+                //label3.Text = "";
+                //label3.Text = retorno;
                 // status da partida , id do jogador da vez, nuemro da rodada, status da rodada
                 string[] DadosRetorno = r.TratarDadosEmArray(retorno);
 
@@ -152,6 +154,7 @@ namespace MagicTrick_Tirana
                         {
                             c.VerificarJogadaDosPlayers(aux[1], InfoRetornoJogada[1], InfoRetornoJogada[2], InfoRetornoJogada[3]);
                             jogadas++;
+                            vezesESuaVez = 0;
                         }
                         //Aposta
                         else
@@ -326,5 +329,9 @@ namespace MagicTrick_Tirana
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            label3.Visible = false;
+        }
     }
 }

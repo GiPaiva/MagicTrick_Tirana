@@ -2876,6 +2876,8 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 65;
             this.label3.Text = "label3";
+            this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tmrVerificarVez
             // 
