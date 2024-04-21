@@ -37,6 +37,8 @@ namespace MagicTrick_Tirana
         public string estado = "A";
         public bool apostar = true;
         public int jogadas = 0;
+        public bool vez = false;
+
         
 
         //Inicializador
@@ -102,6 +104,7 @@ namespace MagicTrick_Tirana
         {
             int TamRetorno = 1;
             int jogadas = 0;
+            int vezesESuaVez = 0;
             while (estado == "J")
             {
                 int idPartida = Convert.ToInt32(PartidaAtual[0]);
@@ -122,6 +125,17 @@ namespace MagicTrick_Tirana
                     {
                         lblQJogadores.Text = "Jogador da Vez: " + infoJogador[1];
                     }
+                }
+                string[] InfoJogador = Jogador.Split(',');
+                if (InfoRetorno[1] == InfoJogador[0] && InfoRetorno[3] == "C" && vezesESuaVez == 0)
+                {
+                    vezesESuaVez++;
+                    vez = true;
+                    MessageBox.Show("É a sua vez");
+                }
+                else
+                {
+                    vez = false;
                 }
 
                 //Varificando a Carta Jogada
