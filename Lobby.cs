@@ -85,12 +85,22 @@ class Lobby
     public bool LobbyCriarPartida(string NomePartida,string SenhaPartida)
     {
         bool ok = false;
-        string retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
-
-        if(!r.Error(retorno))
+        string retorno = "";
+        try
         {
-            MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ok = true;
+            retorno = Jogo.CriarPartida(NomePartida, SenhaPartida, "Tirana");
+        }
+        catch(Exception e)
+        {
+            r.Error(e.Message);
+        }
+        finally
+        {
+            if (!r.Error(retorno))
+            {
+                MessageBox.Show("Partida Criada com Sucesso!\nId da Partida: " + retorno, "Partida Criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ok = true;
+            }
         }
         
         return ok;
@@ -98,30 +108,41 @@ class Lobby
 
     public string LobbyEntrarPartida(int IdPartida, string NomeDoJogador, string SenhaDaPartida, string NomePartida)
     {
-        string retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
-
-        if (!r.Error(retorno))
+        string retorno = "";
+        try
         {
-            MessageBox.Show(
-                $"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}",
-                "Jogador Entrou",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            retorno = Jogo.EntrarPartida(IdPartida, NomeDoJogador, SenhaDaPartida);
+        }
+        catch
+        {
+            r.Error(retorno);
+            return "";
+        }
+        finally
+        {
+            if (!r.Error(retorno))
+            {
+                MessageBox.Show(
+                    $"{NomeDoJogador} entrou na partida: \r\n{NomePartida}! \r\n IdJogador: {retorno}",
+                    "Jogador Entrou",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }else retorno = "";
+
         }
         return retorno;
     }
 
-    public string[] LobbyExibirJogadas()
+    public string LobbyExibirJogadas(int round)
     {
-        string retono = Jogo.ExibirJogadas(Partida.IdPartida);
-        if (!r.Error(retono))
+        string retorno = Jogo.ExibirJogadas2(Partida.IdPartida, round);
+        if (!r.Error(retorno) && retorno != null)
         {
-            string[] strings = r.TratarDadosEmArray(retono);
-            return strings;
+            string[] DadosRetorno = r.TratarDadosEmArray(retorno);
+            return DadosRetorno[0];
         }
-
-        return default;
+        return default(string);
     }
 }
 

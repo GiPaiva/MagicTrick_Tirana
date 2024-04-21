@@ -34,7 +34,7 @@ namespace MagicTrick_Tirana
         Cartas c;
 
         //Variavel de estado do Jogo
-        public bool estado = false;
+        public string estado = "A";
         public bool apostar = true;
         public int jogadas = 0;
         
@@ -56,100 +56,107 @@ namespace MagicTrick_Tirana
         //Verificação de pessoas na Partida
         public async Task ReloAsync()
         {
+            List<Label> lista = new List<Label> { lblTotalP1, lblTotalP2, lblTotalP3, lblTotalP4 };
             int quantidade = 0;
-            while (!estado && quantidade < 5)
+
+            while (quantidade < 5)
             {
-                lblQJ.Visible = true;
-                lblQJogadores.Visible = true;
-
-                lblQJ.Text = Convert.ToString(quantidade);
-
                 lobby.LobbyListarJogadores(PartidaSelecionada);
-                if(quantidade != lobby.Jogadores.Length)
+                if (estado == "A")
                 {
-                    JogadoresAtuais = lobby.Jogadores;
-                    lblParticipantes.Text = "";
+                    lblQJ.Visible = true;
+                    lblQJogadores.Visible = true;
 
+                    lblQJ.Text = Convert.ToString(quantidade);
+
+                    if (quantidade != lobby.Jogadores.Length)
+                    {
+                        JogadoresAtuais = lobby.Jogadores;
+                        lblParticipantes.Text = "";
+                        foreach (string JogadoresAtuais in JogadoresAtuais)
+                        {
+                            lblParticipantes.Text += JogadoresAtuais + "\n\r";
+                        }
+                    }
+                    quantidade = JogadoresAtuais.Length;
+                }
+                else
+                {
+                    lblQJ.Visible = false;
+                    lblParticipantes.Visible = false;
+                    int i = 0;
                     foreach (string JogadoresAtuais in JogadoresAtuais)
                     {
-                        lblParticipantes.Text += JogadoresAtuais + "\n\r";
+                        string[] aux = JogadoresAtuais.Split(',');
+                        lista[i].Text = aux[2];
+                        i++;
                     }
                 }
-                quantidade = JogadoresAtuais.Length;
 
                 await Task.Delay(6000);
             }
 
-            lblQJ.Visible = false;
-            lblQJogadores.Visible = false;
-            lblParticipantes.Visible = false;
         }
 
         public async Task VerificarVez()
         {
-            string auxx = "a, b, f, g";
-            int quantidadeDeJogadas = 0;
-            int quant = 1;
-            while (estado)
+            int TamRetorno = 1;
+            int jogadas = 0;
+            while (estado == "J")
             {
-                string retorno = Jogo.VerificarVez(Convert.ToInt32(PartidaAtual[0]));
+                int idPartida = Convert.ToInt32(PartidaAtual[0]);
+                string retorno = Jogo.VerificarVez2(idPartida);
+                label3.Text = "";
+                label3.Text = retorno;
+                // status da partida , id do jogador da vez, nuemro da rodada, status da rodada
+                string[] DadosRetorno = r.TratarDadosEmArray(retorno);
 
-                if (!r.Error(retorno))
+                //Colocando o nome do jogador da vez
+                string[] InfoRetorno = DadosRetorno[0].Split(',');
+                estado = InfoRetorno[0];
+
+                foreach(string itens in JogadoresAtuais)
                 {
-                    string[] auxxx = auxx.Split(',');
-                    string[] Dados = retorno.Split(',');
-
-                    if (auxxx[3] != "C" && ( auxx != "a, b, f, g" && auxx != retorno))
+                    string[] infoJogador = itens.Split(',');
+                    if (infoJogador[0] == InfoRetorno[1])
                     {
-                        quantidadeDeJogadas = c.VerificarJogadaDosPlayers(auxxx[1]).Length;
+                        lblQJogadores.Text = "Jogador da Vez: " + infoJogador[1];
                     }
+                }
 
-                    if (Dados[3].Trim() == "C" && (quant != quantidadeDeJogadas && quant != 0))
+                //Varificando a Carta Jogada
+                if(DadosRetorno.Length != TamRetorno && DadosRetorno.Length > 1)
+                {
+                    TamRetorno = DadosRetorno.Length;
+                    if (TamRetorno > 1)
                     {
+                        string[] InfoRetornoJogada = DadosRetorno[TamRetorno - 1].Split(',');
+                        string[] aux = InfoRetornoJogada[0].Split(':');
 
-                        quant = quantidadeDeJogadas;
-                        jogadas++;
-                        foreach (string jogador in JogadoresAtuais)
+                        //Colocar carta no meio da mesa
+                        if (aux[0] == "C")
                         {
-                            string[] aux = jogador.Split(',');
-                            if (aux[0] == Dados[1])
-                            {
-                                if (jogadas == JogadoresAtuais.Length)
-                                {
-                                    jogadas = 0;
-                                    //MessageBox.Show($"{aux[1]} venceu a jogada", "Vencedor da Jogada");
-                                    AdicionarPonto(Dados[1]);
-
-                                    List<Panel> panelCartasMeio = new List<Panel> { pnlCartaP1, pnlCartaP2, pnlCartaP3, pnlCartaP4 };
-                                    List<Label> labelCartasMeio = new List<Label> { lblCartaP1, lblCartaP2, lblCartaP3, lblCartaP4 };
-
-                                    for (int i = 0; i < 4; i++)
-                                    {
-                                        panelCartasMeio[i].Visible = false;
-                                        labelCartasMeio[i].Visible = false;
-                                    }
-
-                                }
-                                else
-                                {
-                                    MessageBox.Show(
-                                        $"vez do jogador: {aux[1]} ",
-                                        "vez do jogador",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information
-                                    );
-                                }
-
-                                lblQJogadores.Visible = true;
-                                lblQJogadores.Text = "Vez: " + aux[1];
-
-                            }
+                            c.VerificarJogadaDosPlayers(aux[1], InfoRetornoJogada[1], InfoRetornoJogada[2], InfoRetornoJogada[3]);
+                            jogadas++;
+                        }
+                        //Aposta
+                        else
+                        {
+                            List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
+                            int posicao = c.localNaMesaCadaJogador[aux[1].Trim()];
+                            labels[posicao].Text = Convert.ToString(InfoRetornoJogada[2]);
                         }
                     }
-                      
                 }
-                auxx = retorno;
-                await Task.Delay(6000);
+                //Adicionar ponto
+                else if(jogadas == JogadoresAtuais.Length)
+                {
+                    AdicionarPonto(InfoRetorno[1]);
+                    jogadas = 0;
+                }
+
+                await Task.Delay(10000);
+
             }
         }
 
@@ -168,7 +175,7 @@ namespace MagicTrick_Tirana
                     MessageBox.Show("O primeiro jogador é: " + j[1] + "\n Id: " + retorno);
                 }
             }
-            estado = true;
+            estado = "J";
             btnComecar.Visible = false;
         }
 
@@ -178,7 +185,7 @@ namespace MagicTrick_Tirana
             string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
 
             string[] DadosJogador = Jogador.Split(',');
-            estado = true;
+            estado = "J";
             MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
             await VerificarVez();
         }
@@ -186,7 +193,7 @@ namespace MagicTrick_Tirana
         public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
         {
             bool primeiro = true;
-            c.local.Clear();
+            c.localNaMesaCadaJogador.Clear();
             for (int i = 0; i < JogadoresAtuais.Length; i++)
             {
                 string[] aux = JogadoresAtuais[i].Split(',');
@@ -277,7 +284,7 @@ namespace MagicTrick_Tirana
 
 
                 string retorno = Jogo.Apostar(IdJogador, DadosJogador[1], posicao);
-                int aux = c.local[Convert.ToString(IdJogador)];
+                int aux = c.localNaMesaCadaJogador[Convert.ToString(IdJogador)];
                 labels[aux].Text = retorno;
                 MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
 
@@ -292,11 +299,17 @@ namespace MagicTrick_Tirana
         {
             List<Label> labels = new List<Label> {lblPontos, lblPontoP2, lblPontosP3, lblPontosP4};
 
-            int aux = c.local[idJogador.Trim()];
+            int aux = c.localNaMesaCadaJogador[idJogador.Trim()];
             string aux2 = labels[aux].Text;
             int aux3 = Convert.ToInt32(aux2);
             int aux4 = aux3 + 1;
             labels[aux].Text = Convert.ToString(aux4);
+
+            foreach (var cartaMeio in c.cartasJogadas)
+            {
+                cartaMeio.Key.Visible = false;
+                cartaMeio.Value.Visible = false;
+            }
         }
 
     }
