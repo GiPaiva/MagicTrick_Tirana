@@ -224,7 +224,7 @@
             this.lblCartaP3 = new System.Windows.Forms.Label();
             this.lblParticipantes = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
+            this.tmrDoBot = new System.Windows.Forms.Timer(this.components);
             this.pnlCartas.SuspendLayout();
             this.pnlCarta13P1.SuspendLayout();
             this.pnlCarta6P1.SuspendLayout();
@@ -348,7 +348,7 @@
             this.pnlCartas.Controls.Add(this.pnlCarta2P1);
             this.pnlCartas.Controls.Add(this.pnlCarta1P1);
             this.pnlCartas.Location = new System.Drawing.Point(106, 8);
-            this.pnlCartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartas.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartas.Name = "pnlCartas";
             this.pnlCartas.Size = new System.Drawing.Size(243, 99);
             this.pnlCartas.TabIndex = 14;
@@ -361,7 +361,7 @@
             this.pnlCarta13P1.Controls.Add(this.label42);
             this.pnlCarta13P1.Controls.Add(this.label41);
             this.pnlCarta13P1.Location = new System.Drawing.Point(176, 51);
-            this.pnlCarta13P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta13P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta13P1.Name = "pnlCarta13P1";
             this.pnlCarta13P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta13P1.TabIndex = 38;
@@ -431,7 +431,7 @@
             this.pnlCarta6P1.Controls.Add(this.label38);
             this.pnlCarta6P1.Controls.Add(this.label37);
             this.pnlCarta6P1.Location = new System.Drawing.Point(176, 2);
-            this.pnlCarta6P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta6P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta6P1.Name = "pnlCarta6P1";
             this.pnlCarta6P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta6P1.TabIndex = 31;
@@ -501,7 +501,7 @@
             this.pnlCarta10P1.Controls.Add(this.label18);
             this.pnlCarta10P1.Controls.Add(this.label17);
             this.pnlCarta10P1.Location = new System.Drawing.Point(76, 51);
-            this.pnlCarta10P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta10P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta10P1.Name = "pnlCarta10P1";
             this.pnlCarta10P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta10P1.TabIndex = 35;
@@ -569,7 +569,7 @@
             this.pnlCarta3P1.Controls.Add(this.lblP1ValorCarta3);
             this.pnlCarta3P1.Controls.Add(this.label4);
             this.pnlCarta3P1.Location = new System.Drawing.Point(76, 2);
-            this.pnlCarta3P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta3P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta3P1.Name = "pnlCarta3P1";
             this.pnlCarta3P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta3P1.TabIndex = 28;
@@ -611,7 +611,7 @@
             this.pnlCarta14P1.Controls.Add(this.label50);
             this.pnlCarta14P1.Controls.Add(this.label49);
             this.pnlCarta14P1.Location = new System.Drawing.Point(208, 51);
-            this.pnlCarta14P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta14P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta14P1.Name = "pnlCarta14P1";
             this.pnlCarta14P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta14P1.TabIndex = 37;
@@ -681,7 +681,7 @@
             this.pnlCarta11P1.Controls.Add(this.label14);
             this.pnlCarta11P1.Controls.Add(this.label13);
             this.pnlCarta11P1.Location = new System.Drawing.Point(110, 51);
-            this.pnlCarta11P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta11P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta11P1.Name = "pnlCarta11P1";
             this.pnlCarta11P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta11P1.TabIndex = 34;
@@ -751,7 +751,7 @@
             this.pnlCarta7P1.Controls.Add(this.label46);
             this.pnlCarta7P1.Controls.Add(this.label45);
             this.pnlCarta7P1.Location = new System.Drawing.Point(208, 2);
-            this.pnlCarta7P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta7P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta7P1.Name = "pnlCarta7P1";
             this.pnlCarta7P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta7P1.TabIndex = 30;
@@ -821,7 +821,7 @@
             this.pnlCarta12P1.Controls.Add(this.label30);
             this.pnlCarta12P1.Controls.Add(this.label29);
             this.pnlCarta12P1.Location = new System.Drawing.Point(142, 51);
-            this.pnlCarta12P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta12P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta12P1.Name = "pnlCarta12P1";
             this.pnlCarta12P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta12P1.TabIndex = 36;
@@ -890,7 +890,7 @@
             this.pnlCarta4P1.Controls.Add(this.label7);
             this.pnlCarta4P1.Controls.Add(this.label9);
             this.pnlCarta4P1.Location = new System.Drawing.Point(110, 2);
-            this.pnlCarta4P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta4P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta4P1.Name = "pnlCarta4P1";
             this.pnlCarta4P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta4P1.TabIndex = 27;
@@ -946,7 +946,7 @@
             this.pnlCarta9P1.Controls.Add(this.label22);
             this.pnlCarta9P1.Controls.Add(this.label21);
             this.pnlCarta9P1.Location = new System.Drawing.Point(44, 51);
-            this.pnlCarta9P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta9P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta9P1.Name = "pnlCarta9P1";
             this.pnlCarta9P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta9P1.TabIndex = 33;
@@ -1016,7 +1016,7 @@
             this.pnlCarta5P1.Controls.Add(this.label34);
             this.pnlCarta5P1.Controls.Add(this.label33);
             this.pnlCarta5P1.Location = new System.Drawing.Point(142, 2);
-            this.pnlCarta5P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta5P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta5P1.Name = "pnlCarta5P1";
             this.pnlCarta5P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta5P1.TabIndex = 29;
@@ -1086,7 +1086,7 @@
             this.pnlCarta8P1.Controls.Add(this.label26);
             this.pnlCarta8P1.Controls.Add(this.label25);
             this.pnlCarta8P1.Location = new System.Drawing.Point(10, 51);
-            this.pnlCarta8P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta8P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta8P1.Name = "pnlCarta8P1";
             this.pnlCarta8P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta8P1.TabIndex = 32;
@@ -1153,7 +1153,7 @@
             this.pnlCarta2P1.BackColor = System.Drawing.Color.White;
             this.pnlCarta2P1.Controls.Add(this.lblP1ValorCarta2);
             this.pnlCarta2P1.Location = new System.Drawing.Point(44, 2);
-            this.pnlCarta2P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta2P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta2P1.Name = "pnlCarta2P1";
             this.pnlCarta2P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta2P1.TabIndex = 26;
@@ -1180,7 +1180,7 @@
             this.pnlCarta1P1.BackColor = System.Drawing.Color.White;
             this.pnlCarta1P1.Controls.Add(this.lblP1ValorCarta1);
             this.pnlCarta1P1.Location = new System.Drawing.Point(10, 2);
-            this.pnlCarta1P1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta1P1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta1P1.Name = "pnlCarta1P1";
             this.pnlCarta1P1.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta1P1.TabIndex = 25;
@@ -1215,7 +1215,7 @@
             // btnComecar
             // 
             this.btnComecar.Location = new System.Drawing.Point(569, 315);
-            this.btnComecar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComecar.Margin = new System.Windows.Forms.Padding(2);
             this.btnComecar.Name = "btnComecar";
             this.btnComecar.Size = new System.Drawing.Size(67, 19);
             this.btnComecar.TabIndex = 2;
@@ -1226,7 +1226,7 @@
             // btnConsultarMao
             // 
             this.btnConsultarMao.Location = new System.Drawing.Point(475, 315);
-            this.btnConsultarMao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultarMao.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultarMao.Name = "btnConsultarMao";
             this.btnConsultarMao.Size = new System.Drawing.Size(90, 19);
             this.btnConsultarMao.TabIndex = 3;
@@ -1248,9 +1248,9 @@
             this.grbPlayer1.Controls.Add(this.lblPontos);
             this.grbPlayer1.ForeColor = System.Drawing.Color.White;
             this.grbPlayer1.Location = new System.Drawing.Point(170, 339);
-            this.grbPlayer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.grbPlayer1.Name = "grbPlayer1";
-            this.grbPlayer1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer1.Padding = new System.Windows.Forms.Padding(2);
             this.grbPlayer1.Size = new System.Drawing.Size(470, 110);
             this.grbPlayer1.TabIndex = 4;
             this.grbPlayer1.TabStop = false;
@@ -1281,7 +1281,7 @@
             // 
             this.btnApostar.ForeColor = System.Drawing.Color.Black;
             this.btnApostar.Location = new System.Drawing.Point(26, 83);
-            this.btnApostar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnApostar.Margin = new System.Windows.Forms.Padding(2);
             this.btnApostar.Name = "btnApostar";
             this.btnApostar.Size = new System.Drawing.Size(56, 19);
             this.btnApostar.TabIndex = 25;
@@ -1294,7 +1294,7 @@
             // 
             this.btnJogar.ForeColor = System.Drawing.Color.Black;
             this.btnJogar.Location = new System.Drawing.Point(26, 59);
-            this.btnJogar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnJogar.Margin = new System.Windows.Forms.Padding(2);
             this.btnJogar.Name = "btnJogar";
             this.btnJogar.Size = new System.Drawing.Size(56, 19);
             this.btnJogar.TabIndex = 24;
@@ -1306,7 +1306,7 @@
             // 
             this.lsbPlayer1.FormattingEnabled = true;
             this.lsbPlayer1.Location = new System.Drawing.Point(354, 11);
-            this.lsbPlayer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.lsbPlayer1.Name = "lsbPlayer1";
             this.lsbPlayer1.Size = new System.Drawing.Size(113, 95);
             this.lsbPlayer1.TabIndex = 18;
@@ -1324,9 +1324,9 @@
             this.grbPlayer3.Controls.Add(this.lblPontosP3);
             this.grbPlayer3.ForeColor = System.Drawing.Color.White;
             this.grbPlayer3.Location = new System.Drawing.Point(170, 36);
-            this.grbPlayer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer3.Margin = new System.Windows.Forms.Padding(2);
             this.grbPlayer3.Name = "grbPlayer3";
-            this.grbPlayer3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer3.Padding = new System.Windows.Forms.Padding(2);
             this.grbPlayer3.Size = new System.Drawing.Size(470, 110);
             this.grbPlayer3.TabIndex = 19;
             this.grbPlayer3.TabStop = false;
@@ -1348,7 +1348,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(-149, 62);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(113, 95);
             this.listBox1.TabIndex = 26;
@@ -1367,7 +1367,7 @@
             // 
             this.lsbPlayer3.FormattingEnabled = true;
             this.lsbPlayer3.Location = new System.Drawing.Point(354, 11);
-            this.lsbPlayer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbPlayer3.Margin = new System.Windows.Forms.Padding(2);
             this.lsbPlayer3.Name = "lsbPlayer3";
             this.lsbPlayer3.Size = new System.Drawing.Size(113, 95);
             this.lsbPlayer3.TabIndex = 18;
@@ -1413,7 +1413,7 @@
             this.pnlCartas3.Controls.Add(this.pnlCarta7P3);
             this.pnlCartas3.Controls.Add(this.pnlCarta12P3);
             this.pnlCartas3.Location = new System.Drawing.Point(106, 8);
-            this.pnlCartas3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartas3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartas3.Name = "pnlCartas3";
             this.pnlCartas3.Size = new System.Drawing.Size(243, 101);
             this.pnlCartas3.TabIndex = 14;
@@ -1424,7 +1424,7 @@
             this.pnlCarta13P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta13P3.Controls.Add(this.label79);
             this.pnlCarta13P3.Location = new System.Drawing.Point(176, 54);
-            this.pnlCarta13P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta13P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta13P3.Name = "pnlCarta13P3";
             this.pnlCarta13P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta13P3.TabIndex = 52;
@@ -1450,7 +1450,7 @@
             this.pnlCarta1P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P3.Controls.Add(this.label65);
             this.pnlCarta1P3.Location = new System.Drawing.Point(10, 5);
-            this.pnlCarta1P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta1P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta1P3.Name = "pnlCarta1P3";
             this.pnlCarta1P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta1P3.TabIndex = 39;
@@ -1476,7 +1476,7 @@
             this.pnlCarta6P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P3.Controls.Add(this.label88);
             this.pnlCarta6P3.Location = new System.Drawing.Point(176, 5);
-            this.pnlCarta6P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta6P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta6P3.Name = "pnlCarta6P3";
             this.pnlCarta6P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta6P3.TabIndex = 45;
@@ -1502,7 +1502,7 @@
             this.pnlCarta2P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P3.Controls.Add(this.label55);
             this.pnlCarta2P3.Location = new System.Drawing.Point(44, 5);
-            this.pnlCarta2P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta2P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta2P3.Name = "pnlCarta2P3";
             this.pnlCarta2P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta2P3.TabIndex = 40;
@@ -1528,7 +1528,7 @@
             this.pnlCarta10P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta10P3.Controls.Add(this.label83);
             this.pnlCarta10P3.Location = new System.Drawing.Point(76, 54);
-            this.pnlCarta10P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta10P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta10P3.Name = "pnlCarta10P3";
             this.pnlCarta10P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta10P3.TabIndex = 49;
@@ -1554,7 +1554,7 @@
             this.pnlCarta8P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P3.Controls.Add(this.label81);
             this.pnlCarta8P3.Location = new System.Drawing.Point(10, 54);
-            this.pnlCarta8P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta8P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta8P3.Name = "pnlCarta8P3";
             this.pnlCarta8P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta8P3.TabIndex = 46;
@@ -1580,7 +1580,7 @@
             this.pnlCarta3P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P3.Controls.Add(this.label51);
             this.pnlCarta3P3.Location = new System.Drawing.Point(76, 5);
-            this.pnlCarta3P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta3P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta3P3.Name = "pnlCarta3P3";
             this.pnlCarta3P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta3P3.TabIndex = 42;
@@ -1606,7 +1606,7 @@
             this.pnlCarta5P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P3.Controls.Add(this.label82);
             this.pnlCarta5P3.Location = new System.Drawing.Point(142, 5);
-            this.pnlCarta5P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta5P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta5P3.Name = "pnlCarta5P3";
             this.pnlCarta5P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta5P3.TabIndex = 43;
@@ -1632,7 +1632,7 @@
             this.pnlCarta14P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta14P3.Controls.Add(this.label80);
             this.pnlCarta14P3.Location = new System.Drawing.Point(208, 54);
-            this.pnlCarta14P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta14P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta14P3.Name = "pnlCarta14P3";
             this.pnlCarta14P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta14P3.TabIndex = 51;
@@ -1658,7 +1658,7 @@
             this.pnlCarta9P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P3.Controls.Add(this.label85);
             this.pnlCarta9P3.Location = new System.Drawing.Point(44, 54);
-            this.pnlCarta9P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta9P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta9P3.Name = "pnlCarta9P3";
             this.pnlCarta9P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta9P3.TabIndex = 47;
@@ -1684,7 +1684,7 @@
             this.pnlCarta11P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta11P3.Controls.Add(this.label84);
             this.pnlCarta11P3.Location = new System.Drawing.Point(110, 54);
-            this.pnlCarta11P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta11P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta11P3.Name = "pnlCarta11P3";
             this.pnlCarta11P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta11P3.TabIndex = 48;
@@ -1710,7 +1710,7 @@
             this.pnlCarta4P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P3.Controls.Add(this.label72);
             this.pnlCarta4P3.Location = new System.Drawing.Point(110, 5);
-            this.pnlCarta4P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta4P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta4P3.Name = "pnlCarta4P3";
             this.pnlCarta4P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta4P3.TabIndex = 41;
@@ -1736,7 +1736,7 @@
             this.pnlCarta7P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P3.Controls.Add(this.label87);
             this.pnlCarta7P3.Location = new System.Drawing.Point(208, 5);
-            this.pnlCarta7P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta7P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta7P3.Name = "pnlCarta7P3";
             this.pnlCarta7P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta7P3.TabIndex = 44;
@@ -1762,7 +1762,7 @@
             this.pnlCarta12P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta12P3.Controls.Add(this.label86);
             this.pnlCarta12P3.Location = new System.Drawing.Point(142, 54);
-            this.pnlCarta12P3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta12P3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta12P3.Name = "pnlCarta12P3";
             this.pnlCarta12P3.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta12P3.TabIndex = 50;
@@ -1807,9 +1807,9 @@
             this.grbPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbPlayer4.ForeColor = System.Drawing.Color.White;
             this.grbPlayer4.Location = new System.Drawing.Point(658, 36);
-            this.grbPlayer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer4.Margin = new System.Windows.Forms.Padding(2);
             this.grbPlayer4.Name = "grbPlayer4";
-            this.grbPlayer4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer4.Padding = new System.Windows.Forms.Padding(2);
             this.grbPlayer4.Size = new System.Drawing.Size(111, 417);
             this.grbPlayer4.TabIndex = 21;
             this.grbPlayer4.TabStop = false;
@@ -1831,7 +1831,7 @@
             // 
             this.lsbPlayer4.FormattingEnabled = true;
             this.lsbPlayer4.Location = new System.Drawing.Point(4, 318);
-            this.lsbPlayer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbPlayer4.Margin = new System.Windows.Forms.Padding(2);
             this.lsbPlayer4.Name = "lsbPlayer4";
             this.lsbPlayer4.Size = new System.Drawing.Size(105, 95);
             this.lsbPlayer4.TabIndex = 18;
@@ -1887,7 +1887,7 @@
             this.pnlCartas4.Controls.Add(this.pnlCarta2P4);
             this.pnlCartas4.Controls.Add(this.pnlCarta3P4);
             this.pnlCartas4.Location = new System.Drawing.Point(4, 58);
-            this.pnlCartas4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartas4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartas4.Name = "pnlCartas4";
             this.pnlCartas4.Size = new System.Drawing.Size(102, 255);
             this.pnlCartas4.TabIndex = 14;
@@ -1898,7 +1898,7 @@
             this.pnlCarta13P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta13P4.Controls.Add(this.label91);
             this.pnlCarta13P4.Location = new System.Drawing.Point(16, 202);
-            this.pnlCarta13P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta13P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta13P4.Name = "pnlCarta13P4";
             this.pnlCarta13P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta13P4.TabIndex = 55;
@@ -1924,7 +1924,7 @@
             this.pnlCarta10P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta10P4.Controls.Add(this.label90);
             this.pnlCarta10P4.Location = new System.Drawing.Point(2, 154);
-            this.pnlCarta10P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta10P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta10P4.Name = "pnlCarta10P4";
             this.pnlCarta10P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta10P4.TabIndex = 52;
@@ -1950,7 +1950,7 @@
             this.pnlCarta14P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta14P4.Controls.Add(this.label92);
             this.pnlCarta14P4.Location = new System.Drawing.Point(50, 202);
-            this.pnlCarta14P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta14P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta14P4.Name = "pnlCarta14P4";
             this.pnlCarta14P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta14P4.TabIndex = 56;
@@ -1976,7 +1976,7 @@
             this.pnlCarta4P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P4.Controls.Add(this.label68);
             this.pnlCarta4P4.Location = new System.Drawing.Point(2, 56);
-            this.pnlCarta4P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta4P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta4P4.Name = "pnlCarta4P4";
             this.pnlCarta4P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta4P4.TabIndex = 46;
@@ -2002,7 +2002,7 @@
             this.pnlCarta11P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta11P4.Controls.Add(this.label76);
             this.pnlCarta11P4.Location = new System.Drawing.Point(35, 154);
-            this.pnlCarta11P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta11P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta11P4.Name = "pnlCarta11P4";
             this.pnlCarta11P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta11P4.TabIndex = 53;
@@ -2028,7 +2028,7 @@
             this.pnlCarta5P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P4.Controls.Add(this.label69);
             this.pnlCarta5P4.Location = new System.Drawing.Point(35, 56);
-            this.pnlCarta5P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta5P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta5P4.Name = "pnlCarta5P4";
             this.pnlCarta5P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta5P4.TabIndex = 47;
@@ -2054,7 +2054,7 @@
             this.pnlCarta7P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P4.Controls.Add(this.label70);
             this.pnlCarta7P4.Location = new System.Drawing.Point(2, 105);
-            this.pnlCarta7P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta7P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta7P4.Name = "pnlCarta7P4";
             this.pnlCarta7P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta7P4.TabIndex = 49;
@@ -2080,7 +2080,7 @@
             this.pnlCarta12P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta12P4.Controls.Add(this.label75);
             this.pnlCarta12P4.Location = new System.Drawing.Point(68, 154);
-            this.pnlCarta12P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta12P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta12P4.Name = "pnlCarta12P4";
             this.pnlCarta12P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta12P4.TabIndex = 54;
@@ -2106,7 +2106,7 @@
             this.pnlCarta1P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P4.Controls.Add(this.label78);
             this.pnlCarta1P4.Location = new System.Drawing.Point(2, 7);
-            this.pnlCarta1P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta1P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta1P4.Name = "pnlCarta1P4";
             this.pnlCarta1P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta1P4.TabIndex = 43;
@@ -2132,7 +2132,7 @@
             this.pnlCarta8P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P4.Controls.Add(this.label71);
             this.pnlCarta8P4.Location = new System.Drawing.Point(35, 105);
-            this.pnlCarta8P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta8P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta8P4.Name = "pnlCarta8P4";
             this.pnlCarta8P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta8P4.TabIndex = 50;
@@ -2158,7 +2158,7 @@
             this.pnlCarta6P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P4.Controls.Add(this.label73);
             this.pnlCarta6P4.Location = new System.Drawing.Point(68, 56);
-            this.pnlCarta6P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta6P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta6P4.Name = "pnlCarta6P4";
             this.pnlCarta6P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta6P4.TabIndex = 48;
@@ -2184,7 +2184,7 @@
             this.pnlCarta9P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P4.Controls.Add(this.label74);
             this.pnlCarta9P4.Location = new System.Drawing.Point(68, 105);
-            this.pnlCarta9P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta9P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta9P4.Name = "pnlCarta9P4";
             this.pnlCarta9P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta9P4.TabIndex = 51;
@@ -2210,7 +2210,7 @@
             this.pnlCarta2P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P4.Controls.Add(this.label67);
             this.pnlCarta2P4.Location = new System.Drawing.Point(35, 7);
-            this.pnlCarta2P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta2P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta2P4.Name = "pnlCarta2P4";
             this.pnlCarta2P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta2P4.TabIndex = 44;
@@ -2236,7 +2236,7 @@
             this.pnlCarta3P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P4.Controls.Add(this.label77);
             this.pnlCarta3P4.Location = new System.Drawing.Point(68, 7);
-            this.pnlCarta3P4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta3P4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta3P4.Name = "pnlCarta3P4";
             this.pnlCarta3P4.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta3P4.TabIndex = 45;
@@ -2280,9 +2280,9 @@
             this.grbPlayer2.Controls.Add(this.lblPontoP2);
             this.grbPlayer2.ForeColor = System.Drawing.Color.White;
             this.grbPlayer2.Location = new System.Drawing.Point(42, 36);
-            this.grbPlayer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.grbPlayer2.Name = "grbPlayer2";
-            this.grbPlayer2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbPlayer2.Padding = new System.Windows.Forms.Padding(2);
             this.grbPlayer2.Size = new System.Drawing.Size(110, 417);
             this.grbPlayer2.TabIndex = 22;
             this.grbPlayer2.TabStop = false;
@@ -2304,7 +2304,7 @@
             // 
             this.lsbPlayer2.FormattingEnabled = true;
             this.lsbPlayer2.Location = new System.Drawing.Point(4, 318);
-            this.lsbPlayer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsbPlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.lsbPlayer2.Name = "lsbPlayer2";
             this.lsbPlayer2.Size = new System.Drawing.Size(100, 95);
             this.lsbPlayer2.TabIndex = 18;
@@ -2360,7 +2360,7 @@
             this.pnlCartas2.Controls.Add(this.pnlCarta7P2);
             this.pnlCartas2.Controls.Add(this.pnlCarta12P2);
             this.pnlCartas2.Location = new System.Drawing.Point(4, 58);
-            this.pnlCartas2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartas2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartas2.Name = "pnlCartas2";
             this.pnlCartas2.Size = new System.Drawing.Size(99, 255);
             this.pnlCartas2.TabIndex = 14;
@@ -2370,7 +2370,7 @@
             this.pnlCarta13P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta13P2.Controls.Add(this.label61);
             this.pnlCarta13P2.Location = new System.Drawing.Point(16, 202);
-            this.pnlCarta13P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta13P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta13P2.Name = "pnlCarta13P2";
             this.pnlCarta13P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta13P2.TabIndex = 69;
@@ -2396,7 +2396,7 @@
             this.pnlCarta1P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P2.Controls.Add(this.label89);
             this.pnlCarta1P2.Location = new System.Drawing.Point(2, 7);
-            this.pnlCarta1P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta1P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta1P2.Name = "pnlCarta1P2";
             this.pnlCarta1P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta1P2.TabIndex = 57;
@@ -2421,7 +2421,7 @@
             this.pnlCarta10P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta10P2.Controls.Add(this.label56);
             this.pnlCarta10P2.Location = new System.Drawing.Point(2, 154);
-            this.pnlCarta10P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta10P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta10P2.Name = "pnlCarta10P2";
             this.pnlCarta10P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta10P2.TabIndex = 66;
@@ -2447,7 +2447,7 @@
             this.pnlCarta3P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P2.Controls.Add(this.label52);
             this.pnlCarta3P2.Location = new System.Drawing.Point(68, 7);
-            this.pnlCarta3P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta3P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta3P2.Name = "pnlCarta3P2";
             this.pnlCarta3P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta3P2.TabIndex = 59;
@@ -2472,7 +2472,7 @@
             this.pnlCarta14P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta14P2.Controls.Add(this.label62);
             this.pnlCarta14P2.Location = new System.Drawing.Point(50, 202);
-            this.pnlCarta14P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta14P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta14P2.Name = "pnlCarta14P2";
             this.pnlCarta14P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta14P2.TabIndex = 70;
@@ -2498,7 +2498,7 @@
             this.pnlCarta2P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P2.Controls.Add(this.label66);
             this.pnlCarta2P2.Location = new System.Drawing.Point(35, 7);
-            this.pnlCarta2P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta2P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta2P2.Name = "pnlCarta2P2";
             this.pnlCarta2P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta2P2.TabIndex = 58;
@@ -2524,7 +2524,7 @@
             this.pnlCarta4P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P2.Controls.Add(this.label59);
             this.pnlCarta4P2.Location = new System.Drawing.Point(2, 56);
-            this.pnlCarta4P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta4P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta4P2.Name = "pnlCarta4P2";
             this.pnlCarta4P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta4P2.TabIndex = 60;
@@ -2550,7 +2550,7 @@
             this.pnlCarta9P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P2.Controls.Add(this.label63);
             this.pnlCarta9P2.Location = new System.Drawing.Point(68, 105);
-            this.pnlCarta9P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta9P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta9P2.Name = "pnlCarta9P2";
             this.pnlCarta9P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta9P2.TabIndex = 65;
@@ -2575,7 +2575,7 @@
             this.pnlCarta11P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta11P2.Controls.Add(this.label54);
             this.pnlCarta11P2.Location = new System.Drawing.Point(35, 154);
-            this.pnlCarta11P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta11P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta11P2.Name = "pnlCarta11P2";
             this.pnlCarta11P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta11P2.TabIndex = 67;
@@ -2601,7 +2601,7 @@
             this.pnlCarta6P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P2.Controls.Add(this.label58);
             this.pnlCarta6P2.Location = new System.Drawing.Point(68, 56);
-            this.pnlCarta6P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta6P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta6P2.Name = "pnlCarta6P2";
             this.pnlCarta6P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta6P2.TabIndex = 62;
@@ -2627,7 +2627,7 @@
             this.pnlCarta5P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P2.Controls.Add(this.label64);
             this.pnlCarta5P2.Location = new System.Drawing.Point(35, 56);
-            this.pnlCarta5P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta5P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta5P2.Name = "pnlCarta5P2";
             this.pnlCarta5P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta5P2.TabIndex = 61;
@@ -2653,7 +2653,7 @@
             this.pnlCarta8P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P2.Controls.Add(this.label57);
             this.pnlCarta8P2.Location = new System.Drawing.Point(35, 105);
-            this.pnlCarta8P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta8P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta8P2.Name = "pnlCarta8P2";
             this.pnlCarta8P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta8P2.TabIndex = 64;
@@ -2679,7 +2679,7 @@
             this.pnlCarta7P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P2.Controls.Add(this.label53);
             this.pnlCarta7P2.Location = new System.Drawing.Point(2, 105);
-            this.pnlCarta7P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta7P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta7P2.Name = "pnlCarta7P2";
             this.pnlCarta7P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta7P2.TabIndex = 63;
@@ -2704,7 +2704,7 @@
             this.pnlCarta12P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta12P2.Controls.Add(this.label60);
             this.pnlCarta12P2.Location = new System.Drawing.Point(68, 154);
-            this.pnlCarta12P2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCarta12P2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCarta12P2.Name = "pnlCarta12P2";
             this.pnlCarta12P2.Size = new System.Drawing.Size(28, 44);
             this.pnlCarta12P2.TabIndex = 68;
@@ -2764,7 +2764,7 @@
             this.pnlCartaP1.BackColor = System.Drawing.Color.White;
             this.pnlCartaP1.Controls.Add(this.lblCartaP1);
             this.pnlCartaP1.Location = new System.Drawing.Point(386, 258);
-            this.pnlCartaP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartaP1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartaP1.Name = "pnlCartaP1";
             this.pnlCartaP1.Size = new System.Drawing.Size(28, 44);
             this.pnlCartaP1.TabIndex = 26;
@@ -2788,7 +2788,7 @@
             this.pnlCartaP2.BackColor = System.Drawing.Color.White;
             this.pnlCartaP2.Controls.Add(this.lblCartaP2);
             this.pnlCartaP2.Location = new System.Drawing.Point(320, 210);
-            this.pnlCartaP2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartaP2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartaP2.Name = "pnlCartaP2";
             this.pnlCartaP2.Size = new System.Drawing.Size(28, 44);
             this.pnlCartaP2.TabIndex = 63;
@@ -2812,7 +2812,7 @@
             this.pnlCartaP4.BackColor = System.Drawing.Color.White;
             this.pnlCartaP4.Controls.Add(this.lblCartaP4);
             this.pnlCartaP4.Location = new System.Drawing.Point(452, 210);
-            this.pnlCartaP4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartaP4.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartaP4.Name = "pnlCartaP4";
             this.pnlCartaP4.Size = new System.Drawing.Size(28, 44);
             this.pnlCartaP4.TabIndex = 51;
@@ -2836,7 +2836,7 @@
             this.pnlCartaP3.BackColor = System.Drawing.Color.White;
             this.pnlCartaP3.Controls.Add(this.lblCartaP3);
             this.pnlCartaP3.Location = new System.Drawing.Point(386, 161);
-            this.pnlCartaP3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCartaP3.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCartaP3.Name = "pnlCartaP3";
             this.pnlCartaP3.Size = new System.Drawing.Size(28, 44);
             this.pnlCartaP3.TabIndex = 43;
@@ -2879,9 +2879,10 @@
             this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // tmrVerificarVez
+            // tmrDoBot
             // 
-            this.tmrVerificarVez.Interval = 6000;
+            this.tmrDoBot.Interval = 20000;
+            this.tmrDoBot.Tick += new System.EventHandler(this.tmrDoBot_Tick);
             // 
             // Partida
             // 
@@ -2907,7 +2908,7 @@
             this.Controls.Add(this.btnComecar);
             this.Controls.Add(this.lblVersao2);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(806, 521);
             this.MinimumSize = new System.Drawing.Size(806, 521);
             this.Name = "Partida";
@@ -3247,6 +3248,6 @@
         private System.Windows.Forms.Label lblTotalP2;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer tmrVerificarVez;
+        private System.Windows.Forms.Timer tmrDoBot;
     }
 }

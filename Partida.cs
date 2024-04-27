@@ -179,6 +179,7 @@ namespace MagicTrick_Tirana
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
+            //tmrDoBot.Enabled = true; Liga o timer do Bot
             string[] DadosJogador = Jogador.Split(',');
             int IdJogador = Convert.ToInt32(DadosJogador[0]);
             string retorno = Jogo.IniciarPartida(IdJogador, DadosJogador[1]);
@@ -332,6 +333,13 @@ namespace MagicTrick_Tirana
         private void label3_Click(object sender, EventArgs e)
         {
             label3.Visible = false;
+        }
+
+        private void tmrDoBot_Tick(object sender, EventArgs e) //Aqui vai ligar o bot
+        {
+            //tmrDoBot.Enabled = false; //Coloca o timer pra ele comprir suas açoes 
+                                        //Chama o Bot
+            //tmrDoBot.Enabled = true;  //Coloca o timer para ele dps de x tempo ele voltar a retornar suas ações
         }
     }
 }
