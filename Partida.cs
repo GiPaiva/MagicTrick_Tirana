@@ -173,7 +173,6 @@ namespace MagicTrick_Tirana
                 }
 
                 await Task.Delay(10000);
-
             }
         }
 
@@ -251,6 +250,7 @@ namespace MagicTrick_Tirana
             //Posição
             int posicao = Convert.ToInt32(Dadoslist[0]);
             string retorno = Jogo.Jogar(IdJogador, DadosJogador[1], posicao);
+            
             if (!r.Error(retorno))
             {
                 MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
@@ -277,7 +277,6 @@ namespace MagicTrick_Tirana
                 btnConsultarMao_Click(sender, e);
             }
         }
-
         private void Apostar()
         {
             btnApostar.Visible = true;
