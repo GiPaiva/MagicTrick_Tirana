@@ -22,6 +22,9 @@ namespace MagicTrick_Tirana
 
         public List<List<Panel>> panelsDasCartasDeCadaJogador = new List<List<Panel>>();
 
+        public List<string> posicoesCartasMao = new List<string>();
+        int contador = 0;
+
         Partida p;
         Lobby lobby = new Lobby();
 
@@ -59,7 +62,9 @@ namespace MagicTrick_Tirana
                     {
                         this.cartinhasDoJogadorAtual.Add(aux2[1], ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i));
                         listBoxes[i].Items.Add(aux2[1] + " | " + cartinhasDoJogadorAtual[aux2[1]][0]);
-
+                        posicoesCartasMao.Add(aux2[1]);
+                        p.label3.Text += Convert.ToString(posicoesCartasMao.Count()) + ",  \n";
+                        contador++;
                     }
                     else
                     {
@@ -67,9 +72,9 @@ namespace MagicTrick_Tirana
                         ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i);
                     }
 
-                    if(k == 0)
+                    if (k == 0)
                     {
-                        localNaMesaCadaJogador.Add(aux2[0].Trim(),i);
+                        localNaMesaCadaJogador.Add(aux2[0].Trim(), i);
                         k++;
                     }
 
@@ -147,6 +152,30 @@ namespace MagicTrick_Tirana
             int posicaoMao = Convert.ToInt32(posicao) - 1;
             panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
 
+        }
+
+        public string QuantidadeDeCartasNaMao()
+        {
+            p.label3.Text = "";
+            p.label3.Text = Convert.ToString(posicoesCartasMao.Count()) + " ||";
+            if (posicoesCartasMao.Count() > QuantidadeDeCartasTotal / 2)
+            {
+                //Jogar Maior Carta
+                return posicoesCartasMao[posicoesCartasMao.Count() - 1];
+            }
+            else
+            {
+                if (p.pontos[0] <= 4)
+                {
+                    //Jogar Maior Carta
+                    return posicoesCartasMao[posicoesCartasMao.Count() - 1];
+                }
+                else
+                {
+                    //Jogar Menor Carta
+                    return posicoesCartasMao[0];
+                }
+            }
         }
     }
 }

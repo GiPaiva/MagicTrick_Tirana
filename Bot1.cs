@@ -15,7 +15,6 @@ namespace MagicTrick_Tirana
         Tratamento r = new Tratamento();
         Cartas c;
 
-        string[] posicoesCartasMao;
 
         public Bot1(Partida partida) : base(partida)
         {
@@ -63,59 +62,14 @@ namespace MagicTrick_Tirana
 
         public int Apostar()
         {
-            if (posicoesCartasMao.Length == 1)
+            if (posicoesCartasMao.Count() == 1)
             {
                 return Convert.ToInt32(posicoesCartasMao[0]);
             }
             return 0;
         }
 
-        private string QuantidadeDeCartasNaMao()
-        {
-            int i = 0;
-
-            //string retorno = Jogo.ConsultarMao(Convert.ToInt32(p.PartidaAtual[0]));
-            //string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
-
-            //string[] DadosJogador = p.Jogador.Split(',');
-            //string idJogador = DadosJogador[0];
-
-            //for (int j = 0; j < DadosConsultarMao.Length; j++)
-            //{
-            //    string[] aux2 = DadosConsultarMao[j].Split(',');
-
-            //    if (aux2[0] == idJogador)
-            //    {
-            //        posicoesCartasMao[i] = aux2[1];
-            //        i++;
-            //    }
-            //}
-                
-            //i = 0;
-            foreach(var item in c.cartinhasDoJogadorAtual)
-            {
-                posicoesCartasMao[i] = item.Key; 
-                i++;
-            }
-
-            if (posicoesCartasMao.Length > QuantidadeDeCartasTotal/2)
-            {
-                return posicoesCartasMao[posicoesCartasMao.Length - 1];
-            }
-            else
-            {
-                if (p.pontos[0] <= 4)
-                {
-                    //Jogar Maior Carta
-                    return posicoesCartasMao[posicoesCartasMao.Length - 1];
-                }
-                else
-                {
-                    //Jogar Menor Carta
-                    return posicoesCartasMao[0];
-                }
-            }
-        }
+        
 
         private string VerificarCartasNaMesa(int Round)
         {

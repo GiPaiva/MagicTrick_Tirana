@@ -48,14 +48,13 @@ namespace MagicTrick_Tirana
         public Partida()
         {
             InitializeComponent();
-            c = new Cartas(this);
-            //b = new Bot1(this);
         }
 
         public Task AtualizarTela()
         {
             lblVersao2.Text = Versao;
             _ = ReloAsync();
+            c = new Cartas(this);
             b = new Bot1(this);
             return Task.CompletedTask;
         }
@@ -115,8 +114,7 @@ namespace MagicTrick_Tirana
                 
                 int idPartida = Convert.ToInt32(PartidaAtual[0]);
                 string retorno = Jogo.VerificarVez2(idPartida);
-                //label3.Text = "";
-                //label3.Text = retorno;
+
                 // status da partida , id do jogador da vez, numero da rodada, status da rodada
                 string[] DadosRetorno = r.TratarDadosEmArray(retorno);
 
@@ -144,7 +142,8 @@ namespace MagicTrick_Tirana
                     vezesESuaVez++;
                     vez = true;
                     MessageBox.Show("É a sua vez");
-                    Jogar(InfoRetorno[2]);
+                    string res = b.Jogar(Convert.ToInt32(InfoRetorno[2]));
+                    this.Jogar(res);
                 }
                 else
                 {
@@ -227,9 +226,10 @@ namespace MagicTrick_Tirana
             string[] DadosJogador = Jogador.Split(',');
             estado = "J";
             MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
-            await Task.Delay(10000);
+            //await Task.Delay(8000);
             await VerificarVez();
         }
+
 
         public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
         {
@@ -261,9 +261,9 @@ namespace MagicTrick_Tirana
             }
         }
 
-        private void Jogar(string Round)
+        private void Jogar(string res)
         {
-            int posicao = Convert.ToInt32(b.Jogar(Convert.ToInt32(Round)));
+            int posicao = Convert.ToInt32(res);
 
             //IdJogador e Senha
             string[] DadosJogador = Jogador.Split(',');
