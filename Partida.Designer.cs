@@ -2877,7 +2877,6 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "label3";
             this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tmrDoBot
             // 

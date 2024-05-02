@@ -53,6 +53,7 @@
     <Compile Include="Bot.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bot1.cs" />
     <Compile Include="Cartas.cs" />
     <Compile Include="Lobby.cs" />
     <Compile Include="Partida.cs">

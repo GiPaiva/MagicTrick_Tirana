@@ -32,12 +32,14 @@ namespace MagicTrick_Tirana
         Tratamento r = new Tratamento();
         Lobby lobby = new Lobby();
         Cartas c;
+        Bot1 b;
 
         //Variavel de estado do Jogo
         public string estado = "A";
         public bool apostar = true;
         public int jogadas = 0;
         public bool vez = false;
+        public int[] pontos = {0,0,0,0};
 
         int vezesESuaVez = 0;
 
@@ -47,12 +49,14 @@ namespace MagicTrick_Tirana
         {
             InitializeComponent();
             c = new Cartas(this);
+            //b = new Bot1(this);
         }
 
         public Task AtualizarTela()
         {
             lblVersao2.Text = Versao;
             _ = ReloAsync();
+            b = new Bot1(this);
             return Task.CompletedTask;
         }
 
@@ -105,7 +109,7 @@ namespace MagicTrick_Tirana
         {
             int TamRetorno = 1;
             int jogadas = 0;
-            
+
             while (estado == "J")
             {
                 
@@ -113,14 +117,20 @@ namespace MagicTrick_Tirana
                 string retorno = Jogo.VerificarVez2(idPartida);
                 //label3.Text = "";
                 //label3.Text = retorno;
-                // status da partida , id do jogador da vez, nuemro da rodada, status da rodada
+                // status da partida , id do jogador da vez, numero da rodada, status da rodada
                 string[] DadosRetorno = r.TratarDadosEmArray(retorno);
 
                 //Colocando o nome do jogador da vez
                 string[] InfoRetorno = DadosRetorno[0].Split(',');
                 estado = InfoRetorno[0];
 
-                foreach(string itens in JogadoresAtuais)
+                //Adicionando Ponto
+                if (jogadas == JogadoresAtuais.Length)
+                {
+                    _ = AdicionarPontoAsync(InfoRetorno[1]);
+                }
+
+                foreach (string itens in JogadoresAtuais)
                 {
                     string[] infoJogador = itens.Split(',');
                     if (infoJogador[0] == InfoRetorno[1])
@@ -134,6 +144,7 @@ namespace MagicTrick_Tirana
                     vezesESuaVez++;
                     vez = true;
                     MessageBox.Show("É a sua vez");
+                    Jogar(InfoRetorno[2]);
                 }
                 else
                 {
@@ -141,7 +152,7 @@ namespace MagicTrick_Tirana
                 }
 
                 //Varificando a Carta Jogada
-                if(DadosRetorno.Length != TamRetorno && DadosRetorno.Length > 1)
+                if (DadosRetorno.Length != TamRetorno && DadosRetorno.Length > 1)
                 {
                     TamRetorno = DadosRetorno.Length;
                     if (TamRetorno > 1)
@@ -152,9 +163,8 @@ namespace MagicTrick_Tirana
                         //Colocar carta no meio da mesa
                         if (aux[0] == "C")
                         {
+                            //idJogador, naipe, valorDaCarta, posicao
                             c.VerificarJogadaDosPlayers(aux[1], InfoRetornoJogada[1], InfoRetornoJogada[2], InfoRetornoJogada[3]);
-                            jogadas++;
-                            vezesESuaVez = 0;
                         }
                         //Aposta
                         else
@@ -165,14 +175,15 @@ namespace MagicTrick_Tirana
                         }
                     }
                 }
-                //Adicionar ponto
-                else if(jogadas == JogadoresAtuais.Length)
+
+                //Verificando Quantas jogadas Feitas
+                jogadas = 0;
+                foreach (var joga in c.cartasJogadas)
                 {
-                    AdicionarPonto(InfoRetorno[1]);
-                    jogadas = 0;
+                    jogadas++;
                 }
 
-                await Task.Delay(10000);
+                await Task.Delay(8000);
             }
         }
 
@@ -194,6 +205,7 @@ namespace MagicTrick_Tirana
             }
             estado = "J";
             btnComecar.Visible = false;
+            ConsultarMao();
         }
 
         private async void btnConsultarMao_Click(object sender, EventArgs e)
@@ -204,6 +216,18 @@ namespace MagicTrick_Tirana
             string[] DadosJogador = Jogador.Split(',');
             estado = "J";
             MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
+            await VerificarVez();
+        }
+
+        private async void ConsultarMao()
+        {
+            string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
+            string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
+
+            string[] DadosJogador = Jogador.Split(',');
+            estado = "J";
+            MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
+            await Task.Delay(10000);
             await VerificarVez();
         }
 
@@ -237,6 +261,18 @@ namespace MagicTrick_Tirana
             }
         }
 
+        private void Jogar(string Round)
+        {
+            int posicao = Convert.ToInt32(b.Jogar(Convert.ToInt32(Round)));
+
+            //IdJogador e Senha
+            string[] DadosJogador = Jogador.Split(',');
+            int IdJogador = Convert.ToInt32(DadosJogador[0]);
+
+            //Posição
+            string retorno = Jogo.Jogar(IdJogador, DadosJogador[1], posicao);
+        }
+
         private void btnJogar_Click(object sender, EventArgs e)
         {
             //IdJogador e Senha
@@ -253,37 +289,52 @@ namespace MagicTrick_Tirana
             
             if (!r.Error(retorno))
             {
-                MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
+                //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
                 btnConsultarMao_Click(sender, e);
 
                 if (apostar)
                 {
-                    DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
-                    if (decisao == DialogResult.Yes)
+                    int valorPosicao = b.Apostar();
+                    string retono = Jogo.Apostar(IdJogador, DadosJogador[1], valorPosicao);
+
+                    if (valorPosicao != 0)
                     {
-                        Apostar();
+                        Apostar(retono, IdJogador);
                         apostar = false;
                     }
-                    else
-                    {
-                        Jogo.Apostar(IdJogador, DadosJogador[1], 0);
-                        MessageBox.Show("Pulou aposta", "", MessageBoxButtons.OK);
-                    }
+
+                    //DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
+                    //if (decisao == DialogResult.Yes)
+                    //{
+                    //    Apostar();
+                    //    apostar = false;
+                    //}
+                    //else
+                    //{
+                    //    Jogo.Apostar(IdJogador, DadosJogador[1], 0);
+                    //    MessageBox.Show("Pulou aposta", "", MessageBoxButtons.OK);
+                    //}
                 }
             }
-            else
-            {
-                MessageBox.Show("Tente Novamente", "", MessageBoxButtons.OK);
-                btnConsultarMao_Click(sender, e);
-            }
+            //else
+            //{
+            //    MessageBox.Show("Tente Novamente", "", MessageBoxButtons.OK);
+            //    btnConsultarMao_Click(sender, e);
+            //}
+            vezesESuaVez = 0;
+
         }
-        private void Apostar()
+        private void Apostar(string retorno, int IdJogador)
         {
-            btnApostar.Visible = true;
-            if (lsbPlayer1.SelectedItem == null)
-            {
-                MessageBox.Show($"Selecione uma carta", "Apostar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //btnApostar.Visible = true;
+            //if (lsbPlayer1.SelectedItem == null)
+            //{
+            //    MessageBox.Show($"Selecione uma carta", "Apostar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
+
+            int aux = c.localNaMesaCadaJogador[Convert.ToString(IdJogador)];
+            labels[aux].Text = retorno;
         }
 
         private void btnApostar_Click(object sender, EventArgs e)
@@ -308,30 +359,25 @@ namespace MagicTrick_Tirana
             }
             else
             {
-                Apostar();
+                //Apostar();
             }
         }
 
-        private void AdicionarPonto(string idJogador)
+        private async Task AdicionarPontoAsync(string idJogador)
         {
             List<Label> labels = new List<Label> {lblPontos, lblPontoP2, lblPontosP3, lblPontosP4};
 
             int aux = c.localNaMesaCadaJogador[idJogador.Trim()];
-            string aux2 = labels[aux].Text;
-            int aux3 = Convert.ToInt32(aux2);
-            int aux4 = aux3 + 1;
-            labels[aux].Text = Convert.ToString(aux4);
+            pontos[aux] += 1;
+            labels[aux].Text = Convert.ToString(pontos[aux]);
 
+            await Task.Delay(2000);
             foreach (var cartaMeio in c.cartasJogadas)
             {
                 cartaMeio.Key.Visible = false;
                 cartaMeio.Value.Visible = false;
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            label3.Visible = false;
+            c.cartasJogadas.Clear();
         }
 
         private void tmrDoBot_Tick(object sender, EventArgs e) //Aqui vai ligar o bot

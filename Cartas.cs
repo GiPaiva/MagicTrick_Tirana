@@ -25,15 +25,12 @@ namespace MagicTrick_Tirana
         Partida p;
         Lobby lobby = new Lobby();
 
+        public bool PrimeiraEntrada = true;
+        public int QuantidadeDeCartasTotal = 0;
+
         public Cartas(Partida partida)
         {
             this.p = partida;
-            Armazenar();
-        }
-
-        public void Armazenar()
-        {
-            
         }
 
         public void ExibirCartas()
@@ -74,6 +71,12 @@ namespace MagicTrick_Tirana
                     {
                         localNaMesaCadaJogador.Add(aux2[0].Trim(),i);
                         k++;
+                    }
+
+                    if (PrimeiraEntrada)
+                    {
+                        QuantidadeDeCartasTotal = DadosConsultarMao.Length / p.JogadoresAtuais.Length;
+                        PrimeiraEntrada = false;
                     }
                 }
             }
@@ -118,35 +121,6 @@ namespace MagicTrick_Tirana
             return aux;
         }
         
-        public bool VerificandoCartas(int x, int y, int width, int height)
-        {
-            Point mousePos = Control.MousePosition;
-
-            Form meuFormulario = Application.OpenForms["Partida"];
-            Point localMousePos = meuFormulario.PointToClient(mousePos);
-
-            if (localMousePos.X >= x && localMousePos.X <= x + width && localMousePos.Y >= y && localMousePos.Y <= y + height)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public int CartaSelecionada()
-        {
-            foreach(var carta in cartinhasDoJogadorAtual)
-            {
-                
-                if (VerificandoCartas(14, 3, 38, 54))
-                {
-                    MessageBox.Show("foi");
-                    return Convert.ToInt32(carta.Key);
-                }
-            }
-            return 0;
-        }
-        
-
         public void VerificarJogadaDosPlayers(string idJogador, string naipe, string valorDaCarta, string posicao)
         {
             List<Panel> panelCartasMeio = new List<Panel> { p.pnlCartaP1, p.pnlCartaP2, p.pnlCartaP3, p.pnlCartaP4};
@@ -167,7 +141,7 @@ namespace MagicTrick_Tirana
             Label valor = new Label();
             valor.Text = valorDaCarta;
             valor.Location = new Point(9,18);
-            valor.BackColor = Color.Transparent;
+            valor.BackColor = Color.White;
             valor.ForeColor = Color.Black;
 
             int posicaoMao = Convert.ToInt32(posicao) - 1;
