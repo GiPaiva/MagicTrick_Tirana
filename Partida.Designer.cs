@@ -96,7 +96,6 @@
             this.lblP1ValorCarta1 = new System.Windows.Forms.Label();
             this.lblVersao2 = new System.Windows.Forms.Label();
             this.btnComecar = new System.Windows.Forms.Button();
-            this.btnConsultarMao = new System.Windows.Forms.Button();
             this.grbPlayer1 = new System.Windows.Forms.GroupBox();
             this.lblTotalP1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -1163,25 +1162,16 @@
             // 
             // btnComecar
             // 
+            this.btnComecar.BackColor = System.Drawing.Color.Crimson;
+            this.btnComecar.ForeColor = System.Drawing.Color.White;
             this.btnComecar.Location = new System.Drawing.Point(759, 388);
             this.btnComecar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComecar.Name = "btnComecar";
             this.btnComecar.Size = new System.Drawing.Size(89, 23);
             this.btnComecar.TabIndex = 2;
             this.btnComecar.Text = "Começar";
-            this.btnComecar.UseVisualStyleBackColor = true;
+            this.btnComecar.UseVisualStyleBackColor = false;
             this.btnComecar.Click += new System.EventHandler(this.btnComecar_Click);
-            // 
-            // btnConsultarMao
-            // 
-            this.btnConsultarMao.Location = new System.Drawing.Point(633, 388);
-            this.btnConsultarMao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConsultarMao.Name = "btnConsultarMao";
-            this.btnConsultarMao.Size = new System.Drawing.Size(120, 23);
-            this.btnConsultarMao.TabIndex = 3;
-            this.btnConsultarMao.Text = "Consultar Mão";
-            this.btnConsultarMao.UseVisualStyleBackColor = true;
-            this.btnConsultarMao.Click += new System.EventHandler(this.btnConsultarMao_Click);
             // 
             // grbPlayer1
             // 
@@ -2764,11 +2754,6 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "label3";
             // 
-            // tmrDoBot
-            // 
-            this.tmrDoBot.Interval = 20000;
-            this.tmrDoBot.Tick += new System.EventHandler(this.tmrDoBot_Tick);
-            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2789,7 +2774,6 @@
             this.Controls.Add(this.grbPlayer4);
             this.Controls.Add(this.grbPlayer3);
             this.Controls.Add(this.grbPlayer1);
-            this.Controls.Add(this.btnConsultarMao);
             this.Controls.Add(this.btnComecar);
             this.Controls.Add(this.lblVersao2);
             this.DoubleBuffered = true;
@@ -2938,25 +2922,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblPontos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblAposta;
         private System.Windows.Forms.Label lblVersao2;
-        private System.Windows.Forms.Button btnComecar;
-        private System.Windows.Forms.Button btnConsultarMao;
-        private System.Windows.Forms.Label lblAposta3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblPontosP3;
-        private System.Windows.Forms.Label lblAposta4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblPontosP4;
-        private System.Windows.Forms.Label lblAposta2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblPontoP2;
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.Button btnApostar;
-        private System.Windows.Forms.Label lblQJogadores;
-        private System.Windows.Forms.Label lblQJ;
         public System.Windows.Forms.Panel pnlCarta13P1;
         public System.Windows.Forms.Panel pnlCarta6P1;
         public System.Windows.Forms.Panel pnlCarta10P1;
@@ -3017,24 +2989,15 @@
         public System.Windows.Forms.Panel pnlCartas3;
         public System.Windows.Forms.Panel pnlCartas4;
         public System.Windows.Forms.Panel pnlCartas2;
-        public System.Windows.Forms.Panel pnlCartaP1;
-        public System.Windows.Forms.Panel pnlCartaP2;
-        public System.Windows.Forms.Panel pnlCartaP4;
-        public System.Windows.Forms.Panel pnlCartaP3;
         public System.Windows.Forms.Label lblCartaP1;
         public System.Windows.Forms.Label lblCartaP2;
         public System.Windows.Forms.Label lblCartaP4;
         public System.Windows.Forms.Label lblCartaP3;
-        public System.Windows.Forms.GroupBox grbPlayer1;
         public System.Windows.Forms.ListBox lsbPlayer1;
-        public System.Windows.Forms.GroupBox grbPlayer3;
         public System.Windows.Forms.ListBox lsbPlayer3;
-        public System.Windows.Forms.GroupBox grbPlayer4;
         public System.Windows.Forms.ListBox lsbPlayer4;
-        public System.Windows.Forms.GroupBox grbPlayer2;
         public System.Windows.Forms.ListBox lsbPlayer2;
         public System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label lblParticipantes;
         public System.Windows.Forms.Label lblP1ValorCarta2;
         public System.Windows.Forms.Label lblP1ValorCarta3;
         public System.Windows.Forms.Label label4;
@@ -3124,15 +3087,35 @@
         public System.Windows.Forms.Label label71;
         public System.Windows.Forms.Label label73;
         public System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label lblTotalP1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblTotalP3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblTotalP4;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label lblTotalP2;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Timer tmrDoBot;
-        public System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Button btnComecar;
+        protected System.Windows.Forms.Label lblQJogadores;
+        protected System.Windows.Forms.Label lblQJ;
+        protected System.Windows.Forms.Panel pnlCartaP1;
+        protected System.Windows.Forms.Panel pnlCartaP2;
+        protected System.Windows.Forms.Panel pnlCartaP4;
+        protected System.Windows.Forms.Panel pnlCartaP3;
+        protected System.Windows.Forms.GroupBox grbPlayer1;
+        protected System.Windows.Forms.GroupBox grbPlayer3;
+        protected System.Windows.Forms.GroupBox grbPlayer4;
+        protected System.Windows.Forms.GroupBox grbPlayer2;
+        protected System.Windows.Forms.Label lblParticipantes;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label lblPontos;
+        protected System.Windows.Forms.Label lblAposta;
+        protected System.Windows.Forms.Label lblAposta3;
+        protected System.Windows.Forms.Label lblPontosP3;
+        protected System.Windows.Forms.Label lblAposta4;
+        protected System.Windows.Forms.Label lblPontosP4;
+        protected System.Windows.Forms.Label lblAposta2;
+        protected System.Windows.Forms.Label lblPontoP2;
+        protected System.Windows.Forms.Label lblTotalP1;
+        protected System.Windows.Forms.Label lblTotalP3;
+        protected System.Windows.Forms.Label lblTotalP4;
+        protected System.Windows.Forms.Label lblTotalP2;
     }
 }

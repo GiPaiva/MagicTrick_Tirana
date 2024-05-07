@@ -1,82 +1,157 @@
 ﻿using MagicTrickServer;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Media;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.UI.WebControls;
+using System.Web.Routing;
 using System.Windows.Forms;
-using static Lobby;
 
 namespace MagicTrick_Tirana
 {
-    class Bot : Partida
+    class Bot
     {
-        Tratamento r = new Tratamento();
-        //Partida partidaAtual = new Partida();
+        Tratamento t = new Tratamento();
 
-        //int idBot; 
-        //int idPartida = Convert.ToInt32();
+        public string BotJogar(int Round, int IdPartida, 
+            Dictionary<string, string[]> cartinhasDoJogadorAtual, Dictionary<Panel, Label> cartasJogadas, 
+            List<string> posicoesCartasMao, int QuantidadeDeCartasTotal, int[] pontos)
+        {
+            //É o primeiro a jogar?
+            if(cartasJogadas.Count == 0)
+            {
+                return QuantidadeDeCartasNaMao(posicoesCartasMao, QuantidadeDeCartasTotal, pontos);
+            }
+            else
+            {
+                string naipe = VerificarCartasNaMesa(Round, IdPartida);
+                string[] cartas = {};
+                int i = 0;
+                foreach (var item in cartinhasDoJogadorAtual)
+                {
+                    if (item.Value[0] == naipe)
+                    {
+                        cartas[i] = item.Key; i++;
+                    }
+                }
 
-        #region
-        //public static new string[] PartidaAtual { get; }
-        //string[] maoApenasPosicaoENaipe;
-        //string[][] maoComTudo;
+                //Não tem o naipe
+                if(cartas.Length == 0)
+                {
+                    return QuantidadeDeCartasNaMao(posicoesCartasMao, QuantidadeDeCartasTotal, pontos);
+                }
+                else //Tem o naipe
+                {
+                    if(cartas.Length == 1)
+                    {
+                        return cartas[0];
+                    }
+                    else
+                    {
+                        return QuantidadeDeCartasNaMao(posicoesCartasMao, cartas, QuantidadeDeCartasTotal, pontos);
+                    }
+                }
+            }
+        }
 
-        //string retorno = Jogo.VerificarVez2(Convert.ToInt32(PartidaAtual[0]));
-        //int JogoQueEstaSendoJogado = Convert.ToInt32(PartidaAtual[0]);
+        public int BotApostar(List<string> posicoesCartasMao)
+        {
+            if (posicoesCartasMao.Count() == 1)
+            {
+                return Convert.ToInt32(posicoesCartasMao[0]);
+            }
+            return 0;
+        }
 
+        private string VerificarCartasNaMesa(int Round, int IdPartida)
+        {
+            string retorno = Jogo.ExibirJogadas(IdPartida, Round);
 
-        //public void BotConfigurações()
-        //{           
-        //   string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
-        //   string[] DadosConsultarMao = r.TratarDadosEmArray(retorno);
-        //   estado = "J";
+            string[] DadosRetorno;
+            if (!t.Error(retorno) && retorno != null)
+            {
+                DadosRetorno = t.TratarDadosEmArray(retorno);
+                foreach(string dados in DadosRetorno)
+                {
+                    string[] aux = dados.Split(',',':');
+                    if (aux[0].Trim() == "C")
+                    {
+                        return aux[2];
+                    }
+                }
+            }
+            return "";
+        }
 
-        //   MostrarGalera(DadosConsultarMao[0], DadosConsultarMao, JogadoresAtuais);
-
-        //   idBot = Convert.ToInt32(DadosConsultarMao[0]);
-
-        //   string[] MaoBot = DadosConsultarMao[1].Split(',');
-
-        //   VerMaoBot(MaoBot);   
-        //}
-
-        //void VerMaoBot(string[] mao)
+        //public string Jogar(string pos)
         //{
-        //    for(int i = 0; i < mao.Length; i++)
-        //    {
-        //        maoApenasPosicaoENaipe[i] = mao[i];
-        //    }
+        //    throw new NotImplementedException();
         //}
 
-        //public bool VezDoBot()
+        //public void Apostar(string senha, string retorno, string IdJogador)
         //{
-        //    string retorno = Jogo.VerificarVez2(idPartida);
-        //    string[] DadosRetorno = r.TratarDadosEmArray(retorno);
-        //    int EAVezDoBot = Convert.ToInt32(DadosRetorno[1]);
-        //    if (EAVezDoBot > idBot)
-        //        return true;
-        //    else
-        //        return false;
+        //    throw new NotImplementedException();
         //}
 
-        //public void botJogando()
-        //{
-        //    if (vez)
-        //        idPartida = 0;
-        //    else
-        //        return;
-        //}
-        #endregion
+        public void BotConsultarMao()
+        {
+            throw new NotImplementedException();
+        }
+
+        //não tem o naipe
+        public string QuantidadeDeCartasNaMao(List<string> posicoesCartasMao, int QuantidadeDeCartasTotal, int[] pontos)
+        {
+
+            if (posicoesCartasMao.Count() > QuantidadeDeCartasTotal / 2)
+            {
+                //Jogar Maior Carta
+                return posicoesCartasMao[posicoesCartasMao.Count() - 1];
+            }
+            else
+            {
+                if (pontos[0] <= 4)
+                {
+                    //Jogar Maior Carta
+                    return posicoesCartasMao[posicoesCartasMao.Count() - 1]; //batendo aqui
+                    /*System.ArgumentOutOfRangeException: 'O índice estava fora do intervalo. 
+                     * Ele deve ser não-negativo e menor que o tamanho da coleção. 
+                     * Arg_ParamName_Name'*/
+                }
+                else
+                {
+                    //Jogar Menor Carta
+                    return posicoesCartasMao[0];
+                }
+            }
+        }
+
+        //tem o naipe
+        public string QuantidadeDeCartasNaMao(List<string> posicoesCartasMao, string []cartas, int QuantidadeDeCartasTotal, int[] pontos)
+        {
+
+            if (posicoesCartasMao.Count() > QuantidadeDeCartasTotal / 2)
+            {
+                //Jogar Maior Carta
+                return cartas[cartas.Count() - 1];
+            }
+            else
+            {
+                if (pontos[0] <= 2)
+                {
+                    //Jogar Maior Carta
+                    return cartas[cartas.Count() - 1]; //batendo aqui
+                    /*System.ArgumentOutOfRangeException: 'O índice estava fora do intervalo. 
+                     * Ele deve ser não-negativo e menor que o tamanho da coleção. 
+                     * Arg_ParamName_Name'*/
+                }
+                else
+                {
+                    //Jogar Menor Carta
+                    return cartas[0];
+                }
+            }
+        }
     }
 }

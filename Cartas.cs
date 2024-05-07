@@ -12,45 +12,29 @@ using static Lobby;
 
 namespace MagicTrick_Tirana
 {
-    class Cartas
+    class Cartas : Partida
     {
         string pasta_imagens = "";
-        public Dictionary<string, string[]> cartinhasDoJogadorAtual = new Dictionary<string, string[]>();
-        public Dictionary<string, int> localNaMesaCadaJogador = new Dictionary<string, int>();
-        public Dictionary<string, string> NaipesDasCrtasEImagens = new Dictionary<string, string>();
-        public Dictionary<Panel, Label> cartasJogadas = new Dictionary<Panel, Label>();
-
-        public List<List<Panel>> panelsDasCartasDeCadaJogador = new List<List<Panel>>();
-
-        public List<string> posicoesCartasMao = new List<string>();
-        int contador = 0;
-
-        Partida p;
-        Lobby lobby = new Lobby();
 
         public bool PrimeiraEntrada = true;
         public int QuantidadeDeCartasTotal = 0;
 
-        public Cartas(Partida partida)
-        {
-            this.p = partida;
-        }
-
-        public void ExibirCartas()
-        {
-            _ = p.AtualizarTela();
-        }
+        //public void ExibirCartas()
+        //{
+        //    _ = AtualizarTela();
+        //}
 
         public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador)
         {
-            List<GroupBox> groupBoxes = new List<GroupBox> { p.grbPlayer1, p.grbPlayer2, p.grbPlayer3, p.grbPlayer4 };
-            List<ListBox> listBoxes = new List<ListBox> { p.lsbPlayer1, p.lsbPlayer2, p.lsbPlayer3, p.lsbPlayer4 };
+            List<GroupBox> groupBoxes = new List<GroupBox> { grbPlayer1, grbPlayer2, grbPlayer3, grbPlayer4 };
+            List<ListBox> listBoxes = new List<ListBox> { lsbPlayer1, lsbPlayer2, lsbPlayer3, lsbPlayer4 };
 
             groupBoxes[i].Visible = true;
             listBoxes[i].Items.Clear();
 
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
+
             this.cartinhasDoJogadorAtual.Clear();
             int k = 0;
             for (int j = 0; j < DadosConsultarMao.Length; j++)
@@ -63,8 +47,6 @@ namespace MagicTrick_Tirana
                         this.cartinhasDoJogadorAtual.Add(aux2[1], ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i));
                         listBoxes[i].Items.Add(aux2[1] + " | " + cartinhasDoJogadorAtual[aux2[1]][0]);
                         posicoesCartasMao.Add(aux2[1]);
-                        p.label3.Text += Convert.ToString(posicoesCartasMao.Count()) + ",  \n";
-                        contador++;
                     }
                     else
                     {
@@ -80,7 +62,7 @@ namespace MagicTrick_Tirana
 
                     if (PrimeiraEntrada)
                     {
-                        QuantidadeDeCartasTotal = DadosConsultarMao.Length / p.JogadoresAtuais.Length;
+                        QuantidadeDeCartasTotal = DadosConsultarMao.Length / JogadoresAtuais.Length;
                         PrimeiraEntrada = false;
                     }
                 }
@@ -89,10 +71,10 @@ namespace MagicTrick_Tirana
 
         public string[] ImagemCartasJogador(string naipe, int posicao, int i)
         {
-            List<Panel> CartasP1 = new List<Panel> { p.pnlCarta1P1, p.pnlCarta2P1, p.pnlCarta3P1, p.pnlCarta4P1, p.pnlCarta5P1, p.pnlCarta6P1, p.pnlCarta7P1, p.pnlCarta8P1, p.pnlCarta9P1, p.pnlCarta10P1, p.pnlCarta11P1, p.pnlCarta12P1, p.pnlCarta13P1, p.pnlCarta14P1 };
-            List<Panel> CartasP2 = new List<Panel> { p.pnlCarta1P2, p.pnlCarta2P2, p.pnlCarta3P2, p.pnlCarta4P2, p.pnlCarta5P2, p.pnlCarta6P2, p.pnlCarta7P2, p.pnlCarta8P2, p.pnlCarta9P2, p.pnlCarta10P2, p.pnlCarta11P2, p.pnlCarta12P2, p.pnlCarta13P2, p.pnlCarta14P2 };
-            List<Panel> CartasP3 = new List<Panel> { p.pnlCarta1P3, p.pnlCarta2P3, p.pnlCarta3P3, p.pnlCarta4P3, p.pnlCarta5P3, p.pnlCarta6P3, p.pnlCarta7P3, p.pnlCarta8P3, p.pnlCarta9P3, p.pnlCarta10P3, p.pnlCarta11P3, p.pnlCarta12P3, p.pnlCarta13P3, p.pnlCarta14P3 };
-            List<Panel> CartasP4 = new List<Panel> { p.pnlCarta1P4, p.pnlCarta2P4, p.pnlCarta3P4, p.pnlCarta4P4, p.pnlCarta5P4, p.pnlCarta6P4, p.pnlCarta7P4, p.pnlCarta8P4, p.pnlCarta9P4, p.pnlCarta10P4, p.pnlCarta11P4, p.pnlCarta12P4, p.pnlCarta13P4, p.pnlCarta14P4 };
+            List<Panel> CartasP1 = new List<Panel> { pnlCarta1P1, pnlCarta2P1, pnlCarta3P1, pnlCarta4P1, pnlCarta5P1, pnlCarta6P1, pnlCarta7P1, pnlCarta8P1, pnlCarta9P1, pnlCarta10P1, pnlCarta11P1, pnlCarta12P1, pnlCarta13P1, pnlCarta14P1 };
+            List<Panel> CartasP2 = new List<Panel> { pnlCarta1P2, pnlCarta2P2, pnlCarta3P2, pnlCarta4P2, pnlCarta5P2, pnlCarta6P2, pnlCarta7P2, pnlCarta8P2, pnlCarta9P2, pnlCarta10P2, pnlCarta11P2, pnlCarta12P2, pnlCarta13P2, pnlCarta14P2 };
+            List<Panel> CartasP3 = new List<Panel> { pnlCarta1P3, pnlCarta2P3, pnlCarta3P3, pnlCarta4P3, pnlCarta5P3, pnlCarta6P3, pnlCarta7P3, pnlCarta8P3, pnlCarta9P3, pnlCarta10P3, pnlCarta11P3, pnlCarta12P3, pnlCarta13P3, pnlCarta14P3 };
+            List<Panel> CartasP4 = new List<Panel> { pnlCarta1P4, pnlCarta2P4, pnlCarta3P4, pnlCarta4P4, pnlCarta5P4, pnlCarta6P4, pnlCarta7P4, pnlCarta8P4, pnlCarta9P4, pnlCarta10P4, pnlCarta11P4, pnlCarta12P4, pnlCarta13P4, pnlCarta14P4 };
 
             panelsDasCartasDeCadaJogador.Add(CartasP1);
             panelsDasCartasDeCadaJogador.Add(CartasP2);
@@ -125,55 +107,34 @@ namespace MagicTrick_Tirana
             aux[1] = NaipesDasCrtasEImagens[naipe];
             return aux;
         }
-        
-        public void VerificarJogadaDosPlayers(string idJogador, string naipe, string valorDaCarta, string posicao)
+
+        public void MostrarGalera(string IdJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
         {
-            List<Panel> panelCartasMeio = new List<Panel> { p.pnlCartaP1, p.pnlCartaP2, p.pnlCartaP3, p.pnlCartaP4};
-            List<Label> labelCartasMeio = new List<Label> { p.lblCartaP1, p.lblCartaP2, p.lblCartaP3, p.lblCartaP4 };
+            bool primeiro = true;
+            localNaMesaCadaJogador.Clear();
 
-            int posicaoDoJogador = localNaMesaCadaJogador[idJogador];
-
-            panelCartasMeio[posicaoDoJogador].Visible = true;
-            labelCartasMeio[posicaoDoJogador].Visible = true;
-
-            panelCartasMeio[posicaoDoJogador].BackgroundImage = Image.FromFile(pasta_imagens + NaipesDasCrtasEImagens[naipe]);
-            panelCartasMeio[posicaoDoJogador].BackgroundImageLayout = ImageLayout.Stretch;
-            labelCartasMeio[posicaoDoJogador].Text = valorDaCarta;
-
-            if(!cartasJogadas.ContainsKey(panelCartasMeio[posicaoDoJogador]))
-                cartasJogadas.Add(panelCartasMeio[posicaoDoJogador], labelCartasMeio[posicaoDoJogador]);
-
-            Label valor = new Label();
-            valor.Text = valorDaCarta;
-            valor.Location = new Point(9,18);
-            valor.BackColor = Color.White;
-            valor.ForeColor = Color.Black;
-
-            int posicaoMao = Convert.ToInt32(posicao) - 1;
-            panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
-
-        }
-
-        public string QuantidadeDeCartasNaMao()
-        {
-            p.label3.Text = "";
-            p.label3.Text = Convert.ToString(posicoesCartasMao.Count()) + " ||";
-            if (posicoesCartasMao.Count() > QuantidadeDeCartasTotal / 2)
+            for(int i = 0; i < JogadoresAtuais.Length; i++)
             {
-                //Jogar Maior Carta
-                return posicoesCartasMao[posicoesCartasMao.Count() - 1];
-            }
-            else
-            {
-                if (p.pontos[0] <= 4)
+                string[] aux1 = JogadoresAtuais[i].Split(',');
+
+                if (aux1[0] != IdJogador)
                 {
-                    //Jogar Maior Carta
-                    return posicoesCartasMao[posicoesCartasMao.Count() - 1];
+                    if(i == 0)
+                    {
+                        i++;
+                        primeiro = false;
+                    }
+
+                    MostrarCartas(aux1, DadosConsultarMao, i, "player");
+
+                    if (!primeiro)
+                    {
+                        i--;
+                    }
                 }
                 else
                 {
-                    //Jogar Menor Carta
-                    return posicoesCartasMao[0];
+                    MostrarCartas(aux1, DadosConsultarMao, 0, IdJogador); 
                 }
             }
         }
