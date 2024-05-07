@@ -24,7 +24,7 @@ namespace MagicTrick_Tirana
         //    _ = AtualizarTela();
         //}
 
-        public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador)
+        public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador, string[] JogadoresAtuais)
         {
             List<GroupBox> groupBoxes = new List<GroupBox> { grbPlayer1, grbPlayer2, grbPlayer3, grbPlayer4 };
             List<ListBox> listBoxes = new List<ListBox> { lsbPlayer1, lsbPlayer2, lsbPlayer3, lsbPlayer4 };
@@ -56,7 +56,10 @@ namespace MagicTrick_Tirana
 
                     if (k == 0)
                     {
-                        localNaMesaCadaJogador.Add(aux2[0].Trim(), i);
+                        if (!localNaMesaCadaJogador.ContainsKey(aux2[0].Trim()))
+                        {
+                            localNaMesaCadaJogador.Add(aux2[0].Trim(), i);
+                        }
                         k++;
                     }
 
@@ -108,35 +111,6 @@ namespace MagicTrick_Tirana
             return aux;
         }
 
-        public void MostrarGalera(string IdJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
-        {
-            bool primeiro = true;
-            localNaMesaCadaJogador.Clear();
-
-            for(int i = 0; i < JogadoresAtuais.Length; i++)
-            {
-                string[] aux1 = JogadoresAtuais[i].Split(',');
-
-                if (aux1[0] != IdJogador)
-                {
-                    if(i == 0)
-                    {
-                        i++;
-                        primeiro = false;
-                    }
-
-                    MostrarCartas(aux1, DadosConsultarMao, i, "player");
-
-                    if (!primeiro)
-                    {
-                        i--;
-                    }
-                }
-                else
-                {
-                    MostrarCartas(aux1, DadosConsultarMao, 0, IdJogador); 
-                }
-            }
-        }
+        
     }
 }

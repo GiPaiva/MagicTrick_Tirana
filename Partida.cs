@@ -19,7 +19,7 @@ using static Lobby;
 namespace MagicTrick_Tirana
 
 {
-    public partial class Partida : Form
+    public partial class Partida : Form, IProps
     {
         //Props
         public string Versao { get; set; }
@@ -31,7 +31,6 @@ namespace MagicTrick_Tirana
         //Instancias
         Tratamento t = new Tratamento();
         Lobby lobby = new Lobby();
-        Mesa mesa;
 
         //Variavel de estado do Jogo
         public string estado = "A";
@@ -121,8 +120,12 @@ namespace MagicTrick_Tirana
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
-            mesa = new Mesa();
-            mesa.Comecar();
+            Mesa Mesa = new Mesa();
+            Mesa.Jogador = this.Jogador;
+            Mesa.JogadoresAtuais = lobby.Jogadores;
+            Mesa.PartidaSelecionada = this.PartidaSelecionada;
+            Mesa.PartidaAtual = this.PartidaAtual;
+            Mesa.Comecar();
         }
 
         #region Botão Inutilizavel com bot
@@ -200,6 +203,6 @@ namespace MagicTrick_Tirana
         }
         #endregion
 
-        
+
     }
 }

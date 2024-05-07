@@ -9,7 +9,7 @@ namespace MagicTrick_Tirana
     interface IPartida
     {
         string Jogar(string pos);
-        void Apostar(string senha, string posicao, string IdJogador);
+        void Apostar(int posicao);
         void ConsultarMao();
     }
 }

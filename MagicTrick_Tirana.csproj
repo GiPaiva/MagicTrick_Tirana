@@ -55,9 +55,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IPartida.cs" />
-    <Compile Include="Mesa.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="IProps.cs" />
+    <Compile Include="Mesa.cs" />
     <Compile Include="Lobby.cs" />
     <Compile Include="Partida.cs">
       <SubType>Form</SubType>

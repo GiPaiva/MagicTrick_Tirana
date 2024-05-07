@@ -164,15 +164,16 @@ class Lobby
         return retorno;
     }
 
-    public string LobbyExibirJogadas(int round)
+    public string[] LobbyExibirJogadas(int round)
     {
-        string retorno = Jogo.ExibirJogadas2(Partida.IdPartida, round);
+        string retorno = Jogo.ExibirJogadas2(Partida.IdPartida, round); //System.Data.SqlClient.SqlException: 'Error converting data type int to tinyint.'
+
         if (!r.Error(retorno) && retorno != null)
         {
             string[] DadosRetorno = r.TratarDadosEmArray(retorno);
-            return DadosRetorno[0];
+            return DadosRetorno;
         }
-        return default(string);
+        return default(string[]);
     }
 }
 
