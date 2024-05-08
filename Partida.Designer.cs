@@ -95,7 +95,6 @@
             this.lblP1ValorCarta1 = new System.Windows.Forms.Label();
             this.lblVersao2 = new System.Windows.Forms.Label();
             this.btnComecar = new System.Windows.Forms.Button();
-            this.btnConsultarMao = new System.Windows.Forms.Button();
             this.grbPlayer1 = new System.Windows.Forms.GroupBox();
             this.lblTotalP1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -1153,16 +1152,6 @@
             this.btnComecar.Text = "Começar";
             this.btnComecar.UseVisualStyleBackColor = true;
             this.btnComecar.Click += new System.EventHandler(this.btnComecar_Click);
-            // 
-            // btnConsultarMao
-            // 
-            this.btnConsultarMao.Location = new System.Drawing.Point(633, 388);
-            this.btnConsultarMao.Name = "btnConsultarMao";
-            this.btnConsultarMao.Size = new System.Drawing.Size(120, 23);
-            this.btnConsultarMao.TabIndex = 3;
-            this.btnConsultarMao.Text = "Consultar Mão";
-            this.btnConsultarMao.UseVisualStyleBackColor = true;
-            this.btnConsultarMao.Click += new System.EventHandler(this.btnConsultarMao_Click);
             // 
             // grbPlayer1
             // 
@@ -2701,7 +2690,6 @@
             this.Controls.Add(this.grbPlayer4);
             this.Controls.Add(this.grbPlayer3);
             this.Controls.Add(this.grbPlayer1);
-            this.Controls.Add(this.btnConsultarMao);
             this.Controls.Add(this.btnComecar);
             this.Controls.Add(this.lblVersao2);
             this.DoubleBuffered = true;
@@ -2854,7 +2842,6 @@
         private System.Windows.Forms.Label lblAposta;
         private System.Windows.Forms.Label lblVersao2;
         private System.Windows.Forms.Button btnComecar;
-        private System.Windows.Forms.Button btnConsultarMao;
         private System.Windows.Forms.Label lblAposta3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblPontosP3;

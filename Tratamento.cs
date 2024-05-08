@@ -23,7 +23,10 @@ class Tratamento
     public string[] TratarDadosEmArray(string variavel)
     {
         variavel = variavel.Replace("\r", "");
-        variavel = variavel.Substring(0, variavel.Length - 1);
+        if(variavel.Length - 1 > 0)
+        {
+            variavel = variavel.Substring(0, variavel.Length - 1);
+        }
         string[] Partidas = variavel.Split('\n');
         return Partidas;
     }

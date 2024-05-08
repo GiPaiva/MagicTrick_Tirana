@@ -82,6 +82,36 @@ class Lobby
         return ok;
     }
 
+    public bool LobbyListarJogadores2(string PartidaSelecionada, int round)
+    {
+        bool ok = false;
+        if (!r.Error(PartidaSelecionada))
+        {
+            if (PartidaSelecionada.IndexOf(',') != -1)
+            {
+                string[] DadosPartida = PartidaSelecionada.Split(',');
+
+                Partida.IdPartida = Convert.ToInt32(DadosPartida[0]);
+                Partida.NomePartida = DadosPartida[1];
+
+                string BuscarJogadores = Jogo.ListarJogadores2(Partida.IdPartida);
+
+                if (BuscarJogadores.Length != 0)
+                {
+                    if (!r.Error(BuscarJogadores))
+                    {
+                        //Fazer tratamento de dados
+                        Jogadores = r.TratarDadosEmArray(BuscarJogadores);
+                        ok = true;
+                    }
+                }
+
+            }
+        }
+
+        return ok;
+    }
+
     public bool LobbyCriarPartida(string NomePartida,string SenhaPartida)
     {
         bool ok = false;
@@ -132,17 +162,6 @@ class Lobby
 
         }
         return retorno;
-    }
-
-    public string LobbyExibirJogadas(int round)
-    {
-        string retorno = Jogo.ExibirJogadas2(Partida.IdPartida, round);
-        if (!r.Error(retorno) && retorno != null)
-        {
-            string[] DadosRetorno = r.TratarDadosEmArray(retorno);
-            return DadosRetorno[0];
-        }
-        return default(string);
     }
 }
 

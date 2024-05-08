@@ -28,14 +28,7 @@ namespace MagicTrick_Tirana
         public Cartas(Partida partida)
         {
             this.p = partida;
-            Armazenar();
         }
-
-        public void Armazenar()
-        {
-            
-        }
-
         public void ExibirCartas()
         {
             _ = p.AtualizarTela();
