@@ -31,7 +31,7 @@ namespace MagicTrick_Tirana
         }
         public void ExibirCartas()
         {
-            _ = p.AtualizarTela();
+            p.AtualizarTela();
         }
 
         public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador)
@@ -138,14 +138,13 @@ namespace MagicTrick_Tirana
             }
             return 0;
         }
-        
 
-        public void VerificarJogadaDosPlayers(string idJogador, string naipe, string valorDaCarta, string posicao)
+        public void VerificarJogadaDosPlayers(string IdJogador, string naipe, string valorDaCarta, string posicao)
         {
             List<Panel> panelCartasMeio = new List<Panel> { p.pnlCartaP1, p.pnlCartaP2, p.pnlCartaP3, p.pnlCartaP4};
             List<Label> labelCartasMeio = new List<Label> { p.lblCartaP1, p.lblCartaP2, p.lblCartaP3, p.lblCartaP4 };
 
-            int posicaoDoJogador = localNaMesaCadaJogador[idJogador];
+            int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
 
             panelCartasMeio[posicaoDoJogador].Visible = true;
             labelCartasMeio[posicaoDoJogador].Visible = true;
@@ -165,7 +164,6 @@ namespace MagicTrick_Tirana
 
             int posicaoMao = Convert.ToInt32(posicao) - 1;
             panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
-
         }
     }
 }

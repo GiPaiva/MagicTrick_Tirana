@@ -61,7 +61,7 @@ namespace MagicTrick_Tirana
             {
                 PartidaSelecionada = lstPartidas.SelectedItem.ToString();
 
-                if (lobby.LobbyListarJogadores(PartidaSelecionada) && PartidaSelecionada != "")
+                if (lobby.LobbyListarJogadores2(PartidaSelecionada) && PartidaSelecionada != "")
                 {
                     for (int i = 0; i < lobby.Jogadores.Length; i++)
                     {
@@ -126,7 +126,7 @@ namespace MagicTrick_Tirana
                     txtNomeJogador.Clear();
                     txtSenhaDaPartida.Clear();
 
-                    lobby.LobbyListarJogadores(PartidaEscolhida);
+                    lobby.LobbyListarJogadores2(PartidaEscolhida);
 
                     Partida Partida = new Partida();
                     Partida.Versao = Jogo.Versao;

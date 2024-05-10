@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAposta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPontos = new System.Windows.Forms.Label();
@@ -211,7 +212,6 @@
             this.label60 = new System.Windows.Forms.Label();
             this.lblPontoP2 = new System.Windows.Forms.Label();
             this.lblQJogadores = new System.Windows.Forms.Label();
-            this.lblQJ = new System.Windows.Forms.Label();
             this.pnlCartaP1 = new System.Windows.Forms.Panel();
             this.lblCartaP1 = new System.Windows.Forms.Label();
             this.pnlCartaP2 = new System.Windows.Forms.Panel();
@@ -222,6 +222,7 @@
             this.lblCartaP3 = new System.Windows.Forms.Label();
             this.lblParticipantes = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
             this.pnlCartas.SuspendLayout();
             this.pnlCarta13P1.SuspendLayout();
             this.pnlCarta6P1.SuspendLayout();
@@ -2552,16 +2553,6 @@
             this.lblQJogadores.TabIndex = 23;
             this.lblQJogadores.Text = "Quantidade de Jogadores";
             // 
-            // lblQJ
-            // 
-            this.lblQJ.AutoSize = true;
-            this.lblQJ.BackColor = System.Drawing.Color.Transparent;
-            this.lblQJ.ForeColor = System.Drawing.Color.White;
-            this.lblQJ.Location = new System.Drawing.Point(23, 28);
-            this.lblQJ.Name = "lblQJ";
-            this.lblQJ.Size = new System.Drawing.Size(0, 16);
-            this.lblQJ.TabIndex = 24;
-            // 
             // pnlCartaP1
             // 
             this.pnlCartaP1.BackColor = System.Drawing.Color.White;
@@ -2655,7 +2646,7 @@
             this.lblParticipantes.AutoSize = true;
             this.lblParticipantes.BackColor = System.Drawing.Color.Transparent;
             this.lblParticipantes.ForeColor = System.Drawing.Color.White;
-            this.lblParticipantes.Location = new System.Drawing.Point(23, 54);
+            this.lblParticipantes.Location = new System.Drawing.Point(44, 25);
             this.lblParticipantes.Name = "lblParticipantes";
             this.lblParticipantes.Size = new System.Drawing.Size(0, 16);
             this.lblParticipantes.TabIndex = 64;
@@ -2669,6 +2660,11 @@
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 65;
             this.label3.Text = "label3";
+            // 
+            // tmrVerificarVez
+            // 
+            this.tmrVerificarVez.Interval = 5000;
+            this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
             // Partida
             // 
@@ -2684,7 +2680,6 @@
             this.Controls.Add(this.pnlCartaP4);
             this.Controls.Add(this.pnlCartaP2);
             this.Controls.Add(this.pnlCartaP1);
-            this.Controls.Add(this.lblQJ);
             this.Controls.Add(this.lblQJogadores);
             this.Controls.Add(this.grbPlayer2);
             this.Controls.Add(this.grbPlayer4);
@@ -2854,7 +2849,6 @@
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.Button btnApostar;
         private System.Windows.Forms.Label lblQJogadores;
-        private System.Windows.Forms.Label lblQJ;
         public System.Windows.Forms.Panel pnlCarta13P1;
         public System.Windows.Forms.Panel pnlCarta6P1;
         public System.Windows.Forms.Panel pnlCarta10P1;
@@ -3031,5 +3025,6 @@
         private System.Windows.Forms.Label lblTotalP2;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer tmrVerificarVez;
     }
 }

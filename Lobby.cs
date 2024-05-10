@@ -52,7 +52,7 @@ class Lobby
 
     }
 
-    public bool LobbyListarJogadores(string PartidaSelecionada)
+    public bool LobbyListarJogadores2(string PartidaSelecionada)
     {
         bool ok = false;
         if (!r.Error(PartidaSelecionada))
@@ -64,7 +64,7 @@ class Lobby
                 Partida.IdPartida = Convert.ToInt32(DadosPartida[0]);
                 Partida.NomePartida = DadosPartida[1];
 
-                string BuscarJogadores = Jogo.ListarJogadores(Partida.IdPartida);
+                string BuscarJogadores = Jogo.ListarJogadores2(Partida.IdPartida);
 
                 if (BuscarJogadores.Length != 0)
                 {
@@ -94,7 +94,7 @@ class Lobby
                 Partida.IdPartida = Convert.ToInt32(DadosPartida[0]);
                 Partida.NomePartida = DadosPartida[1];
 
-                string BuscarJogadores = Jogo.ListarJogadores2(Partida.IdPartida);
+                string BuscarJogadores = Jogo.ListarJogadores2(Partida.IdPartida, round);
 
                 if (BuscarJogadores.Length != 0)
                 {
