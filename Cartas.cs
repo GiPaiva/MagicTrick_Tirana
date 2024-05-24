@@ -15,29 +15,28 @@ namespace MagicTrick_Tirana
     class Cartas
     {
         string pasta_imagens = "";
-        public Dictionary<string, string[]> cartinhasDoJogadorAtual = new Dictionary<string, string[]>();
+
+        public Dictionary<string, int> TemplocalNaMesaCadaJogador = new Dictionary<string, int>();
         public Dictionary<string, int> localNaMesaCadaJogador = new Dictionary<string, int>();
         public Dictionary<string, string> NaipesDasCrtasEImagens = new Dictionary<string, string>();
-        public Dictionary<Panel, Label> cartasJogadas = new Dictionary<Panel, Label>();
 
+        public Dictionary<string, string[]> cartinhasDoJogadorAtual = new Dictionary<string, string[]>();
+        
         public List<List<Panel>> panelsDasCartasDeCadaJogador = new List<List<Panel>>();
 
         Partida p;
-        Lobby lobby = new Lobby();
+
+        bool preencher = true;
 
         public Cartas(Partida partida)
         {
             this.p = partida;
         }
-        public void ExibirCartas()
-        {
-            p.AtualizarTela();
-        }
 
         public void MostrarCartas(string[] aux, string[] DadosConsultarMao, int i, string idJogador)
         {
-            List<GroupBox> groupBoxes = new List<GroupBox> { p.grbPlayer1, p.grbPlayer2, p.grbPlayer3, p.grbPlayer4 };
-            List<ListBox> listBoxes = new List<ListBox> { p.lsbPlayer1, p.lsbPlayer2, p.lsbPlayer3, p.lsbPlayer4 };
+            List<GroupBox>  groupBoxes   = new List<GroupBox> { p.grbPlayer1, p.grbPlayer2, p.grbPlayer3, p.grbPlayer4 };
+            List<ListBox>   listBoxes     = new List<ListBox>  { p.lsbPlayer1, p.lsbPlayer2, p.lsbPlayer3, p.lsbPlayer4 };
 
             groupBoxes[i].Visible = true;
             listBoxes[i].Items.Clear();
@@ -45,12 +44,15 @@ namespace MagicTrick_Tirana
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
             this.cartinhasDoJogadorAtual.Clear();
-            int k = 0;
+
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
                 string[] aux2 = DadosConsultarMao[j].Split(',');
                 if (aux2[0] == aux[0])
                 {
+                    if (!(TemplocalNaMesaCadaJogador.ContainsKey(aux2[0].Trim())))
+                        TemplocalNaMesaCadaJogador.Add(aux2[0].Trim(), i);
+
                     if (aux2[0] == idJogador)
                     {
                         this.cartinhasDoJogadorAtual.Add(aux2[1], ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i));
@@ -63,12 +65,13 @@ namespace MagicTrick_Tirana
                         ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i);
                     }
 
-                    if(k == 0)
-                    {
-                        localNaMesaCadaJogador.Add(aux2[0].Trim(),i);
-                        k++;
-                    }
                 }
+            }
+
+            if (preencher)
+            {
+                localNaMesaCadaJogador = TemplocalNaMesaCadaJogador;
+                preencher = false;
             }
         }
 
@@ -110,60 +113,66 @@ namespace MagicTrick_Tirana
             aux[1] = NaipesDasCrtasEImagens[naipe];
             return aux;
         }
-        
-        public bool VerificandoCartas(int x, int y, int width, int height)
+
+        public void ValorCartasJogador(string IdJogador, string valorDaCarta, string posicao)
         {
-            Point mousePos = Control.MousePosition;
+            Label valor = new Label();
+            valor.Text = valorDaCarta;
+            valor.Location = new Point(8, 17);
+            valor.BackColor = Color.FromArgb(50,255,255,255);
+            valor.Size = new Size(12, 14);
+            valor.ForeColor = Color.Black;
 
-            Form meuFormulario = Application.OpenForms["Partida"];
-            Point localMousePos = meuFormulario.PointToClient(mousePos);
+            int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
 
-            if (localMousePos.X >= x && localMousePos.X <= x + width && localMousePos.Y >= y && localMousePos.Y <= y + height)
-            {
-                return true;
-            }
-            return false;
+            int posicaoMao = Convert.ToInt32(posicao) - 1;
+            panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
         }
 
-        public int CartaSelecionada()
-        {
-            foreach(var carta in cartinhasDoJogadorAtual)
-            {
-                
-                if (VerificandoCartas(14, 3, 38, 54))
-                {
-                    MessageBox.Show("foi");
-                    return Convert.ToInt32(carta.Key);
-                }
-            }
-            return 0;
-        }
-
-        public void VerificarJogadaDosPlayers(string IdJogador, string naipe, string valorDaCarta, string posicao)
+        public int ColocarCartasMeio(string IdJogador, string naipe, string valorDaCarta, string posicao, int posicaoDoJogador)
         {
             List<Panel> panelCartasMeio = new List<Panel> { p.pnlCartaP1, p.pnlCartaP2, p.pnlCartaP3, p.pnlCartaP4};
             List<Label> labelCartasMeio = new List<Label> { p.lblCartaP1, p.lblCartaP2, p.lblCartaP3, p.lblCartaP4 };
 
-            int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
+            p.pnlCartasMeio.Visible = true;
 
-            panelCartasMeio[posicaoDoJogador].Visible = true;
-            labelCartasMeio[posicaoDoJogador].Visible = true;
+            //List<Control> controls = new List<Control>();
+
+            //foreach (Control control in p.pnlCartasMeio.Controls)
+            //{
+            //    controls.Add(control);
+            //}
+
+            //int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
 
             panelCartasMeio[posicaoDoJogador].BackgroundImage = Image.FromFile(pasta_imagens + NaipesDasCrtasEImagens[naipe]);
             panelCartasMeio[posicaoDoJogador].BackgroundImageLayout = ImageLayout.Stretch;
             labelCartasMeio[posicaoDoJogador].Text = valorDaCarta;
 
-            if(!cartasJogadas.ContainsKey(panelCartasMeio[posicaoDoJogador]))
-                cartasJogadas.Add(panelCartasMeio[posicaoDoJogador], labelCartasMeio[posicaoDoJogador]);
+            panelCartasMeio[posicaoDoJogador].Visible = true;
 
-            Label valor = new Label();
-            valor.Text = valorDaCarta;
-            valor.Location = new Point(9,18);
-            valor.BackColor = Color.Transparent;
-            valor.ForeColor = Color.Black;
+            ValorCartasJogador(IdJogador, valorDaCarta, posicao);
 
-            int posicaoMao = Convert.ToInt32(posicao) - 1;
-            panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
+            return 1;
         }
+
+        public void LimparAsCartas()
+        {
+            List<Label> labels = new List<Label> { p.lblAposta, p.lblAposta2, p.lblAposta3, p.lblAposta4 };
+
+            foreach (List<Panel> item in panelsDasCartasDeCadaJogador)
+            {
+                foreach(Panel p in item)
+                {
+                    p.Controls.Clear();
+                }
+            }
+
+            foreach(Label label in labels)
+            {
+                label.Text = "?";
+            }
+        }
+
     }
 }

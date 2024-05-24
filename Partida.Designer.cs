@@ -39,7 +39,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.pnlCarta6P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta6 = new System.Windows.Forms.Label();
+            this.lblCarta6P1 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlCarta3P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta3 = new System.Windows.Forms.Label();
+            this.lblCarta3P1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlCarta14P1 = new System.Windows.Forms.Panel();
             this.lblP1ValorCarta14 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.pnlCarta4P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta4 = new System.Windows.Forms.Label();
+            this.lblCarta4P1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlCarta9P1 = new System.Windows.Forms.Panel();
@@ -81,7 +81,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pnlCarta5P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta5 = new System.Windows.Forms.Label();
+            this.lblCarta5P1 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -91,16 +91,16 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.pnlCarta2P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta2 = new System.Windows.Forms.Label();
+            this.lblCarta2P1 = new System.Windows.Forms.Label();
             this.pnlCarta1P1 = new System.Windows.Forms.Panel();
-            this.lblP1ValorCarta1 = new System.Windows.Forms.Label();
+            this.lblCarta1P1 = new System.Windows.Forms.Label();
             this.lblVersao2 = new System.Windows.Forms.Label();
             this.btnComecar = new System.Windows.Forms.Button();
             this.grbPlayer1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnJogar = new System.Windows.Forms.Button();
             this.lblTotalP1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnApostar = new System.Windows.Forms.Button();
-            this.btnJogar = new System.Windows.Forms.Button();
             this.lsbPlayer1 = new System.Windows.Forms.ListBox();
             this.grbPlayer3 = new System.Windows.Forms.GroupBox();
             this.lblTotalP3 = new System.Windows.Forms.Label();
@@ -218,11 +218,14 @@
             this.lblCartaP2 = new System.Windows.Forms.Label();
             this.pnlCartaP4 = new System.Windows.Forms.Panel();
             this.lblCartaP4 = new System.Windows.Forms.Label();
-            this.pnlCartaP3 = new System.Windows.Forms.Panel();
-            this.lblCartaP3 = new System.Windows.Forms.Label();
             this.lblParticipantes = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
+            this.lblCartaP3 = new System.Windows.Forms.Label();
+            this.pnlCartaP3 = new System.Windows.Forms.Panel();
+            this.pnlCartasMeio = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.pnlCartas.SuspendLayout();
             this.pnlCarta13P1.SuspendLayout();
             this.pnlCarta6P1.SuspendLayout();
@@ -291,6 +294,7 @@
             this.pnlCartaP2.SuspendLayout();
             this.pnlCartaP4.SuspendLayout();
             this.pnlCartaP3.SuspendLayout();
+            this.pnlCartasMeio.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAposta
@@ -350,11 +354,14 @@
             // pnlCarta13P1
             // 
             this.pnlCarta13P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta13P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta13P1.Controls.Add(this.lblP1ValorCarta13);
             this.pnlCarta13P1.Controls.Add(this.label40);
             this.pnlCarta13P1.Controls.Add(this.label42);
             this.pnlCarta13P1.Controls.Add(this.label41);
             this.pnlCarta13P1.Location = new System.Drawing.Point(234, 63);
+            this.pnlCarta13P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta13P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta13P1.Name = "pnlCarta13P1";
             this.pnlCarta13P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta13P1.TabIndex = 38;
@@ -369,7 +376,7 @@
             this.lblP1ValorCarta13.Name = "lblP1ValorCarta13";
             this.lblP1ValorCarta13.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta13.TabIndex = 29;
-            this.lblP1ValorCarta13.Text = "0";
+            this.lblP1ValorCarta13.Text = "?";
             this.lblP1ValorCarta13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta13.Visible = false;
             // 
@@ -415,28 +422,31 @@
             // pnlCarta6P1
             // 
             this.pnlCarta6P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta6P1.Controls.Add(this.lblP1ValorCarta6);
+            this.pnlCarta6P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta6P1.Controls.Add(this.lblCarta6P1);
             this.pnlCarta6P1.Controls.Add(this.label36);
             this.pnlCarta6P1.Controls.Add(this.label38);
             this.pnlCarta6P1.Controls.Add(this.label37);
             this.pnlCarta6P1.Location = new System.Drawing.Point(234, 3);
+            this.pnlCarta6P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta6P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta6P1.Name = "pnlCarta6P1";
             this.pnlCarta6P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta6P1.TabIndex = 31;
             this.pnlCarta6P1.Visible = false;
             // 
-            // lblP1ValorCarta6
+            // lblCarta6P1
             // 
-            this.lblP1ValorCarta6.AutoSize = true;
-            this.lblP1ValorCarta6.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta6.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta6.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta6.Name = "lblP1ValorCarta6";
-            this.lblP1ValorCarta6.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta6.TabIndex = 25;
-            this.lblP1ValorCarta6.Text = "0";
-            this.lblP1ValorCarta6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta6.Visible = false;
+            this.lblCarta6P1.AutoSize = true;
+            this.lblCarta6P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta6P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta6P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta6P1.Name = "lblCarta6P1";
+            this.lblCarta6P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta6P1.TabIndex = 25;
+            this.lblCarta6P1.Text = "?";
+            this.lblCarta6P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta6P1.Visible = false;
             // 
             // label36
             // 
@@ -480,11 +490,14 @@
             // pnlCarta10P1
             // 
             this.pnlCarta10P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta10P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta10P1.Controls.Add(this.lblP1ValorCarta10);
             this.pnlCarta10P1.Controls.Add(this.label16);
             this.pnlCarta10P1.Controls.Add(this.label18);
             this.pnlCarta10P1.Controls.Add(this.label17);
             this.pnlCarta10P1.Location = new System.Drawing.Point(102, 63);
+            this.pnlCarta10P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta10P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta10P1.Name = "pnlCarta10P1";
             this.pnlCarta10P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta10P1.TabIndex = 35;
@@ -499,7 +512,7 @@
             this.lblP1ValorCarta10.Name = "lblP1ValorCarta10";
             this.lblP1ValorCarta10.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta10.TabIndex = 13;
-            this.lblP1ValorCarta10.Text = "0";
+            this.lblP1ValorCarta10.Text = "?";
             this.lblP1ValorCarta10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta10.Visible = false;
             // 
@@ -545,26 +558,29 @@
             // pnlCarta3P1
             // 
             this.pnlCarta3P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta3P1.Controls.Add(this.lblP1ValorCarta3);
+            this.pnlCarta3P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta3P1.Controls.Add(this.lblCarta3P1);
             this.pnlCarta3P1.Controls.Add(this.label4);
             this.pnlCarta3P1.Location = new System.Drawing.Point(102, 3);
+            this.pnlCarta3P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta3P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta3P1.Name = "pnlCarta3P1";
             this.pnlCarta3P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta3P1.TabIndex = 28;
             this.pnlCarta3P1.Visible = false;
             // 
-            // lblP1ValorCarta3
+            // lblCarta3P1
             // 
-            this.lblP1ValorCarta3.AutoSize = true;
-            this.lblP1ValorCarta3.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta3.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta3.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta3.Name = "lblP1ValorCarta3";
-            this.lblP1ValorCarta3.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta3.TabIndex = 4;
-            this.lblP1ValorCarta3.Text = "0";
-            this.lblP1ValorCarta3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta3.Visible = false;
+            this.lblCarta3P1.AutoSize = true;
+            this.lblCarta3P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta3P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta3P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta3P1.Name = "lblCarta3P1";
+            this.lblCarta3P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta3P1.TabIndex = 4;
+            this.lblCarta3P1.Text = "?";
+            this.lblCarta3P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta3P1.Visible = false;
             // 
             // label4
             // 
@@ -582,11 +598,14 @@
             // pnlCarta14P1
             // 
             this.pnlCarta14P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta14P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta14P1.Controls.Add(this.lblP1ValorCarta14);
             this.pnlCarta14P1.Controls.Add(this.label48);
             this.pnlCarta14P1.Controls.Add(this.label50);
             this.pnlCarta14P1.Controls.Add(this.label49);
             this.pnlCarta14P1.Location = new System.Drawing.Point(278, 63);
+            this.pnlCarta14P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta14P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta14P1.Name = "pnlCarta14P1";
             this.pnlCarta14P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta14P1.TabIndex = 37;
@@ -601,7 +620,7 @@
             this.lblP1ValorCarta14.Name = "lblP1ValorCarta14";
             this.lblP1ValorCarta14.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta14.TabIndex = 37;
-            this.lblP1ValorCarta14.Text = "0";
+            this.lblP1ValorCarta14.Text = "?";
             this.lblP1ValorCarta14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta14.Visible = false;
             // 
@@ -647,11 +666,14 @@
             // pnlCarta11P1
             // 
             this.pnlCarta11P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta11P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta11P1.Controls.Add(this.lblP1ValorCarta11);
             this.pnlCarta11P1.Controls.Add(this.label12);
             this.pnlCarta11P1.Controls.Add(this.label14);
             this.pnlCarta11P1.Controls.Add(this.label13);
             this.pnlCarta11P1.Location = new System.Drawing.Point(146, 63);
+            this.pnlCarta11P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta11P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta11P1.Name = "pnlCarta11P1";
             this.pnlCarta11P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta11P1.TabIndex = 34;
@@ -666,7 +688,7 @@
             this.lblP1ValorCarta11.Name = "lblP1ValorCarta11";
             this.lblP1ValorCarta11.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta11.TabIndex = 9;
-            this.lblP1ValorCarta11.Text = "0";
+            this.lblP1ValorCarta11.Text = "?";
             this.lblP1ValorCarta11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta11.Visible = false;
             // 
@@ -712,11 +734,14 @@
             // pnlCarta7P1
             // 
             this.pnlCarta7P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta7P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P1.Controls.Add(this.lblP1ValorCarta7);
             this.pnlCarta7P1.Controls.Add(this.label44);
             this.pnlCarta7P1.Controls.Add(this.label46);
             this.pnlCarta7P1.Controls.Add(this.label45);
             this.pnlCarta7P1.Location = new System.Drawing.Point(278, 3);
+            this.pnlCarta7P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta7P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta7P1.Name = "pnlCarta7P1";
             this.pnlCarta7P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta7P1.TabIndex = 30;
@@ -731,7 +756,7 @@
             this.lblP1ValorCarta7.Name = "lblP1ValorCarta7";
             this.lblP1ValorCarta7.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta7.TabIndex = 33;
-            this.lblP1ValorCarta7.Text = "0";
+            this.lblP1ValorCarta7.Text = "?";
             this.lblP1ValorCarta7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta7.Visible = false;
             // 
@@ -777,11 +802,14 @@
             // pnlCarta12P1
             // 
             this.pnlCarta12P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta12P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta12P1.Controls.Add(this.lblP1ValorCarta12);
             this.pnlCarta12P1.Controls.Add(this.label28);
             this.pnlCarta12P1.Controls.Add(this.label30);
             this.pnlCarta12P1.Controls.Add(this.label29);
             this.pnlCarta12P1.Location = new System.Drawing.Point(190, 63);
+            this.pnlCarta12P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta12P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta12P1.Name = "pnlCarta12P1";
             this.pnlCarta12P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta12P1.TabIndex = 36;
@@ -796,7 +824,7 @@
             this.lblP1ValorCarta12.Name = "lblP1ValorCarta12";
             this.lblP1ValorCarta12.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta12.TabIndex = 17;
-            this.lblP1ValorCarta12.Text = "0";
+            this.lblP1ValorCarta12.Text = "?";
             this.lblP1ValorCarta12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta12.Visible = false;
             // 
@@ -842,27 +870,30 @@
             // pnlCarta4P1
             // 
             this.pnlCarta4P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta4P1.Controls.Add(this.lblP1ValorCarta4);
+            this.pnlCarta4P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta4P1.Controls.Add(this.lblCarta4P1);
             this.pnlCarta4P1.Controls.Add(this.label7);
             this.pnlCarta4P1.Controls.Add(this.label9);
             this.pnlCarta4P1.Location = new System.Drawing.Point(146, 3);
+            this.pnlCarta4P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta4P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta4P1.Name = "pnlCarta4P1";
             this.pnlCarta4P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta4P1.TabIndex = 27;
             this.pnlCarta4P1.Visible = false;
             // 
-            // lblP1ValorCarta4
+            // lblCarta4P1
             // 
-            this.lblP1ValorCarta4.AutoSize = true;
-            this.lblP1ValorCarta4.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta4.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta4.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta4.Name = "lblP1ValorCarta4";
-            this.lblP1ValorCarta4.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta4.TabIndex = 7;
-            this.lblP1ValorCarta4.Text = "0";
-            this.lblP1ValorCarta4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta4.Visible = false;
+            this.lblCarta4P1.AutoSize = true;
+            this.lblCarta4P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta4P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta4P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta4P1.Name = "lblCarta4P1";
+            this.lblCarta4P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta4P1.TabIndex = 7;
+            this.lblCarta4P1.Text = "?";
+            this.lblCarta4P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta4P1.Visible = false;
             // 
             // label7
             // 
@@ -893,11 +924,14 @@
             // pnlCarta9P1
             // 
             this.pnlCarta9P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta9P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P1.Controls.Add(this.lblP1ValorCarta9);
             this.pnlCarta9P1.Controls.Add(this.label20);
             this.pnlCarta9P1.Controls.Add(this.label22);
             this.pnlCarta9P1.Controls.Add(this.label21);
             this.pnlCarta9P1.Location = new System.Drawing.Point(58, 63);
+            this.pnlCarta9P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta9P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta9P1.Name = "pnlCarta9P1";
             this.pnlCarta9P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta9P1.TabIndex = 33;
@@ -912,7 +946,7 @@
             this.lblP1ValorCarta9.Name = "lblP1ValorCarta9";
             this.lblP1ValorCarta9.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta9.TabIndex = 9;
-            this.lblP1ValorCarta9.Text = "0";
+            this.lblP1ValorCarta9.Text = "?";
             this.lblP1ValorCarta9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta9.Visible = false;
             // 
@@ -958,28 +992,31 @@
             // pnlCarta5P1
             // 
             this.pnlCarta5P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta5P1.Controls.Add(this.lblP1ValorCarta5);
+            this.pnlCarta5P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta5P1.Controls.Add(this.lblCarta5P1);
             this.pnlCarta5P1.Controls.Add(this.label32);
             this.pnlCarta5P1.Controls.Add(this.label34);
             this.pnlCarta5P1.Controls.Add(this.label33);
             this.pnlCarta5P1.Location = new System.Drawing.Point(190, 3);
+            this.pnlCarta5P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta5P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta5P1.Name = "pnlCarta5P1";
             this.pnlCarta5P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta5P1.TabIndex = 29;
             this.pnlCarta5P1.Visible = false;
             // 
-            // lblP1ValorCarta5
+            // lblCarta5P1
             // 
-            this.lblP1ValorCarta5.AutoSize = true;
-            this.lblP1ValorCarta5.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta5.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta5.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta5.Name = "lblP1ValorCarta5";
-            this.lblP1ValorCarta5.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta5.TabIndex = 21;
-            this.lblP1ValorCarta5.Text = "0";
-            this.lblP1ValorCarta5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta5.Visible = false;
+            this.lblCarta5P1.AutoSize = true;
+            this.lblCarta5P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta5P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta5P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta5P1.Name = "lblCarta5P1";
+            this.lblCarta5P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta5P1.TabIndex = 21;
+            this.lblCarta5P1.Text = "?";
+            this.lblCarta5P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta5P1.Visible = false;
             // 
             // label32
             // 
@@ -1023,11 +1060,14 @@
             // pnlCarta8P1
             // 
             this.pnlCarta8P1.BackColor = System.Drawing.Color.White;
+            this.pnlCarta8P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P1.Controls.Add(this.lblP1ValorCarta8);
             this.pnlCarta8P1.Controls.Add(this.label24);
             this.pnlCarta8P1.Controls.Add(this.label26);
             this.pnlCarta8P1.Controls.Add(this.label25);
             this.pnlCarta8P1.Location = new System.Drawing.Point(14, 63);
+            this.pnlCarta8P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta8P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta8P1.Name = "pnlCarta8P1";
             this.pnlCarta8P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta8P1.TabIndex = 32;
@@ -1042,7 +1082,7 @@
             this.lblP1ValorCarta8.Name = "lblP1ValorCarta8";
             this.lblP1ValorCarta8.Size = new System.Drawing.Size(14, 16);
             this.lblP1ValorCarta8.TabIndex = 13;
-            this.lblP1ValorCarta8.Text = "0";
+            this.lblP1ValorCarta8.Text = "?";
             this.lblP1ValorCarta8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblP1ValorCarta8.Visible = false;
             // 
@@ -1088,50 +1128,54 @@
             // pnlCarta2P1
             // 
             this.pnlCarta2P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta2P1.Controls.Add(this.lblP1ValorCarta2);
+            this.pnlCarta2P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta2P1.Controls.Add(this.lblCarta2P1);
             this.pnlCarta2P1.Location = new System.Drawing.Point(58, 3);
+            this.pnlCarta2P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta2P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta2P1.Name = "pnlCarta2P1";
             this.pnlCarta2P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta2P1.TabIndex = 26;
             this.pnlCarta2P1.Visible = false;
             // 
-            // lblP1ValorCarta2
+            // lblCarta2P1
             // 
-            this.lblP1ValorCarta2.AutoSize = true;
-            this.lblP1ValorCarta2.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta2.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta2.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta2.Name = "lblP1ValorCarta2";
-            this.lblP1ValorCarta2.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta2.TabIndex = 2;
-            this.lblP1ValorCarta2.Text = "0";
-            this.lblP1ValorCarta2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta2.Visible = false;
+            this.lblCarta2P1.AutoSize = true;
+            this.lblCarta2P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta2P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta2P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta2P1.Name = "lblCarta2P1";
+            this.lblCarta2P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta2P1.TabIndex = 2;
+            this.lblCarta2P1.Text = "?";
+            this.lblCarta2P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta2P1.Visible = false;
             // 
             // pnlCarta1P1
             // 
-            this.pnlCarta1P1.AutoScroll = true;
-            this.pnlCarta1P1.AutoSize = true;
             this.pnlCarta1P1.BackColor = System.Drawing.Color.White;
-            this.pnlCarta1P1.Controls.Add(this.lblP1ValorCarta1);
+            this.pnlCarta1P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCarta1P1.Controls.Add(this.lblCarta1P1);
             this.pnlCarta1P1.Location = new System.Drawing.Point(14, 3);
+            this.pnlCarta1P1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta1P1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta1P1.Name = "pnlCarta1P1";
             this.pnlCarta1P1.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta1P1.TabIndex = 25;
             this.pnlCarta1P1.Visible = false;
             // 
-            // lblP1ValorCarta1
+            // lblCarta1P1
             // 
-            this.lblP1ValorCarta1.AutoSize = true;
-            this.lblP1ValorCarta1.BackColor = System.Drawing.Color.Transparent;
-            this.lblP1ValorCarta1.ForeColor = System.Drawing.Color.Black;
-            this.lblP1ValorCarta1.Location = new System.Drawing.Point(12, 20);
-            this.lblP1ValorCarta1.Name = "lblP1ValorCarta1";
-            this.lblP1ValorCarta1.Size = new System.Drawing.Size(14, 16);
-            this.lblP1ValorCarta1.TabIndex = 3;
-            this.lblP1ValorCarta1.Text = "0";
-            this.lblP1ValorCarta1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblP1ValorCarta1.Visible = false;
+            this.lblCarta1P1.AutoSize = true;
+            this.lblCarta1P1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCarta1P1.ForeColor = System.Drawing.Color.Black;
+            this.lblCarta1P1.Location = new System.Drawing.Point(12, 20);
+            this.lblCarta1P1.Name = "lblCarta1P1";
+            this.lblCarta1P1.Size = new System.Drawing.Size(14, 16);
+            this.lblCarta1P1.TabIndex = 3;
+            this.lblCarta1P1.Text = "?";
+            this.lblCarta1P1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCarta1P1.Visible = false;
             // 
             // lblVersao2
             // 
@@ -1146,21 +1190,23 @@
             // 
             // btnComecar
             // 
-            this.btnComecar.Location = new System.Drawing.Point(759, 388);
+            this.btnComecar.BackColor = System.Drawing.Color.Crimson;
+            this.btnComecar.ForeColor = System.Drawing.Color.White;
+            this.btnComecar.Location = new System.Drawing.Point(924, 22);
             this.btnComecar.Name = "btnComecar";
-            this.btnComecar.Size = new System.Drawing.Size(89, 23);
+            this.btnComecar.Size = new System.Drawing.Size(89, 37);
             this.btnComecar.TabIndex = 2;
             this.btnComecar.Text = "Começar";
-            this.btnComecar.UseVisualStyleBackColor = true;
+            this.btnComecar.UseVisualStyleBackColor = false;
             this.btnComecar.Click += new System.EventHandler(this.btnComecar_Click);
             // 
             // grbPlayer1
             // 
             this.grbPlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.grbPlayer1.Controls.Add(this.button1);
+            this.grbPlayer1.Controls.Add(this.btnJogar);
             this.grbPlayer1.Controls.Add(this.lblTotalP1);
             this.grbPlayer1.Controls.Add(this.label2);
-            this.grbPlayer1.Controls.Add(this.btnApostar);
-            this.grbPlayer1.Controls.Add(this.btnJogar);
             this.grbPlayer1.Controls.Add(this.lsbPlayer1);
             this.grbPlayer1.Controls.Add(this.lblAposta);
             this.grbPlayer1.Controls.Add(this.label1);
@@ -1173,6 +1219,29 @@
             this.grbPlayer1.TabIndex = 4;
             this.grbPlayer1.TabStop = false;
             this.grbPlayer1.Text = "Nome Jogador";
+            this.grbPlayer1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(18, 103);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Apostar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnJogar
+            // 
+            this.btnJogar.ForeColor = System.Drawing.Color.Black;
+            this.btnJogar.Location = new System.Drawing.Point(18, 73);
+            this.btnJogar.Name = "btnJogar";
+            this.btnJogar.Size = new System.Drawing.Size(92, 27);
+            this.btnJogar.TabIndex = 28;
+            this.btnJogar.Text = "Jogar";
+            this.btnJogar.UseVisualStyleBackColor = true;
+            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click_1);
             // 
             // lblTotalP1
             // 
@@ -1192,29 +1261,6 @@
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 26;
             this.label2.Text = "Total";
-            // 
-            // btnApostar
-            // 
-            this.btnApostar.ForeColor = System.Drawing.Color.Black;
-            this.btnApostar.Location = new System.Drawing.Point(34, 102);
-            this.btnApostar.Name = "btnApostar";
-            this.btnApostar.Size = new System.Drawing.Size(75, 23);
-            this.btnApostar.TabIndex = 25;
-            this.btnApostar.Text = "Apostar";
-            this.btnApostar.UseVisualStyleBackColor = true;
-            this.btnApostar.Visible = false;
-            this.btnApostar.Click += new System.EventHandler(this.btnApostar_Click);
-            // 
-            // btnJogar
-            // 
-            this.btnJogar.ForeColor = System.Drawing.Color.Black;
-            this.btnJogar.Location = new System.Drawing.Point(34, 73);
-            this.btnJogar.Name = "btnJogar";
-            this.btnJogar.Size = new System.Drawing.Size(75, 23);
-            this.btnJogar.TabIndex = 24;
-            this.btnJogar.Text = "Jogar";
-            this.btnJogar.UseVisualStyleBackColor = true;
-            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
             // 
             // lsbPlayer1
             // 
@@ -1331,6 +1377,8 @@
             this.pnlCarta13P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta13P3.Controls.Add(this.label79);
             this.pnlCarta13P3.Location = new System.Drawing.Point(234, 66);
+            this.pnlCarta13P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta13P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta13P3.Name = "pnlCarta13P3";
             this.pnlCarta13P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta13P3.TabIndex = 52;
@@ -1345,7 +1393,7 @@
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(14, 16);
             this.label79.TabIndex = 45;
-            this.label79.Text = "0";
+            this.label79.Text = "?";
             this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label79.Visible = false;
             // 
@@ -1355,6 +1403,8 @@
             this.pnlCarta1P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P3.Controls.Add(this.label65);
             this.pnlCarta1P3.Location = new System.Drawing.Point(14, 6);
+            this.pnlCarta1P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta1P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta1P3.Name = "pnlCarta1P3";
             this.pnlCarta1P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta1P3.TabIndex = 39;
@@ -1369,7 +1419,7 @@
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(14, 16);
             this.label65.TabIndex = 41;
-            this.label65.Text = "0";
+            this.label65.Text = "?";
             this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label65.Visible = false;
             // 
@@ -1379,6 +1429,8 @@
             this.pnlCarta6P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P3.Controls.Add(this.label88);
             this.pnlCarta6P3.Location = new System.Drawing.Point(234, 6);
+            this.pnlCarta6P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta6P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta6P3.Name = "pnlCarta6P3";
             this.pnlCarta6P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta6P3.TabIndex = 45;
@@ -1393,7 +1445,7 @@
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(14, 16);
             this.label88.TabIndex = 47;
-            this.label88.Text = "0";
+            this.label88.Text = "?";
             this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label88.Visible = false;
             // 
@@ -1403,6 +1455,8 @@
             this.pnlCarta2P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P3.Controls.Add(this.label55);
             this.pnlCarta2P3.Location = new System.Drawing.Point(58, 6);
+            this.pnlCarta2P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta2P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta2P3.Name = "pnlCarta2P3";
             this.pnlCarta2P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta2P3.TabIndex = 40;
@@ -1417,7 +1471,7 @@
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(14, 16);
             this.label55.TabIndex = 45;
-            this.label55.Text = "0";
+            this.label55.Text = "?";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label55.Visible = false;
             // 
@@ -1427,6 +1481,8 @@
             this.pnlCarta10P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta10P3.Controls.Add(this.label83);
             this.pnlCarta10P3.Location = new System.Drawing.Point(102, 66);
+            this.pnlCarta10P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta10P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta10P3.Name = "pnlCarta10P3";
             this.pnlCarta10P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta10P3.TabIndex = 49;
@@ -1441,7 +1497,7 @@
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(14, 16);
             this.label83.TabIndex = 49;
-            this.label83.Text = "0";
+            this.label83.Text = "?";
             this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label83.Visible = false;
             // 
@@ -1451,6 +1507,8 @@
             this.pnlCarta8P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P3.Controls.Add(this.label81);
             this.pnlCarta8P3.Location = new System.Drawing.Point(14, 66);
+            this.pnlCarta8P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta8P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta8P3.Name = "pnlCarta8P3";
             this.pnlCarta8P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta8P3.TabIndex = 46;
@@ -1465,7 +1523,7 @@
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(14, 16);
             this.label81.TabIndex = 43;
-            this.label81.Text = "0";
+            this.label81.Text = "?";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label81.Visible = false;
             // 
@@ -1475,6 +1533,8 @@
             this.pnlCarta3P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P3.Controls.Add(this.label51);
             this.pnlCarta3P3.Location = new System.Drawing.Point(102, 6);
+            this.pnlCarta3P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta3P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta3P3.Name = "pnlCarta3P3";
             this.pnlCarta3P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta3P3.TabIndex = 42;
@@ -1489,7 +1549,7 @@
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(14, 16);
             this.label51.TabIndex = 39;
-            this.label51.Text = "0";
+            this.label51.Text = "?";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label51.Visible = false;
             // 
@@ -1499,6 +1559,8 @@
             this.pnlCarta5P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P3.Controls.Add(this.label82);
             this.pnlCarta5P3.Location = new System.Drawing.Point(190, 6);
+            this.pnlCarta5P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta5P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta5P3.Name = "pnlCarta5P3";
             this.pnlCarta5P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta5P3.TabIndex = 43;
@@ -1513,7 +1575,7 @@
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(14, 16);
             this.label82.TabIndex = 44;
-            this.label82.Text = "0";
+            this.label82.Text = "?";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label82.Visible = false;
             // 
@@ -1523,6 +1585,8 @@
             this.pnlCarta14P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta14P3.Controls.Add(this.label80);
             this.pnlCarta14P3.Location = new System.Drawing.Point(278, 66);
+            this.pnlCarta14P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta14P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta14P3.Name = "pnlCarta14P3";
             this.pnlCarta14P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta14P3.TabIndex = 51;
@@ -1537,7 +1601,7 @@
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(14, 16);
             this.label80.TabIndex = 42;
-            this.label80.Text = "0";
+            this.label80.Text = "?";
             this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label80.Visible = false;
             // 
@@ -1547,6 +1611,8 @@
             this.pnlCarta9P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P3.Controls.Add(this.label85);
             this.pnlCarta9P3.Location = new System.Drawing.Point(58, 66);
+            this.pnlCarta9P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta9P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta9P3.Name = "pnlCarta9P3";
             this.pnlCarta9P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta9P3.TabIndex = 47;
@@ -1561,7 +1627,7 @@
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(14, 16);
             this.label85.TabIndex = 47;
-            this.label85.Text = "0";
+            this.label85.Text = "?";
             this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label85.Visible = false;
             // 
@@ -1571,6 +1637,8 @@
             this.pnlCarta11P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta11P3.Controls.Add(this.label84);
             this.pnlCarta11P3.Location = new System.Drawing.Point(146, 66);
+            this.pnlCarta11P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta11P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta11P3.Name = "pnlCarta11P3";
             this.pnlCarta11P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta11P3.TabIndex = 48;
@@ -1585,7 +1653,7 @@
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(14, 16);
             this.label84.TabIndex = 46;
-            this.label84.Text = "0";
+            this.label84.Text = "?";
             this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label84.Visible = false;
             // 
@@ -1595,6 +1663,8 @@
             this.pnlCarta4P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P3.Controls.Add(this.label72);
             this.pnlCarta4P3.Location = new System.Drawing.Point(146, 6);
+            this.pnlCarta4P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta4P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta4P3.Name = "pnlCarta4P3";
             this.pnlCarta4P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta4P3.TabIndex = 41;
@@ -1609,7 +1679,7 @@
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(14, 16);
             this.label72.TabIndex = 45;
-            this.label72.Text = "0";
+            this.label72.Text = "?";
             this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label72.Visible = false;
             // 
@@ -1619,6 +1689,8 @@
             this.pnlCarta7P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P3.Controls.Add(this.label87);
             this.pnlCarta7P3.Location = new System.Drawing.Point(278, 6);
+            this.pnlCarta7P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta7P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta7P3.Name = "pnlCarta7P3";
             this.pnlCarta7P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta7P3.TabIndex = 44;
@@ -1633,7 +1705,7 @@
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(14, 16);
             this.label87.TabIndex = 43;
-            this.label87.Text = "0";
+            this.label87.Text = "?";
             this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label87.Visible = false;
             // 
@@ -1643,6 +1715,8 @@
             this.pnlCarta12P3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta12P3.Controls.Add(this.label86);
             this.pnlCarta12P3.Location = new System.Drawing.Point(190, 66);
+            this.pnlCarta12P3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta12P3.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta12P3.Name = "pnlCarta12P3";
             this.pnlCarta12P3.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta12P3.TabIndex = 50;
@@ -1657,7 +1731,7 @@
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(14, 16);
             this.label86.TabIndex = 48;
-            this.label86.Text = "0";
+            this.label86.Text = "?";
             this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label86.Visible = false;
             // 
@@ -1769,6 +1843,8 @@
             this.pnlCarta13P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta13P4.Controls.Add(this.label91);
             this.pnlCarta13P4.Location = new System.Drawing.Point(22, 249);
+            this.pnlCarta13P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta13P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta13P4.Name = "pnlCarta13P4";
             this.pnlCarta13P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta13P4.TabIndex = 55;
@@ -1783,7 +1859,7 @@
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(14, 16);
             this.label91.TabIndex = 52;
-            this.label91.Text = "0";
+            this.label91.Text = "?";
             this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label91.Visible = false;
             // 
@@ -1793,6 +1869,8 @@
             this.pnlCarta10P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta10P4.Controls.Add(this.label90);
             this.pnlCarta10P4.Location = new System.Drawing.Point(3, 189);
+            this.pnlCarta10P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta10P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta10P4.Name = "pnlCarta10P4";
             this.pnlCarta10P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta10P4.TabIndex = 52;
@@ -1807,7 +1885,7 @@
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(14, 16);
             this.label90.TabIndex = 51;
-            this.label90.Text = "0";
+            this.label90.Text = "?";
             this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label90.Visible = false;
             // 
@@ -1817,6 +1895,8 @@
             this.pnlCarta14P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta14P4.Controls.Add(this.label92);
             this.pnlCarta14P4.Location = new System.Drawing.Point(66, 249);
+            this.pnlCarta14P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta14P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta14P4.Name = "pnlCarta14P4";
             this.pnlCarta14P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta14P4.TabIndex = 56;
@@ -1831,7 +1911,7 @@
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(14, 16);
             this.label92.TabIndex = 53;
-            this.label92.Text = "0";
+            this.label92.Text = "?";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label92.Visible = false;
             // 
@@ -1841,6 +1921,8 @@
             this.pnlCarta4P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P4.Controls.Add(this.label68);
             this.pnlCarta4P4.Location = new System.Drawing.Point(3, 69);
+            this.pnlCarta4P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta4P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta4P4.Name = "pnlCarta4P4";
             this.pnlCarta4P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta4P4.TabIndex = 46;
@@ -1855,7 +1937,7 @@
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(14, 16);
             this.label68.TabIndex = 44;
-            this.label68.Text = "0";
+            this.label68.Text = "?";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label68.Visible = false;
             // 
@@ -1865,6 +1947,8 @@
             this.pnlCarta11P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta11P4.Controls.Add(this.label76);
             this.pnlCarta11P4.Location = new System.Drawing.Point(47, 189);
+            this.pnlCarta11P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta11P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta11P4.Name = "pnlCarta11P4";
             this.pnlCarta11P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta11P4.TabIndex = 53;
@@ -1879,7 +1963,7 @@
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(14, 16);
             this.label76.TabIndex = 50;
-            this.label76.Text = "0";
+            this.label76.Text = "?";
             this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label76.Visible = false;
             // 
@@ -1889,6 +1973,8 @@
             this.pnlCarta5P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P4.Controls.Add(this.label69);
             this.pnlCarta5P4.Location = new System.Drawing.Point(47, 69);
+            this.pnlCarta5P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta5P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta5P4.Name = "pnlCarta5P4";
             this.pnlCarta5P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta5P4.TabIndex = 47;
@@ -1903,7 +1989,7 @@
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(14, 16);
             this.label69.TabIndex = 45;
-            this.label69.Text = "0";
+            this.label69.Text = "?";
             this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label69.Visible = false;
             // 
@@ -1913,6 +1999,8 @@
             this.pnlCarta7P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P4.Controls.Add(this.label70);
             this.pnlCarta7P4.Location = new System.Drawing.Point(3, 129);
+            this.pnlCarta7P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta7P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta7P4.Name = "pnlCarta7P4";
             this.pnlCarta7P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta7P4.TabIndex = 49;
@@ -1927,7 +2015,7 @@
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(14, 16);
             this.label70.TabIndex = 45;
-            this.label70.Text = "0";
+            this.label70.Text = "?";
             this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label70.Visible = false;
             // 
@@ -1937,6 +2025,8 @@
             this.pnlCarta12P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta12P4.Controls.Add(this.label75);
             this.pnlCarta12P4.Location = new System.Drawing.Point(91, 189);
+            this.pnlCarta12P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta12P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta12P4.Name = "pnlCarta12P4";
             this.pnlCarta12P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta12P4.TabIndex = 54;
@@ -1951,7 +2041,7 @@
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(14, 16);
             this.label75.TabIndex = 49;
-            this.label75.Text = "0";
+            this.label75.Text = "?";
             this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label75.Visible = false;
             // 
@@ -1961,6 +2051,8 @@
             this.pnlCarta1P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P4.Controls.Add(this.label78);
             this.pnlCarta1P4.Location = new System.Drawing.Point(3, 9);
+            this.pnlCarta1P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta1P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta1P4.Name = "pnlCarta1P4";
             this.pnlCarta1P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta1P4.TabIndex = 43;
@@ -1975,7 +2067,7 @@
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(14, 16);
             this.label78.TabIndex = 51;
-            this.label78.Text = "0";
+            this.label78.Text = "?";
             this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label78.Visible = false;
             // 
@@ -1985,6 +2077,8 @@
             this.pnlCarta8P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P4.Controls.Add(this.label71);
             this.pnlCarta8P4.Location = new System.Drawing.Point(47, 129);
+            this.pnlCarta8P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta8P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta8P4.Name = "pnlCarta8P4";
             this.pnlCarta8P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta8P4.TabIndex = 50;
@@ -1999,7 +2093,7 @@
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(14, 16);
             this.label71.TabIndex = 46;
-            this.label71.Text = "0";
+            this.label71.Text = "?";
             this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label71.Visible = false;
             // 
@@ -2009,6 +2103,8 @@
             this.pnlCarta6P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P4.Controls.Add(this.label73);
             this.pnlCarta6P4.Location = new System.Drawing.Point(91, 69);
+            this.pnlCarta6P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta6P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta6P4.Name = "pnlCarta6P4";
             this.pnlCarta6P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta6P4.TabIndex = 48;
@@ -2023,7 +2119,7 @@
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(14, 16);
             this.label73.TabIndex = 47;
-            this.label73.Text = "0";
+            this.label73.Text = "?";
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label73.Visible = false;
             // 
@@ -2033,6 +2129,8 @@
             this.pnlCarta9P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P4.Controls.Add(this.label74);
             this.pnlCarta9P4.Location = new System.Drawing.Point(91, 129);
+            this.pnlCarta9P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta9P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta9P4.Name = "pnlCarta9P4";
             this.pnlCarta9P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta9P4.TabIndex = 51;
@@ -2047,7 +2145,7 @@
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(14, 16);
             this.label74.TabIndex = 48;
-            this.label74.Text = "0";
+            this.label74.Text = "?";
             this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label74.Visible = false;
             // 
@@ -2057,6 +2155,8 @@
             this.pnlCarta2P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P4.Controls.Add(this.label67);
             this.pnlCarta2P4.Location = new System.Drawing.Point(47, 9);
+            this.pnlCarta2P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta2P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta2P4.Name = "pnlCarta2P4";
             this.pnlCarta2P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta2P4.TabIndex = 44;
@@ -2071,7 +2171,7 @@
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(14, 16);
             this.label67.TabIndex = 46;
-            this.label67.Text = "0";
+            this.label67.Text = "?";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label67.Visible = false;
             // 
@@ -2081,6 +2181,8 @@
             this.pnlCarta3P4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P4.Controls.Add(this.label77);
             this.pnlCarta3P4.Location = new System.Drawing.Point(91, 9);
+            this.pnlCarta3P4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta3P4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta3P4.Name = "pnlCarta3P4";
             this.pnlCarta3P4.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta3P4.TabIndex = 45;
@@ -2095,7 +2197,7 @@
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(14, 16);
             this.label77.TabIndex = 53;
-            this.label77.Text = "0";
+            this.label77.Text = "?";
             this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label77.Visible = false;
             // 
@@ -2205,6 +2307,8 @@
             this.pnlCarta13P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta13P2.Controls.Add(this.label61);
             this.pnlCarta13P2.Location = new System.Drawing.Point(22, 249);
+            this.pnlCarta13P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta13P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta13P2.Name = "pnlCarta13P2";
             this.pnlCarta13P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta13P2.TabIndex = 69;
@@ -2219,7 +2323,7 @@
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(14, 16);
             this.label61.TabIndex = 48;
-            this.label61.Text = "0";
+            this.label61.Text = "?";
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label61.Visible = false;
             // 
@@ -2229,6 +2333,8 @@
             this.pnlCarta1P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta1P2.Controls.Add(this.label89);
             this.pnlCarta1P2.Location = new System.Drawing.Point(3, 9);
+            this.pnlCarta1P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta1P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta1P2.Name = "pnlCarta1P2";
             this.pnlCarta1P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta1P2.TabIndex = 57;
@@ -2243,7 +2349,7 @@
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(14, 16);
             this.label89.TabIndex = 65;
-            this.label89.Text = "0";
+            this.label89.Text = "?";
             this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label89.Visible = false;
             // 
@@ -2252,6 +2358,8 @@
             this.pnlCarta10P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta10P2.Controls.Add(this.label56);
             this.pnlCarta10P2.Location = new System.Drawing.Point(3, 189);
+            this.pnlCarta10P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta10P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta10P2.Name = "pnlCarta10P2";
             this.pnlCarta10P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta10P2.TabIndex = 66;
@@ -2266,7 +2374,7 @@
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(14, 16);
             this.label56.TabIndex = 40;
-            this.label56.Text = "0";
+            this.label56.Text = "?";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label56.Visible = false;
             // 
@@ -2276,6 +2384,8 @@
             this.pnlCarta3P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta3P2.Controls.Add(this.label52);
             this.pnlCarta3P2.Location = new System.Drawing.Point(91, 9);
+            this.pnlCarta3P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta3P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta3P2.Name = "pnlCarta3P2";
             this.pnlCarta3P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta3P2.TabIndex = 59;
@@ -2290,7 +2400,7 @@
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(14, 16);
             this.label52.TabIndex = 38;
-            this.label52.Text = "0";
+            this.label52.Text = "?";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label52.Visible = false;
             // 
@@ -2299,6 +2409,8 @@
             this.pnlCarta14P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta14P2.Controls.Add(this.label62);
             this.pnlCarta14P2.Location = new System.Drawing.Point(66, 249);
+            this.pnlCarta14P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta14P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta14P2.Name = "pnlCarta14P2";
             this.pnlCarta14P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta14P2.TabIndex = 70;
@@ -2313,7 +2425,7 @@
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(14, 16);
             this.label62.TabIndex = 50;
-            this.label62.Text = "0";
+            this.label62.Text = "?";
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label62.Visible = false;
             // 
@@ -2323,6 +2435,8 @@
             this.pnlCarta2P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta2P2.Controls.Add(this.label66);
             this.pnlCarta2P2.Location = new System.Drawing.Point(47, 9);
+            this.pnlCarta2P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta2P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta2P2.Name = "pnlCarta2P2";
             this.pnlCarta2P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta2P2.TabIndex = 58;
@@ -2337,7 +2451,7 @@
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(14, 16);
             this.label66.TabIndex = 40;
-            this.label66.Text = "0";
+            this.label66.Text = "?";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label66.Visible = false;
             // 
@@ -2347,6 +2461,8 @@
             this.pnlCarta4P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta4P2.Controls.Add(this.label59);
             this.pnlCarta4P2.Location = new System.Drawing.Point(3, 69);
+            this.pnlCarta4P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta4P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta4P2.Name = "pnlCarta4P2";
             this.pnlCarta4P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta4P2.TabIndex = 60;
@@ -2361,7 +2477,7 @@
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(14, 16);
             this.label59.TabIndex = 46;
-            this.label59.Text = "0";
+            this.label59.Text = "?";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label59.Visible = false;
             // 
@@ -2371,6 +2487,8 @@
             this.pnlCarta9P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta9P2.Controls.Add(this.label63);
             this.pnlCarta9P2.Location = new System.Drawing.Point(91, 129);
+            this.pnlCarta9P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta9P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta9P2.Name = "pnlCarta9P2";
             this.pnlCarta9P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta9P2.TabIndex = 65;
@@ -2385,7 +2503,7 @@
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(14, 16);
             this.label63.TabIndex = 51;
-            this.label63.Text = "0";
+            this.label63.Text = "?";
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label63.Visible = false;
             // 
@@ -2394,6 +2512,8 @@
             this.pnlCarta11P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta11P2.Controls.Add(this.label54);
             this.pnlCarta11P2.Location = new System.Drawing.Point(47, 189);
+            this.pnlCarta11P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta11P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta11P2.Name = "pnlCarta11P2";
             this.pnlCarta11P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta11P2.TabIndex = 67;
@@ -2408,7 +2528,7 @@
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(14, 16);
             this.label54.TabIndex = 42;
-            this.label54.Text = "0";
+            this.label54.Text = "?";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label54.Visible = false;
             // 
@@ -2418,6 +2538,8 @@
             this.pnlCarta6P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta6P2.Controls.Add(this.label58);
             this.pnlCarta6P2.Location = new System.Drawing.Point(91, 69);
+            this.pnlCarta6P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta6P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta6P2.Name = "pnlCarta6P2";
             this.pnlCarta6P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta6P2.TabIndex = 62;
@@ -2432,7 +2554,7 @@
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(14, 16);
             this.label58.TabIndex = 43;
-            this.label58.Text = "0";
+            this.label58.Text = "?";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label58.Visible = false;
             // 
@@ -2442,6 +2564,8 @@
             this.pnlCarta5P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta5P2.Controls.Add(this.label64);
             this.pnlCarta5P2.Location = new System.Drawing.Point(47, 69);
+            this.pnlCarta5P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta5P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta5P2.Name = "pnlCarta5P2";
             this.pnlCarta5P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta5P2.TabIndex = 61;
@@ -2456,7 +2580,7 @@
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(14, 16);
             this.label64.TabIndex = 49;
-            this.label64.Text = "0";
+            this.label64.Text = "?";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label64.Visible = false;
             // 
@@ -2466,6 +2590,8 @@
             this.pnlCarta8P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta8P2.Controls.Add(this.label57);
             this.pnlCarta8P2.Location = new System.Drawing.Point(47, 129);
+            this.pnlCarta8P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta8P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta8P2.Name = "pnlCarta8P2";
             this.pnlCarta8P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta8P2.TabIndex = 64;
@@ -2480,7 +2606,7 @@
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(14, 16);
             this.label57.TabIndex = 41;
-            this.label57.Text = "0";
+            this.label57.Text = "?";
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label57.Visible = false;
             // 
@@ -2490,6 +2616,8 @@
             this.pnlCarta7P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCarta7P2.Controls.Add(this.label53);
             this.pnlCarta7P2.Location = new System.Drawing.Point(3, 129);
+            this.pnlCarta7P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta7P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta7P2.Name = "pnlCarta7P2";
             this.pnlCarta7P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta7P2.TabIndex = 63;
@@ -2504,7 +2632,7 @@
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(14, 16);
             this.label53.TabIndex = 44;
-            this.label53.Text = "0";
+            this.label53.Text = "?";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label53.Visible = false;
             // 
@@ -2513,6 +2641,8 @@
             this.pnlCarta12P2.BackColor = System.Drawing.Color.White;
             this.pnlCarta12P2.Controls.Add(this.label60);
             this.pnlCarta12P2.Location = new System.Drawing.Point(91, 189);
+            this.pnlCarta12P2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCarta12P2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCarta12P2.Name = "pnlCarta12P2";
             this.pnlCarta12P2.Size = new System.Drawing.Size(38, 54);
             this.pnlCarta12P2.TabIndex = 68;
@@ -2527,7 +2657,7 @@
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(14, 16);
             this.label60.TabIndex = 47;
-            this.label60.Text = "0";
+            this.label60.Text = "?";
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label60.Visible = false;
             // 
@@ -2557,7 +2687,9 @@
             // 
             this.pnlCartaP1.BackColor = System.Drawing.Color.White;
             this.pnlCartaP1.Controls.Add(this.lblCartaP1);
-            this.pnlCartaP1.Location = new System.Drawing.Point(515, 318);
+            this.pnlCartaP1.Location = new System.Drawing.Point(102, 129);
+            this.pnlCartaP1.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCartaP1.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCartaP1.Name = "pnlCartaP1";
             this.pnlCartaP1.Size = new System.Drawing.Size(38, 54);
             this.pnlCartaP1.TabIndex = 26;
@@ -2567,19 +2699,20 @@
             // 
             this.lblCartaP1.AutoSize = true;
             this.lblCartaP1.BackColor = System.Drawing.Color.Transparent;
-            this.lblCartaP1.Location = new System.Drawing.Point(12, 19);
+            this.lblCartaP1.Location = new System.Drawing.Point(11, 20);
             this.lblCartaP1.Name = "lblCartaP1";
             this.lblCartaP1.Size = new System.Drawing.Size(14, 16);
             this.lblCartaP1.TabIndex = 1;
-            this.lblCartaP1.Text = "0";
+            this.lblCartaP1.Text = "?";
             this.lblCartaP1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCartaP1.Visible = false;
             // 
             // pnlCartaP2
             // 
             this.pnlCartaP2.BackColor = System.Drawing.Color.White;
             this.pnlCartaP2.Controls.Add(this.lblCartaP2);
-            this.pnlCartaP2.Location = new System.Drawing.Point(427, 258);
+            this.pnlCartaP2.Location = new System.Drawing.Point(14, 72);
+            this.pnlCartaP2.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCartaP2.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCartaP2.Name = "pnlCartaP2";
             this.pnlCartaP2.Size = new System.Drawing.Size(38, 54);
             this.pnlCartaP2.TabIndex = 63;
@@ -2589,19 +2722,20 @@
             // 
             this.lblCartaP2.AutoSize = true;
             this.lblCartaP2.BackColor = System.Drawing.Color.Transparent;
-            this.lblCartaP2.Location = new System.Drawing.Point(12, 22);
+            this.lblCartaP2.Location = new System.Drawing.Point(11, 20);
             this.lblCartaP2.Name = "lblCartaP2";
             this.lblCartaP2.Size = new System.Drawing.Size(14, 16);
             this.lblCartaP2.TabIndex = 0;
-            this.lblCartaP2.Text = "0";
+            this.lblCartaP2.Text = "?";
             this.lblCartaP2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCartaP2.Visible = false;
             // 
             // pnlCartaP4
             // 
             this.pnlCartaP4.BackColor = System.Drawing.Color.White;
             this.pnlCartaP4.Controls.Add(this.lblCartaP4);
-            this.pnlCartaP4.Location = new System.Drawing.Point(603, 258);
+            this.pnlCartaP4.Location = new System.Drawing.Point(190, 72);
+            this.pnlCartaP4.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCartaP4.MinimumSize = new System.Drawing.Size(38, 54);
             this.pnlCartaP4.Name = "pnlCartaP4";
             this.pnlCartaP4.Size = new System.Drawing.Size(38, 54);
             this.pnlCartaP4.TabIndex = 51;
@@ -2611,35 +2745,12 @@
             // 
             this.lblCartaP4.AutoSize = true;
             this.lblCartaP4.BackColor = System.Drawing.Color.Transparent;
-            this.lblCartaP4.Location = new System.Drawing.Point(12, 22);
+            this.lblCartaP4.Location = new System.Drawing.Point(11, 20);
             this.lblCartaP4.Name = "lblCartaP4";
             this.lblCartaP4.Size = new System.Drawing.Size(14, 16);
             this.lblCartaP4.TabIndex = 2;
-            this.lblCartaP4.Text = "0";
+            this.lblCartaP4.Text = "?";
             this.lblCartaP4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCartaP4.Visible = false;
-            // 
-            // pnlCartaP3
-            // 
-            this.pnlCartaP3.BackColor = System.Drawing.Color.White;
-            this.pnlCartaP3.Controls.Add(this.lblCartaP3);
-            this.pnlCartaP3.Location = new System.Drawing.Point(515, 198);
-            this.pnlCartaP3.Name = "pnlCartaP3";
-            this.pnlCartaP3.Size = new System.Drawing.Size(38, 54);
-            this.pnlCartaP3.TabIndex = 43;
-            this.pnlCartaP3.Visible = false;
-            // 
-            // lblCartaP3
-            // 
-            this.lblCartaP3.AutoSize = true;
-            this.lblCartaP3.BackColor = System.Drawing.Color.Transparent;
-            this.lblCartaP3.Location = new System.Drawing.Point(12, 18);
-            this.lblCartaP3.Name = "lblCartaP3";
-            this.lblCartaP3.Size = new System.Drawing.Size(14, 16);
-            this.lblCartaP3.TabIndex = 3;
-            this.lblCartaP3.Text = "0";
-            this.lblCartaP3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCartaP3.Visible = false;
             // 
             // lblParticipantes
             // 
@@ -2648,14 +2759,15 @@
             this.lblParticipantes.ForeColor = System.Drawing.Color.White;
             this.lblParticipantes.Location = new System.Drawing.Point(44, 25);
             this.lblParticipantes.Name = "lblParticipantes";
-            this.lblParticipantes.Size = new System.Drawing.Size(0, 16);
+            this.lblParticipantes.Size = new System.Drawing.Size(73, 16);
             this.lblParticipantes.TabIndex = 64;
+            this.lblParticipantes.Text = "Jogadores";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(270, 242);
+            this.label3.Location = new System.Drawing.Point(224, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 65;
@@ -2666,6 +2778,62 @@
             this.tmrVerificarVez.Interval = 5000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
+            // lblCartaP3
+            // 
+            this.lblCartaP3.AutoSize = true;
+            this.lblCartaP3.BackColor = System.Drawing.Color.Transparent;
+            this.lblCartaP3.Location = new System.Drawing.Point(11, 20);
+            this.lblCartaP3.Name = "lblCartaP3";
+            this.lblCartaP3.Size = new System.Drawing.Size(14, 16);
+            this.lblCartaP3.TabIndex = 3;
+            this.lblCartaP3.Text = "?";
+            this.lblCartaP3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlCartaP3
+            // 
+            this.pnlCartaP3.BackColor = System.Drawing.Color.White;
+            this.pnlCartaP3.Controls.Add(this.lblCartaP3);
+            this.pnlCartaP3.Location = new System.Drawing.Point(102, 18);
+            this.pnlCartaP3.MaximumSize = new System.Drawing.Size(38, 54);
+            this.pnlCartaP3.MinimumSize = new System.Drawing.Size(38, 54);
+            this.pnlCartaP3.Name = "pnlCartaP3";
+            this.pnlCartaP3.Size = new System.Drawing.Size(38, 54);
+            this.pnlCartaP3.TabIndex = 43;
+            this.pnlCartaP3.Visible = false;
+            // 
+            // pnlCartasMeio
+            // 
+            this.pnlCartasMeio.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCartasMeio.Controls.Add(this.pnlCartaP3);
+            this.pnlCartasMeio.Controls.Add(this.pnlCartaP4);
+            this.pnlCartasMeio.Controls.Add(this.pnlCartaP1);
+            this.pnlCartasMeio.Controls.Add(this.pnlCartaP2);
+            this.pnlCartasMeio.Location = new System.Drawing.Point(413, 186);
+            this.pnlCartasMeio.Name = "pnlCartasMeio";
+            this.pnlCartasMeio.Size = new System.Drawing.Size(238, 198);
+            this.pnlCartasMeio.TabIndex = 64;
+            this.pnlCartasMeio.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(659, 204);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "label6";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(746, 204);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 16);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "label15";
+            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2674,19 +2842,18 @@
             this.BackgroundImage = global::MagicTrick_Tirana.Properties.Resources.PartidaBack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 585);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblParticipantes);
-            this.Controls.Add(this.pnlCartaP3);
-            this.Controls.Add(this.pnlCartaP4);
-            this.Controls.Add(this.pnlCartaP2);
-            this.Controls.Add(this.pnlCartaP1);
             this.Controls.Add(this.lblQJogadores);
             this.Controls.Add(this.grbPlayer2);
             this.Controls.Add(this.grbPlayer4);
             this.Controls.Add(this.grbPlayer3);
             this.Controls.Add(this.grbPlayer1);
-            this.Controls.Add(this.btnComecar);
             this.Controls.Add(this.lblVersao2);
+            this.Controls.Add(this.pnlCartasMeio);
+            this.Controls.Add(this.btnComecar);
             this.DoubleBuffered = true;
             this.MaximumSize = new System.Drawing.Size(1070, 632);
             this.MinimumSize = new System.Drawing.Size(1070, 632);
@@ -2694,7 +2861,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Partida";
             this.pnlCartas.ResumeLayout(false);
-            this.pnlCartas.PerformLayout();
             this.pnlCarta13P1.ResumeLayout(false);
             this.pnlCarta13P1.PerformLayout();
             this.pnlCarta6P1.ResumeLayout(false);
@@ -2826,6 +2992,7 @@
             this.pnlCartaP4.PerformLayout();
             this.pnlCartaP3.ResumeLayout(false);
             this.pnlCartaP3.PerformLayout();
+            this.pnlCartasMeio.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2834,20 +3001,14 @@
         #endregion
         private System.Windows.Forms.Label lblPontos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblAposta;
         private System.Windows.Forms.Label lblVersao2;
         private System.Windows.Forms.Button btnComecar;
-        private System.Windows.Forms.Label lblAposta3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblPontosP3;
-        private System.Windows.Forms.Label lblAposta4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblPontosP4;
-        private System.Windows.Forms.Label lblAposta2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblPontoP2;
-        private System.Windows.Forms.Button btnJogar;
-        private System.Windows.Forms.Button btnApostar;
         private System.Windows.Forms.Label lblQJogadores;
         public System.Windows.Forms.Panel pnlCarta13P1;
         public System.Windows.Forms.Panel pnlCarta6P1;
@@ -2912,11 +3073,9 @@
         public System.Windows.Forms.Panel pnlCartaP1;
         public System.Windows.Forms.Panel pnlCartaP2;
         public System.Windows.Forms.Panel pnlCartaP4;
-        public System.Windows.Forms.Panel pnlCartaP3;
         public System.Windows.Forms.Label lblCartaP1;
         public System.Windows.Forms.Label lblCartaP2;
         public System.Windows.Forms.Label lblCartaP4;
-        public System.Windows.Forms.Label lblCartaP3;
         public System.Windows.Forms.GroupBox grbPlayer1;
         public System.Windows.Forms.ListBox lsbPlayer1;
         public System.Windows.Forms.GroupBox grbPlayer3;
@@ -2927,15 +3086,15 @@
         public System.Windows.Forms.ListBox lsbPlayer2;
         public System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblParticipantes;
-        public System.Windows.Forms.Label lblP1ValorCarta2;
-        public System.Windows.Forms.Label lblP1ValorCarta3;
+        public System.Windows.Forms.Label lblCarta2P1;
+        public System.Windows.Forms.Label lblCarta3P1;
         public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label lblP1ValorCarta1;
+        public System.Windows.Forms.Label lblCarta1P1;
         public System.Windows.Forms.Label lblP1ValorCarta13;
         public System.Windows.Forms.Label label40;
         public System.Windows.Forms.Label label42;
         public System.Windows.Forms.Label label41;
-        public System.Windows.Forms.Label lblP1ValorCarta6;
+        public System.Windows.Forms.Label lblCarta6P1;
         public System.Windows.Forms.Label label36;
         public System.Windows.Forms.Label label38;
         public System.Windows.Forms.Label label37;
@@ -2959,14 +3118,14 @@
         public System.Windows.Forms.Label label28;
         public System.Windows.Forms.Label label30;
         public System.Windows.Forms.Label label29;
-        public System.Windows.Forms.Label lblP1ValorCarta4;
+        public System.Windows.Forms.Label lblCarta4P1;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label lblP1ValorCarta9;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.Label label22;
         public System.Windows.Forms.Label label21;
-        public System.Windows.Forms.Label lblP1ValorCarta5;
+        public System.Windows.Forms.Label lblCarta5P1;
         public System.Windows.Forms.Label label32;
         public System.Windows.Forms.Label label34;
         public System.Windows.Forms.Label label33;
@@ -3026,5 +3185,16 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer tmrVerificarVez;
+        public System.Windows.Forms.Label lblCartaP3;
+        public System.Windows.Forms.Panel pnlCartaP3;
+        public System.Windows.Forms.Panel pnlCartasMeio;
+        private System.Windows.Forms.Button btnJogar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lblAposta;
+        public System.Windows.Forms.Label lblAposta3;
+        public System.Windows.Forms.Label lblAposta4;
+        public System.Windows.Forms.Label lblAposta2;
     }
 }
