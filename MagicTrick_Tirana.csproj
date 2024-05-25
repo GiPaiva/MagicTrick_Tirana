@@ -112,43 +112,43 @@
     <None Include="Partida\PartidaBack.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Paus1.png" />
+    <None Include="ImagensCartas\Paus1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Triângulo1.png" />
+    <None Include="ImagensCartas\Triângulo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Espadas1.png" />
+    <None Include="ImagensCartas\Espadas1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Estrela1.png" />
+    <None Include="ImagensCartas\Estrela1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Estrela2.png" />
+    <None Include="ImagensCartas\Estrela2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Lua1.png" />
+    <None Include="ImagensCartas\Lua1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Lua2.png" />
+    <None Include="ImagensCartas\Lua2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Ouros1.png" />
+    <None Include="ImagensCartas\Ouros1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Ouros2.png" />
+    <None Include="ImagensCartas\Ouros2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Paus2.png" />
+    <None Include="ImagensCartas\Paus2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Triângulo2.png" />
+    <None Include="ImagensCartas\Triângulo2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Copas1.png" />
+    <None Include="ImagensCartas\Copas1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cartas\Copas2.png" />
+    <None Include="ImagensCartas\Copas2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
