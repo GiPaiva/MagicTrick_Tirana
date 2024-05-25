@@ -103,6 +103,7 @@ namespace MagicTrick_Tirana
         {
             string jogadas = Jogo.ExibirJogadas2(IdPartida);
             label15.Text = jogadas;
+            //label15.Text = "";
             VerificarJogadasArray = t.TratarDadosEmArray(jogadas);
         }
 
@@ -117,7 +118,7 @@ namespace MagicTrick_Tirana
                     if (aux[0] == Convert.ToString(rodada))
                     {
                         VerificarJogadasNoRoundAtualArray.Add(s);
-                        label6.Text += s + "\n";
+                        //label6.Text += s + "\n";
                     }
                 }
 

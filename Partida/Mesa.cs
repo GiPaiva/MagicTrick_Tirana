@@ -38,6 +38,7 @@ namespace MagicTrick_Tirana
             btnComecar.Visible = false;
             MesaDistribuirMao(0);
             grbPlayer1.Visible = true;
+            bot = new BotZob(c.cartasDaGalera, idJogador);
         }
 
         private void MesaDistribuirMao(int k)
@@ -91,10 +92,12 @@ namespace MagicTrick_Tirana
         protected void MesaJogadorDaVez(string[] InfoRetorno)
         {
             string[] JogadorInfo = Jogador.Split(',');
+            idJogador = JogadorInfo[0];
 
             foreach (string itens in JogadoresAtuais)
             {
                 string[] infoJogador = itens.Split(',');
+
                 if (infoJogador[0] == InfoRetorno[1])
                 {
                     lblQJogadores.Text = "Jogador da Vez: " + infoJogador[1];
@@ -102,7 +105,6 @@ namespace MagicTrick_Tirana
                 if (InfoRetorno[1] == JogadorInfo[0])
                 {
                     vez = true;
-                    //ConsultarMao(0);
                 }
                 else
                 {
@@ -174,11 +176,11 @@ namespace MagicTrick_Tirana
 
             lblParticipantes.Visible = false;
 
-            label3.Text = "";
+            //label3.Text = "";
 
             foreach (string JogadoresAtuais in JogadoresAtuais)
             {
-                label3.Text += JogadoresAtuais + "\n";
+                //label3.Text += JogadoresAtuais + "\n";
 
                 string[] aux = JogadoresAtuais.Split(',');
                 posicaoDoJogador = c.localNaMesaCadaJogador[aux[0]];

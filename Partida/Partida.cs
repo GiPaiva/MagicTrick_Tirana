@@ -22,6 +22,8 @@ namespace MagicTrick_Tirana
         {
             lblVersao2.Text = Versao;
             IdPartida = Convert.ToInt32(PartidaAtual[0]);
+            DadosJogador = Jogador.Split(',');
+            idJogador = DadosJogador[0];
             VerficarJogadores();
         }
 
@@ -34,7 +36,7 @@ namespace MagicTrick_Tirana
             if (estado.Trim() == "J")
             {
                 VerificarVez();
-                tmrVerificarVez.Interval = 8000;
+                tmrVerificarVez.Interval = 6000;
             }
             else if (estado.Trim() == "F")
             {
@@ -54,16 +56,19 @@ namespace MagicTrick_Tirana
         private void btnJogar_Click_1(object sender, EventArgs e)
         {
             //IdJogador e Senha
-            string[] DadosJogador = Jogador.Split(',');
-            int IdJogador = Convert.ToInt32(DadosJogador[0]);
+            int IdJogador = Convert.ToInt32(idJogador);
+            string senha = DadosJogador[1];
+            resposta = bot.Jogar(VerificarJogadasArray, VerificarJogadasNoRoundAtualArray.ToArray());
 
             //IdJogador | senhaJogador | posição
             string list = lsbPlayer1.Text;
             string[] Dadoslist = list.Split('|');
 
             //Posição
-            int posicao = Convert.ToInt32(Dadoslist[0]);
-            string retorno = Jogo.Jogar(IdJogador, DadosJogador[1], posicao);
+            string[] aux = resposta.Split(',');
+            label3.Text = resposta;
+            int posicao = Convert.ToInt32(aux[0]);
+            string retorno = Jogo.Jogar(IdJogador, senha, posicao);
             lsbPlayer1.Text = "";
             if (!t.Error(retorno))
             {

@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bot\BotZob.cs" />
+    <Compile Include="Bot\JogadorInfo.cs" />
     <Compile Include="PacoteCartas\Cartas.cs" />
     <Compile Include="Partida\AtributosPatida.cs">
       <SubType>Form</SubType>
@@ -150,5 +152,6 @@
   <ItemGroup>
     <None Include="Cartas\Copas2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

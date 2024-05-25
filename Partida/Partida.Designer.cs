@@ -3189,12 +3189,12 @@
         public System.Windows.Forms.Panel pnlCartaP3;
         public System.Windows.Forms.Panel pnlCartasMeio;
         private System.Windows.Forms.Button btnJogar;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label lblAposta;
         public System.Windows.Forms.Label lblAposta3;
         public System.Windows.Forms.Label lblAposta4;
         public System.Windows.Forms.Label lblAposta2;
+        public System.Windows.Forms.Label label6;
     }
 }

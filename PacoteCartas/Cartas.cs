@@ -29,6 +29,7 @@ namespace MagicTrick_Tirana
         //Atributos
         string pasta_imagens = " ";
         bool preencher = true;
+        public Dictionary<string, List<string>> cartasDaGalera = new Dictionary<string, List<string>>();
 
         public Cartas(Partida partida)
         {
@@ -46,6 +47,8 @@ namespace MagicTrick_Tirana
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
             this.cartinhasDoJogadorAtual.Clear();
+            List<string> vamo = new List<string>();
+
 
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
@@ -59,7 +62,6 @@ namespace MagicTrick_Tirana
                     {
                         this.cartinhasDoJogadorAtual.Add(aux2[1], ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i));
                         listBoxes[i].Items.Add(aux2[1] + " | " + cartinhasDoJogadorAtual[aux2[1]][0]);
-
                     }
                     else
                     {
@@ -67,7 +69,13 @@ namespace MagicTrick_Tirana
                         ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i);
                     }
 
+                    vamo.Add(aux2[1] + "," + aux2[2]);
                 }
+            }
+
+            if (!cartasDaGalera.ContainsKey(aux[0]))
+            {
+                cartasDaGalera.Add(aux[0], vamo);
             }
 
             if (preencher)

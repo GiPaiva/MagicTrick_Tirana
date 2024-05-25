@@ -8,7 +8,7 @@ class Tratamento
 
     public bool Error(string msg)
     {
-        if(msg.Length > 4)
+        if(msg != null && msg.Length > 4)
         {
             if(msg.Substring(0, 4) == "ERRO" || msg.Substring(0, 4) == "Erro")
             {
