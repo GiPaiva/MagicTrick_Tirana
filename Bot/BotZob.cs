@@ -18,14 +18,14 @@ namespace MagicTrick_Tirana
 
         public BotZob(Dictionary<string, List<string>> cartas, string IdBot)
         {
-            foreach(var item in cartas)
+            foreach (var item in cartas)
             {
-                if(item.Value != null)
+                if (item.Value != null)
                 {
                     jogadoresInfos.Add(item.Key, new JogadorInfo(item.Key, item.Value));
                 }
-                
-                if(item.Key == IdBot)
+
+                if (item.Key == IdBot)
                 {
                     this.quantidadeDeCartasNaMao = item.Value.Count();
                 }
@@ -34,7 +34,7 @@ namespace MagicTrick_Tirana
             this.Id = IdBot;
         }
 
-        string[] possibilidades = {};
+        string[] possibilidades = { };
 
         public string Jogar(string[] Jogadas, string[] JogadasAtuais)
         {
@@ -127,17 +127,17 @@ namespace MagicTrick_Tirana
                 // Remover a carta jogada da mão do jogador
                 if (jogadoresInfos.ContainsKey(aux[1]))
                 {
-                    foreach(string item in jogadoresInfos[Id].Cartas)
+                    foreach (string item in jogadoresInfos[Id].Cartas)
                     {
-                        if(item == juncao)
+                        if (item == juncao)
                         {
                             jogadoresInfos[Id].Cartas.Remove(item);
                             break;
                         }
-                        
+
                         partida.label6.Text += item + "\n";
                     }
-                    if(Id == aux[1])
+                    if (Id == aux[1])
                     {
                         quantidadeDeCartasNaMao--;
                     }
