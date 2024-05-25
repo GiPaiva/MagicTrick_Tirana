@@ -50,32 +50,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cartas.cs" />
-    <Compile Include="Lobby.cs" />
-    <Compile Include="Partida.cs">
+    <Compile Include="PacoteCartas\Cartas.cs" />
+    <Compile Include="Partida\AtributosPatida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Partida.Designer.cs">
+    <Compile Include="Menu\Lobby.cs" />
+    <Compile Include="Partida\Mesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partida\Partida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partida\Partida.Designer.cs">
       <DependentUpon>Partida.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tratamento.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Menu\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Menu\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Partida\Verificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Menu\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Partida.resx">
+    <EmbeddedResource Include="Partida\Partida.resx">
       <DependentUpon>Partida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -97,10 +106,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Magic.png" />
+    <None Include="Menu\Magic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PartidaBack.png" />
+    <None Include="Partida\PartidaBack.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Cartas\Paus1.png" />

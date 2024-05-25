@@ -14,18 +14,20 @@ namespace MagicTrick_Tirana
 {
     class Cartas
     {
-        string pasta_imagens = "";
+        //Instancias
+        Partida p;
 
+        //Dicionarios
         public Dictionary<string, int> TemplocalNaMesaCadaJogador = new Dictionary<string, int>();
         public Dictionary<string, int> localNaMesaCadaJogador = new Dictionary<string, int>();
         public Dictionary<string, string> NaipesDasCrtasEImagens = new Dictionary<string, string>();
-
         public Dictionary<string, string[]> cartinhasDoJogadorAtual = new Dictionary<string, string[]>();
-        
+
+        //Listas
         public List<List<Panel>> panelsDasCartasDeCadaJogador = new List<List<Panel>>();
-
-        Partida p;
-
+        
+        //Atributos
+        string pasta_imagens = " ";
         bool preencher = true;
 
         public Cartas(Partida partida)
@@ -89,7 +91,7 @@ namespace MagicTrick_Tirana
 
             string[] aux = new string[2];
             int imagemPosicao = 0;
-            pasta_imagens = Path.Combine(Application.StartupPath, "Cartas/");
+            pasta_imagens = Path.Combine(Application.StartupPath, "../../ImagensCartas/");
 
             if (!NaipesDasCrtasEImagens.ContainsKey("C"))
             {
@@ -135,15 +137,6 @@ namespace MagicTrick_Tirana
             List<Label> labelCartasMeio = new List<Label> { p.lblCartaP1, p.lblCartaP2, p.lblCartaP3, p.lblCartaP4 };
 
             p.pnlCartasMeio.Visible = true;
-
-            //List<Control> controls = new List<Control>();
-
-            //foreach (Control control in p.pnlCartasMeio.Controls)
-            //{
-            //    controls.Add(control);
-            //}
-
-            //int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
 
             panelCartasMeio[posicaoDoJogador].BackgroundImage = Image.FromFile(pasta_imagens + NaipesDasCrtasEImagens[naipe]);
             panelCartasMeio[posicaoDoJogador].BackgroundImageLayout = ImageLayout.Stretch;
