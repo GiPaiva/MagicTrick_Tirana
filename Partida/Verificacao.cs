@@ -43,6 +43,7 @@ namespace MagicTrick_Tirana
                 if (VerificarJogadasArray[0] == "" && !primeiraVez)
                 {
                     LimparAMesa();
+                    bot.BotZobNovaRodada(c.cartasDaGalera, idJogador);
                 }
                 primeiraVez = false;
             }

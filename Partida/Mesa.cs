@@ -19,7 +19,7 @@ namespace MagicTrick_Tirana
             apostar = true;
         }
 
-        public void MesaComercar()
+        public void MesaComecar()
         {
             string[] DadosJogador = Jogador.Split(',');
             int IdJogador = Convert.ToInt32(DadosJogador[0]);

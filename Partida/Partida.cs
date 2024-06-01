@@ -50,7 +50,7 @@ namespace MagicTrick_Tirana
 
         private void btnComecar_Click(object sender, EventArgs e)
         {
-            MesaComercar();
+            MesaComecar();
             estado = "J";
         }
 

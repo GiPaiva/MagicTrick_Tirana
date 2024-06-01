@@ -12,7 +12,6 @@ namespace MagicTrick_Tirana
         public Dictionary<string, JogadorInfo> jogadoresInfos = new Dictionary<string, JogadorInfo>();
         JogadorInfo jogador;
         private string Id = "";
-        //private string Id = "idDoJogador";
         int quantidadeDeCartasNaMao = 0;
         Partida partida = new Partida();
 
@@ -34,6 +33,26 @@ namespace MagicTrick_Tirana
             this.Id = IdBot;
         }
 
+        public void BotZobNovaRodada(Dictionary<string, List<string>> cartas, string IdBot)
+        {
+            jogadoresInfos.Clear();
+
+            foreach (var item in cartas)
+            {
+                if (item.Value != null)
+                {
+                    jogadoresInfos.Add(item.Key, new JogadorInfo(item.Key, item.Value));
+                }
+
+                if (item.Key == IdBot)
+                {
+                    this.quantidadeDeCartasNaMao = item.Value.Count();
+                }
+            }
+
+            this.Id = IdBot; //só ta vindo duas cartas na segunda rodada
+        }
+
         string[] possibilidades = { };
 
         public string Jogar(string[] Jogadas, string[] JogadasAtuais)
@@ -42,7 +61,7 @@ namespace MagicTrick_Tirana
             int opcao = 1;
             string cartaAJogar = "";
 
-            AtualizarCartasMao(JogadasAtuais);
+            AtualizarCartasMao(Jogadas);
 
             if (JogadasAtuais.Length == 0 || JogadasAtuais[0] == "")
             {
@@ -82,7 +101,7 @@ namespace MagicTrick_Tirana
                 else
                 {
                     opcao--;
-                    cartaAJogar = ConferirCarta(jogadoresInfos[Id], opcao);
+                    cartaAJogar = ConferirCarta(jogadoresInfos[Id].Cartas.ToArray(), opcao);
                 }
             }
 
@@ -113,33 +132,37 @@ namespace MagicTrick_Tirana
             return cartaAJogar;
         }
 
-
         private void AtualizarCartasMao(string[] JogadasAtuais)
         {
             // Suponha que `JogadasAtuais` contenha as cartas jogadas na rodada atual
             // Atualiza as cartas na mão do jogador com base nas jogadas feitas
-
-            foreach (var jogada in JogadasAtuais)
+            if (JogadasAtuais.Length != 0)
             {
-                string[] aux = jogada.Split(',');
-                string juncao = aux[4] + "," + aux[2];
-
-                // Remover a carta jogada da mão do jogador
-                if (jogadoresInfos.ContainsKey(aux[1]))
+                if(JogadasAtuais[0] != "")
                 {
-                    foreach (string item in jogadoresInfos[Id].Cartas)
+                    foreach (var jogada in JogadasAtuais)
                     {
-                        if (item == juncao)
-                        {
-                            jogadoresInfos[Id].Cartas.Remove(item);
-                            break;
-                        }
+                        string[] aux = jogada.Split(',');
+                        string juncao = aux[4] + "," + aux[2];
 
-                        partida.label6.Text += item + "\n";
-                    }
-                    if (Id == aux[1])
-                    {
-                        quantidadeDeCartasNaMao--;
+                        // Remover a carta jogada da mão do jogador
+                        if (jogadoresInfos.ContainsKey(aux[1]))
+                        {
+                            foreach (string item in jogadoresInfos[aux[1]].Cartas)
+                            {
+                                if (item == juncao)
+                                {
+                                    jogadoresInfos[aux[1]].Cartas.Remove(item);
+                                    break;
+                                }
+
+                                partida.label6.Text += item + "\n";
+                            }
+                            if (Id == aux[1])
+                            {
+                                quantidadeDeCartasNaMao--;
+                            }
+                        }
                     }
                 }
             }
@@ -147,6 +170,9 @@ namespace MagicTrick_Tirana
 
         private string ConferirCarta(string[] cartas, int opcao)
         {
+            if (opcao == -1) opcao++;
+            if (opcao == 0) opcao++;
+
             // Conferir uma carta com base na opção fornecida
             return cartas[cartas.Length - opcao];
 
@@ -179,7 +205,7 @@ namespace MagicTrick_Tirana
         private bool TemONaipe(string[] jogadasAtuais)
         {
             // Definir o array `possibilidades` e retornar true se houver cartas com o naipe requerido
-            string[] dadosJogadasAtuais0 = jogadasAtuais[0].Split(',');
+            string[] dadosJogadasAtuais0 = jogadasAtuais[jogadasAtuais.Length - 1].Split(',');
             string naipeRequerido = dadosJogadasAtuais0[2];
             List<string> poss = new List<string>();
 
@@ -196,7 +222,6 @@ namespace MagicTrick_Tirana
                     }
                 }
             }
-
             possibilidades = poss.ToArray();
             return poss.Count > 0;
         }

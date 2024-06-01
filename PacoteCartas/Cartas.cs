@@ -49,7 +49,6 @@ namespace MagicTrick_Tirana
             this.cartinhasDoJogadorAtual.Clear();
             List<string> vamo = new List<string>();
 
-
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
                 string[] aux2 = DadosConsultarMao[j].Split(',');
@@ -174,6 +173,5 @@ namespace MagicTrick_Tirana
                 label.Text = "?";
             }
         }
-
     }
 }
