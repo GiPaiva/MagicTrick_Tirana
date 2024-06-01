@@ -10,7 +10,7 @@ namespace MagicTrick_Tirana
     class BotZob
     {
         public Dictionary<string, JogadorInfo> jogadoresInfos = new Dictionary<string, JogadorInfo>();
-        JogadorInfo jogador;
+        //JogadorInfo jogador;
         private string Id = "";
         int quantidadeDeCartasNaMao = 0;
         Partida partida = new Partida();

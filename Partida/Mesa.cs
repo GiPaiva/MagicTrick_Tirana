@@ -13,6 +13,7 @@ namespace MagicTrick_Tirana
         public void LimparAMesa()
         {
             c.LimparAsCartas();
+            c.cartasDaGalera.Clear();
             MesaDistribuirMao(0);
             RetirarCartasDoMeioDaMesa();
             primeiraVez = true;
@@ -105,7 +106,7 @@ namespace MagicTrick_Tirana
                 }
                 if (InfoRetorno[1] == JogadorInfo[0])
                 {
-                    vez = true;
+                    vez = true; //voce eh um vagabundo miseravel, te odeio, que saco saqueuowefkgkrek,g
                 }
                 else
                 {

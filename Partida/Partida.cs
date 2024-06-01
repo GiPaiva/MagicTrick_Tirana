@@ -37,7 +37,7 @@ namespace MagicTrick_Tirana
             if (estado.Trim() == "J")
             {
                 VerificarVez();
-                tmrVerificarVez.Interval = 6000;
+                tmrVerificarVez.Interval = 5000;
             }
             else if (estado.Trim() == "F")
             {
@@ -59,7 +59,43 @@ namespace MagicTrick_Tirana
             //IdJogador e Senha
             int IdJogador = Convert.ToInt32(idJogador);
             string senha = DadosJogador[1];
-            resposta = bot.Jogar(VerificarJogadasArray, VerificarJogadasNoRoundAtualArray.ToArray());
+
+            //IdJogador | senhaJogador | posição
+            string list = lsbPlayer1.Text;
+            string[] Dadoslist = list.Split('|');
+
+            //Posição
+            string[] aux = resposta.Split(',');
+            label3.Text = resposta;
+            int posicao = Convert.ToInt32(aux[0]);
+            string retorno = Jogo.Jogar(IdJogador, senha, posicao);
+            lsbPlayer1.Text = "";
+            if (!t.Error(retorno))
+            {
+                //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
+
+                if (apostar)
+                {
+                    DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
+                    if (decisao == DialogResult.Yes)
+                    {
+                        MesaApostar();
+                        apostar = false;
+                    }
+                    else
+                    {
+                        _ = Jogo.Apostar(IdJogador, DadosJogador[1], 0);
+                        //MessageBox.Show("Pulou aposta", "", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+
+        private void Jogar()
+        {
+            //IdJogador e Senha
+            int IdJogador = Convert.ToInt32(idJogador);
+            string senha = DadosJogador[1];
 
             //IdJogador | senhaJogador | posição
             string list = lsbPlayer1.Text;

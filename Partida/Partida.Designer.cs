@@ -227,6 +227,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.tmrDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlCartas.SuspendLayout();
             this.pnlCarta13P1.SuspendLayout();
             this.pnlCarta6P1.SuspendLayout();
@@ -2845,6 +2846,10 @@
             this.label23.TabIndex = 68;
             this.label23.Text = "label23";
             // 
+            // tmrDelay
+            // 
+            this.tmrDelay.Interval = 5000;
+            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3209,5 +3214,6 @@
         public System.Windows.Forms.Label lblAposta2;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Timer tmrDelay;
     }
 }

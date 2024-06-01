@@ -35,7 +35,6 @@ namespace MagicTrick_Tirana
         protected List<string> VerificarJogadasNoRoundAtualArray = new List<string>();
         protected Dictionary<string, List<string>> cartasDaGalera = new Dictionary<string, List<string>>();
         protected string[] DadosJogador = {};
-        
 
         //Ints
         public int rodada = 0;

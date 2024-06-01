@@ -47,7 +47,7 @@ namespace MagicTrick_Tirana
             groupBoxes[i].Text = aux[1];
             listBoxes[i].Items.Add("Posição | Naipe");
             this.cartinhasDoJogadorAtual.Clear();
-            List<string> vamo = new List<string>();
+            List<string> tempCartasNaMao = new List<string>(); //qq vamo faz? kkkkkk
 
             for (int j = 0; j < DadosConsultarMao.Length; j++)
             {
@@ -68,13 +68,13 @@ namespace MagicTrick_Tirana
                         ImagemCartasJogador(aux2[2], Convert.ToInt32(aux2[1]), i);
                     }
 
-                    vamo.Add(aux2[1] + "," + aux2[2]);
+                    tempCartasNaMao.Add(aux2[1] + "," + aux2[2]);
                 }
             }
 
             if (!cartasDaGalera.ContainsKey(aux[0]))
             {
-                cartasDaGalera.Add(aux[0], vamo);
+                cartasDaGalera.Add(aux[0], tempCartasNaMao);
             }
 
             if (preencher)

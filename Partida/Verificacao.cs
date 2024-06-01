@@ -21,6 +21,13 @@ namespace MagicTrick_Tirana
             string[] InfoRetorno = DadosRetornoVez[0].Split(',');
             estado = InfoRetorno[0];
             rodada = Convert.ToInt32(InfoRetorno[2]);
+            
+            if (vez)
+            {
+                resposta = bot.Jogar(VerificarJogadasArray, VerificarJogadasNoRoundAtualArray.ToArray()); 
+                Jogar();
+                vez = false;
+            }
 
             if (alteracao != retorno && InfoRetorno[3] == "C")
             {
@@ -28,7 +35,7 @@ namespace MagicTrick_Tirana
 
                 Pontos();
                 HouveAposta(DadosRetornoVez);
-                MesaJogadorDaVez(InfoRetorno);
+
 
                 if (DadosRetornoVez.Length > 1)
                 {
@@ -38,6 +45,7 @@ namespace MagicTrick_Tirana
 
                 VerificarJogadas(IdPartida);
                 VerificarJogadasNoRoundAtual();
+                MesaJogadorDaVez(InfoRetorno);
 
                 //Se o round acabou, limpar a mesa se VerificarJogadasArray estiver vazio e não for a primeira vez
                 if (VerificarJogadasArray[0] == "" && !primeiraVez)
