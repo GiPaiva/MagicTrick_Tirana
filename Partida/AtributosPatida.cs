@@ -41,6 +41,7 @@ namespace MagicTrick_Tirana
         public int IdPartida;
         protected int posicaoDoJogador = 0;
         protected int cartasJogadas;
+        protected int pontos = 0;
 
         //Bool
         protected bool primeiraVez = true;

@@ -82,16 +82,24 @@ namespace MagicTrick_Tirana
             }
         }
 
-        private void MesaApostar()
-        {
-            if (lsbPlayer1.SelectedItem == null)
-            {
-                //MessageBox.Show($"Selecione uma carta", "Apostar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+        private void MesaApostar(string posicaoResposta)
+        {           
+            List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
+            string[] DadosJogador = Jogador.Split(',');
+
+            string list = lsbPlayer1.Text;
+            string[] Dadoslist = list.Split('|');
+
+            //Posição
+            int posicao = Convert.ToInt32(posicaoResposta);
+            int IdJogador = Convert.ToInt32(DadosJogador[0]);
+
+            string retorno = Jogo.Apostar(IdJogador, DadosJogador[1], posicao);
+            posicaoDoJogador = c.localNaMesaCadaJogador[Convert.ToString(IdJogador)];
+            labels[posicaoDoJogador].Text = retorno;
         }
 
-
-        protected void MesaJogadorDaVez(string[] InfoRetorno)
+            protected void MesaJogadorDaVez(string[] InfoRetorno)
         {
             string[] JogadorInfo = Jogador.Split(',');
             idJogador = JogadorInfo[0];
@@ -189,6 +197,10 @@ namespace MagicTrick_Tirana
 
                 PontosTotais[posicaoDoJogador].Text = aux[2];
                 PontosRodada[posicaoDoJogador].Text = aux[3];
+                if (aux[0] == idJogador)
+                {
+                    pontos = Convert.ToInt32(aux[3]);
+                }
             }
         }
     }

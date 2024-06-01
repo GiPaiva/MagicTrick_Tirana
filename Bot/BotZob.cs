@@ -104,18 +104,27 @@ namespace MagicTrick_Tirana
                     cartaAJogar = ConferirCarta(jogadoresInfos[Id].Cartas.ToArray(), opcao);
                 }
             }
-
+          
+            foreach (string item in jogadoresInfos[Id].Cartas)
+            {
+                if (item == cartaAJogar)
+                {
+                    jogadoresInfos[Id].Cartas.Remove(item);
+                    break;
+                }
+            }
+            
             return cartaAJogar;
         }
-
+        /*
         public string Apostar(int pontos, string[] Jogadas)
         {
             int opcao = 0;
-            string cartaAJogar = "";
+            string cartaAJogar = "";         
 
             if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
             {
-                //Joga menor carta
+                //Joga menor carta  Zocbi
                 opcao = jogadoresInfos[Id].Cartas.Count();
             }
             else if (pontos >= 2 && pontos <= 4)
@@ -130,6 +139,46 @@ namespace MagicTrick_Tirana
             }
             cartaAJogar = ConferirCarta(jogadoresInfos[Id], opcao);
             return cartaAJogar;
+        }*/
+        public string Apostar(int pontos, string[] Jogadas)
+        {
+            int opcao = 0;
+            string escolha = "0";
+
+            if (jogadoresInfos[Id].Cartas.Count() == 1)
+            {
+                return ConferirCarta(jogadoresInfos[Id], opcao);                 
+            } 
+            else if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
+            {
+                //Joga menor carta  
+                opcao = jogadoresInfos[Id].Cartas.Count();
+                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+            }
+            else if (pontos >= 2 && pontos <= 4)
+            {
+                //Joga a carta do meio
+                opcao = jogadoresInfos[Id].Cartas.Count() / 2;
+                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+            }
+            else if (pontos > 4)
+            {
+                //Joga a maior carta
+                opcao = 1;
+                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+            }
+            foreach (string item in jogadoresInfos[Id].Cartas)
+            {
+                if (item == escolha)
+                {
+                    jogadoresInfos[Id].Cartas.Remove(item);
+                    break;
+                }
+
+                partida.label6.Text += item + "\n";
+            }
+            return escolha;
+            
         }
 
         private void AtualizarCartasMao(string[] JogadasAtuais)
