@@ -50,11 +50,11 @@ namespace MagicTrick_Tirana
             VerificacaoDeCartasNaMesa(InfoRetorno, IdPartida);
         }
 
-        public void VerficarJogadores()
+        public void VerificarJogadores()
         {
             int quantidade = 0;
 
-            lobby.LobbyListarJogadores2(PartidaSelecionada);
+            lobby.LobbyListarJogadores2(PartidaSelecionada, "1");
 
             lblQJogadores.Visible = true;
 
@@ -73,7 +73,7 @@ namespace MagicTrick_Tirana
         {
             int maior = 0;
             int i = 0;
-            VerficarJogadores();
+            VerificarJogadores();
             foreach (string JogadoresAtuais in JogadoresAtuais)
             {
                 string[] aux = JogadoresAtuais.Split(',');

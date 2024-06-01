@@ -226,6 +226,7 @@
             this.pnlCartasMeio = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.pnlCartas.SuspendLayout();
             this.pnlCarta13P1.SuspendLayout();
             this.pnlCarta6P1.SuspendLayout();
@@ -2834,6 +2835,16 @@
             this.label15.TabIndex = 67;
             this.label15.Text = "label15";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(221, 242);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 16);
+            this.label23.TabIndex = 68;
+            this.label23.Text = "label23";
+            // 
             // Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2842,6 +2853,7 @@
             this.BackgroundImage = global::MagicTrick_Tirana.Properties.Resources.PartidaBack;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 585);
+            this.Controls.Add(this.label23);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -3196,5 +3208,6 @@
         public System.Windows.Forms.Label lblAposta4;
         public System.Windows.Forms.Label lblAposta2;
         public System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label23;
     }
 }

@@ -39,6 +39,7 @@ namespace MagicTrick_Tirana
             MesaDistribuirMao(0);
             grbPlayer1.Visible = true;
             bot = new BotZob(c.cartasDaGalera, idJogador);
+            label23.Text = PartidaSelecionada;
         }
 
         private void MesaDistribuirMao(int k)

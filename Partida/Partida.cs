@@ -24,14 +24,15 @@ namespace MagicTrick_Tirana
             IdPartida = Convert.ToInt32(PartidaAtual[0]);
             DadosJogador = Jogador.Split(',');
             idJogador = DadosJogador[0];
-            VerficarJogadores();
+            label23.Text = PartidaSelecionada;
+            VerificarJogadores();
         }
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             tmrVerificarVez.Enabled = false;
 
-            VerficarJogadores();
+            VerificarJogadores();
 
             if (estado.Trim() == "J")
             {
