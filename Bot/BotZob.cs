@@ -1,6 +1,8 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Schema;
@@ -10,7 +12,6 @@ namespace MagicTrick_Tirana
     class BotZob
     {
         public Dictionary<string, JogadorInfo> jogadoresInfos = new Dictionary<string, JogadorInfo>();
-        //JogadorInfo jogador;
         private string Id = "";
         int quantidadeDeCartasNaMao = 0;
         Partida partida = new Partida();
@@ -36,7 +37,6 @@ namespace MagicTrick_Tirana
         public void BotZobNovaRodada(Dictionary<string, List<string>> cartas, string IdBot)
         {
             jogadoresInfos.Clear();
-
             foreach (var item in cartas)
             {
                 if (item.Value != null)
@@ -55,7 +55,7 @@ namespace MagicTrick_Tirana
 
         string[] possibilidades = { };
 
-        public string Jogar(string[] Jogadas, string[] JogadasAtuais)
+        public string Jogar(string[] Jogadas)
         {
             //bool res;
             int opcao = 1;
@@ -63,7 +63,9 @@ namespace MagicTrick_Tirana
 
             AtualizarCartasMao(Jogadas);
 
-            if (JogadasAtuais.Length == 0 || JogadasAtuais[0] == "")
+            bool primeirajogadadoRound = VerificarSeÉAPrimeiraJogada(Jogadas);
+
+            if (Jogadas.Length == 0 || Jogadas[0] == "" || primeirajogadadoRound)
             {
                 // Você é o primeiro a jogar
                 //do
@@ -84,11 +86,11 @@ namespace MagicTrick_Tirana
                 // Você não é o primeiro
 
                 // Tem o Naipe verifica se dentro das cartas do jogador tem o naipe requerido (o primeiro naipe jogado na partida), setando uma variável local (string[] possibilidades) e devolvendo se é true (caso possibilidades.Length > 0) ou false
-                if (TemONaipe(JogadasAtuais))
+                if (TemONaipe(Jogadas))
                 {
                     // Examinar Jogadas verifica se uma carta master (7 do primeiro naipe ou um coração) foi jogada, caso não return true (ou seja, possível ganhar)
                     // NaipesTodosIguais verifica se a cartas jogadas têm todas o mesmo naipe, caso sim true
-                    if (!ExaminarJogadas(JogadasAtuais) && NaipesTodosIguais(JogadasAtuais))
+                    if (!ExaminarJogadas(Jogadas) && NaipesTodosIguais(Jogadas))
                     {
                         opcao--;
                     }
@@ -116,30 +118,31 @@ namespace MagicTrick_Tirana
             
             return cartaAJogar;
         }
-        /*
-        public string Apostar(int pontos, string[] Jogadas)
-        {
-            int opcao = 0;
-            string cartaAJogar = "";         
 
-            if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
+        private bool VerificarSeÉAPrimeiraJogada(string[] Jogadas)
+        {
+            string[] dadosJogadasAtuais0 = Jogadas[Jogadas.Length - 1].Split(',');
+            string rodadaAtual = dadosJogadasAtuais0[0];
+            int contador = 0;
+
+            if (Jogadas.Length > 1)
             {
-                //Joga menor carta  Zocbi
-                opcao = jogadoresInfos[Id].Cartas.Count();
+                foreach (string rodadasAtuias in Jogadas)
+                {
+                    string[] auxiliar = rodadasAtuias.Split(',');
+                    if (auxiliar[0] == rodadaAtual)
+                    {
+                        contador++;
+                    }
+                }
+                if (contador == jogadoresInfos.Count())
+                {
+                    return true;
+                }
             }
-            else if (pontos >= 2 && pontos <= 4)
-            {
-                //Joga a carta do meio
-                opcao = jogadoresInfos[Id].Cartas.Count() / 2;
-            }
-            else if (pontos > 4)
-            {
-                //Joga a maior carta
-                opcao--;
-            }
-            cartaAJogar = ConferirCarta(jogadoresInfos[Id], opcao);
-            return cartaAJogar;
-        }*/
+            return false;
+        }
+
         public string Apostar(int pontos, string[] Jogadas)
         {
             int opcao = 0;
@@ -255,7 +258,24 @@ namespace MagicTrick_Tirana
         {
             // Definir o array `possibilidades` e retornar true se houver cartas com o naipe requerido
             string[] dadosJogadasAtuais0 = jogadasAtuais[jogadasAtuais.Length - 1].Split(',');
+            string rodadaAtual = dadosJogadasAtuais0[0];
             string naipeRequerido = dadosJogadasAtuais0[2];
+            bool primeirajogadadoRound = true;
+
+            if(jogadasAtuais.Length > 1)
+            {
+
+                foreach (string rodadasAtuias in jogadasAtuais)
+                {
+                    string[] auxiliar = rodadasAtuias.Split(',');
+                    if (auxiliar[0] == rodadaAtual && primeirajogadadoRound)
+                    {
+                        naipeRequerido = auxiliar[2];
+                        primeirajogadadoRound = false;
+                    }
+                }
+            }
+
             List<string> poss = new List<string>();
 
             JogadorInfo jogadorInfo = jogadoresInfos[Id];

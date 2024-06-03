@@ -14,7 +14,7 @@ namespace MagicTrick_Tirana
         {
             c.LimparAsCartas();
             c.cartasDaGalera.Clear();
-            MesaDistribuirMao(0);
+            MesaDistribuirMao();
             RetirarCartasDoMeioDaMesa();
             primeiraVez = true;
             apostar = true;
@@ -37,48 +37,30 @@ namespace MagicTrick_Tirana
             }
             estado = "J";
             btnComecar.Visible = false;
-            MesaDistribuirMao(0);
+            MesaDistribuirMao();
             grbPlayer1.Visible = true;
             bot = new BotZob(c.cartasDaGalera, idJogador);
             label23.Text = PartidaSelecionada;
         }
 
-        private void MesaDistribuirMao(int k)
+        private void MesaDistribuirMao()
         {
             string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
             string[] DadosConsultarMao = t.TratarDadosEmArray(retorno);
 
             string[] DadosJogador = Jogador.Split(',');
-            MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais, k);
+            MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
         }
 
-        public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais, int k)
+        public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
         {
-            bool primeiro = true;
             c.localNaMesaCadaJogador.Clear();
-            for (int i = 0; i < JogadoresAtuais.Length; i++)
+            int i = 0;
+            foreach(string idJogador in JogadoresAtuais)
             {
                 string[] aux = JogadoresAtuais[i].Split(',');
-
-                if (aux[0] != idDoJogador)
-                {
-                    if (i == 0)
-                    {
-                        i++;
-                        primeiro = false;
-                    }
-
-                    c.MostrarCartas(aux, DadosConsultarMao, i, "player");
-
-                    if (!primeiro)
-                    {
-                        i--;
-                    }
-                }
-                else
-                {
-                    c.MostrarCartas(aux, DadosConsultarMao, 0, idDoJogador);
-                }
+                c.MostrarCartas(aux, DadosConsultarMao, i, idJogador);
+                i++;
             }
         }
 
@@ -99,7 +81,7 @@ namespace MagicTrick_Tirana
             labels[posicaoDoJogador].Text = retorno;
         }
 
-            protected void MesaJogadorDaVez(string[] InfoRetorno)
+        protected void MesaJogadorDaVez(string[] InfoRetorno)
         {
             string[] JogadorInfo = Jogador.Split(',');
             idJogador = JogadorInfo[0];

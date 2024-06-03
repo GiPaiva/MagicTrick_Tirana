@@ -37,7 +37,7 @@ namespace MagicTrick_Tirana
             if (estado.Trim() == "J")
             {
                 VerificarVez();
-                tmrVerificarVez.Interval = 4000;
+                tmrVerificarVez.Interval = 2000;
             }
             else if (estado.Trim() == "F")
             {
@@ -79,7 +79,7 @@ namespace MagicTrick_Tirana
                     DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
                     if (decisao == DialogResult.Yes)
                     {
-                      //  MesaApostar();
+                        //  MesaApostar();
                         apostar = false;
                     }
                     else
@@ -112,7 +112,7 @@ namespace MagicTrick_Tirana
                 //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
 
                 if (apostar)
-                {                    
+                {
                     resposta = bot.Apostar(pontos, VerificarJogadasArray);
                     string[] splitResposta = resposta.Split(',');
                     if (splitResposta[0] != "0")
@@ -157,7 +157,7 @@ namespace MagicTrick_Tirana
             labels[posicaoDoJogador].Text = retorno;
             //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);,
             //ConsultarMao();
-            
+
         }
     }
 }

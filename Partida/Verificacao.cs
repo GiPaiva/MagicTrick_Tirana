@@ -24,7 +24,7 @@ namespace MagicTrick_Tirana
             
             if (vez)
             {
-                resposta = bot.Jogar(VerificarJogadasArray, VerificarJogadasNoRoundAtualArray.ToArray()); 
+                resposta = bot.Jogar(VerificarJogadasArray); 
                 Jogar();
                 vez = false;
             }
