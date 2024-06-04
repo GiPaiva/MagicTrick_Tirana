@@ -96,7 +96,7 @@ namespace MagicTrick_Tirana
                 }
                 if (InfoRetorno[1] == JogadorInfo[0])
                 {
-                    vez = true; //voce eh um vagabundo miseravel, te odeio, que saco saqueuowefkgkrek,g
+                    vez = true;
                 }
                 else
                 {
@@ -146,7 +146,6 @@ namespace MagicTrick_Tirana
         {
             List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
 
-            //string[] InfoRetornoJogada = DadosRetornoVez[DadosRetornoVez.Length - 1].Split(',');
             foreach (string item in DadosRetornoVez)
             {
                 string[] aux = item.Split(':');
@@ -168,12 +167,8 @@ namespace MagicTrick_Tirana
 
             lblParticipantes.Visible = false;
 
-            //label3.Text = "";
-
             foreach (string JogadoresAtuais in JogadoresAtuais)
             {
-                //label3.Text += JogadoresAtuais + "\n";
-
                 string[] aux = JogadoresAtuais.Split(',');
                 posicaoDoJogador = c.localNaMesaCadaJogador[aux[0]];
 

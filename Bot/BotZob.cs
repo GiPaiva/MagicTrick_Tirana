@@ -50,17 +50,15 @@ namespace MagicTrick_Tirana
                 }
             }
 
-            this.Id = IdBot; //só ta vindo duas cartas na segunda rodada
+            this.Id = IdBot;
         }
 
         string[] possibilidades = { };
-        /* Code 1 
+
+        /*Code 2*/
         public string Jogar(string[] Jogadas)
         {
-            //bool res;
-            int opcao = 1;
             string cartaAJogar = "";
-
             AtualizarCartasMao(Jogadas);
 
             bool primeirajogadadoRound = VerificarSeÉAPrimeiraJogada(Jogadas);
@@ -68,118 +66,53 @@ namespace MagicTrick_Tirana
             if (Jogadas.Length == 0 || Jogadas[0] == "" || primeirajogadadoRound)
             {
                 // Você é o primeiro a jogar
-                //do
-                //{
-                opcao--;
-
-                // Conferir Cartas, pega a carta possível retornando o naipe e sua posição
-                cartaAJogar = ConferirCarta(jogadoresInfos[Id], opcao);
-
-                //    // Examinar Escolha verifica se a carta selecionada é boa, com base em parâmetros como pontos e se todos têm o naipe
-                //    //res = ExaminarEscolha(cartaAJogar);
-
-                //} while (!res);
-
+                cartaAJogar = JogarCartaMaisBaixa(jogadoresInfos[Id].Cartas);
             }
             else
             {
                 // Você não é o primeiro
-
-                // Tem o Naipe verifica se dentro das cartas do jogador tem o naipe requerido (o primeiro naipe jogado na partida), setando uma variável local (string[] possibilidades) e devolvendo se é true (caso possibilidades.Length > 0) ou false
+                // Tem o Naipe verifica se dentro das cartas do jogador tem o naipe requerido
                 if (TemONaipe(Jogadas))
                 {
-                    // Examinar Jogadas verifica se uma carta master (7 do primeiro naipe ou um coração) foi jogada, caso não return true (ou seja, possível ganhar)
-                    // NaipesTodosIguais verifica se a cartas jogadas têm todas o mesmo naipe, caso sim true
-                    if (!ExaminarJogadas(Jogadas) && NaipesTodosIguais(Jogadas))
-                    {
-                        opcao--;
-                    }
-                    else
-                    {
-                        opcao = possibilidades.Length;
-                    }
-                    cartaAJogar = ConferirCarta(possibilidades, opcao);
+                    cartaAJogar = JogarCartaMenorPossivel(possibilidades);
                 }
                 else
                 {
-                    opcao--;
-                    cartaAJogar = ConferirCarta(jogadoresInfos[Id].Cartas.ToArray(), opcao);
+                    // Se não tem o naipe, joga o maior trunfo ou a carta mais alta
+                    cartaAJogar = JogarMaiorTrunfoOuMaisAlta(jogadoresInfos[Id].Cartas);
                 }
             }
-          
-            foreach (string item in jogadoresInfos[Id].Cartas)
-            {
-                if (item == cartaAJogar)
-                {
-                    jogadoresInfos[Id].Cartas.Remove(item);
-                    break;
-                }
-            }
-            
+
+            jogadoresInfos[Id].Cartas.Remove(cartaAJogar);
             return cartaAJogar;
-        }*/
+        }
 
-        //public string Jogar(string[] Jogadas) Code 2
-        //{
-        //    //int opcao = 1;
-        //    string cartaAJogar = "";
+        private string JogarCartaMaisBaixa(List<string> cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
 
-        //    AtualizarCartasMao(Jogadas);
+        private string JogarCartaMenorPossivel(string[] cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
 
-        //    bool primeirajogadadoRound = VerificarSeÉAPrimeiraJogada(Jogadas);
+        private string JogarMaiorTrunfoOuMaisAlta(List<string> cartas)
+        {
+            string maiorTrunfo = cartas
+                .Where(c => c.Contains("C"))
+                .OrderByDescending(c => int.Parse(c.Split(',')[0]))
+                .FirstOrDefault();
 
-        //    if (Jogadas.Length == 0 || Jogadas[0] == "" || primeirajogadadoRound)
-        //    {
-        //        // Você é o primeiro a jogar
-        //        cartaAJogar = JogarCartaMaisBaixa(jogadoresInfos[Id].Cartas);
-        //    }
-        //    else
-        //    {
-        //        // Você não é o primeiro
+            if (maiorTrunfo != null)
+            {
+                return maiorTrunfo;
+            }
 
-        //        // Tem o Naipe verifica se dentro das cartas do jogador tem o naipe requerido
-        //        if (TemONaipe(Jogadas))
-        //        {
-        //            cartaAJogar = JogarCartaMenorPossivel(possibilidades);
-        //        }
-        //        else
-        //        {
-        //            // Se não tem o naipe, joga o maior trunfo ou a carta mais alta
-        //            cartaAJogar = JogarMaiorTrunfoOuMaisAlta(jogadoresInfos[Id].Cartas);
-        //        }
-        //    }
+            return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        } /*End Code 2*/
 
-        //    jogadoresInfos[Id].Cartas.Remove(cartaAJogar);
-
-        //    return cartaAJogar;
-        //}
-
-        //private string JogarCartaMaisBaixa(List<string> cartas)
-        //{
-        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
-        //}
-
-        //private string JogarCartaMenorPossivel(string[] cartas)
-        //{
-        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
-        //}
-
-        //private string JogarMaiorTrunfoOuMaisAlta(List<string> cartas)
-        //{
-        //    string maiorTrunfo = cartas
-        //        .Where(c => c.Contains("C")) // Supondo que o coração é identificado como "C"
-        //        .OrderByDescending(c => int.Parse(c.Split(',')[0]))
-        //        .FirstOrDefault();
-
-        //    if (maiorTrunfo != null)
-        //    {
-        //        return maiorTrunfo;
-        //    }
-
-        //    return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
-        //}
-
-        /*Code 3*/
+        /*Code 3
         public string Jogar(string[] Jogadas)
         {
             string cartaAJogar = "";
@@ -196,7 +129,6 @@ namespace MagicTrick_Tirana
             else
             {
                 // Você não é o primeiro
-
                 if (TemONaipe(Jogadas))
                 {
                     // Tem o naipe da jogada
@@ -237,8 +169,8 @@ namespace MagicTrick_Tirana
             }
 
             return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
-        }
-        /*End of Code 3*/
+        } End of Code 3*/
+
         private bool VerificarSeÉAPrimeiraJogada(string[] Jogadas)
         {
             string[] dadosJogadasAtuais0 = Jogadas[Jogadas.Length - 1].Split(',');
@@ -262,7 +194,8 @@ namespace MagicTrick_Tirana
             }
             return false;
         }
-        /* Code 1
+
+        /*Code 2
         public string Apostar(int pontos, string[] Jogadas)
         {
             int opcao = 0;
@@ -270,84 +203,45 @@ namespace MagicTrick_Tirana
 
             if (jogadoresInfos[Id].Cartas.Count() == 1)
             {
-                return ConferirCarta(jogadoresInfos[Id], opcao);                 
-            } 
+                return ConferirCarta(jogadoresInfos[Id], opcao);
+            }
             else if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
             {
-                //Joga menor carta  
-                opcao = jogadoresInfos[Id].Cartas.Count();
-                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+                // Joga a menor carta  
+                escolha = JogarCartaMaisBaixa1(jogadoresInfos[Id].Cartas);
             }
             else if (pontos >= 2 && pontos <= 4)
             {
-                //Joga a carta do meio
-                opcao = jogadoresInfos[Id].Cartas.Count() / 2;
-                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+                // Joga a carta do meio
+                escolha = JogarCartaDoMeio(jogadoresInfos[Id].Cartas);
             }
             else if (pontos > 4)
             {
-                //Joga a maior carta
-                opcao = 1;
-                escolha = ConferirCarta(jogadoresInfos[Id], opcao);
+                // Joga a maior carta
+                escolha = JogarCartaMaisAlta(jogadoresInfos[Id].Cartas);
             }
-            foreach (string item in jogadoresInfos[Id].Cartas)
-            {
-                if (item == escolha)
-                {
-                    jogadoresInfos[Id].Cartas.Remove(item);
-                    break;
-                }
 
-                partida.label6.Text += item + "\n";
-            }
+            jogadoresInfos[Id].Cartas.Remove(escolha);
+
             return escolha;
-            
-        }*/
-        //public string Apostar(int pontos, string[] Jogadas) Code 2
-        //{
-        //    int opcao = 0;
-        //    string escolha = "0";
+        }
 
-        //    if (jogadoresInfos[Id].Cartas.Count() == 1)
-        //    {
-        //        return ConferirCarta(jogadoresInfos[Id], opcao);
-        //    }
-        //    else if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
-        //    {
-        //        // Joga a menor carta  
-        //        escolha = JogarCartaMaisBaixa1(jogadoresInfos[Id].Cartas);
-        //    }
-        //    else if (pontos >= 2 && pontos <= 4)
-        //    {
-        //        // Joga a carta do meio
-        //        escolha = JogarCartaDoMeio(jogadoresInfos[Id].Cartas);
-        //    }
-        //    else if (pontos > 4)
-        //    {
-        //        // Joga a maior carta
-        //        escolha = JogarCartaMaisAlta(jogadoresInfos[Id].Cartas);
-        //    }
+        private string JogarCartaMaisBaixa1(List<string> cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
 
-        //    jogadoresInfos[Id].Cartas.Remove(escolha);
+        private string JogarCartaDoMeio(List<string> cartas)
+        {
+            int meio = cartas.Count / 2;
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).ElementAt(meio);
+        }
 
-        //    return escolha;
-        //}
+        private string JogarCartaMaisAlta(List<string> cartas)
+        {
+            return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        } End Code 2*/
 
-        //private string JogarCartaMaisBaixa1(List<string> cartas)
-        //{
-        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
-        //}
-
-        //private string JogarCartaDoMeio(List<string> cartas)
-        //{
-        //    int meio = cartas.Count / 2;
-        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).ElementAt(meio);
-        //}
-
-        //private string JogarCartaMaisAlta(List<string> cartas)
-        //{
-        //    return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
-        //}
         /*Code 3*/
         public string Apostar(int pontos, string[] Jogadas)
         {
@@ -393,12 +287,10 @@ namespace MagicTrick_Tirana
         private string JogarCartaMaisAlta(List<string> cartas)
         {
             return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
-        }
-        /*End of Code 3*/
+        } /*End of Code 3*/
 
         private void AtualizarCartasMao(string[] JogadasAtuais)
         {
-            // Suponha que `JogadasAtuais` contenha as cartas jogadas na rodada atual
             // Atualiza as cartas na mão do jogador com base nas jogadas feitas
             if (JogadasAtuais.Length != 0)
             {
@@ -439,32 +331,12 @@ namespace MagicTrick_Tirana
 
             // Conferir uma carta com base na opção fornecida
             return cartas[cartas.Length - opcao];
-
         }
 
         private string ConferirCarta(JogadorInfo cartas, int opcao)
         {
             return cartas.Cartas[cartas.Cartas.Count() - 1 - opcao];
         }
-
-        //private bool ExaminarEscolha(string carta)
-        //{
-        //    // Verificar se a seleção da carta é boa
-        //    // Exemplos: verifica valor alto ou critério estratégico
-
-        //    int temNaipe = 0;
-
-        //    foreach(var mao in jogadoresInfos)
-        //    {
-
-        //        JogadorInfo jogador = mao.value;
-        //    }
-        //    //if ()
-        //        return false;
-
-        //    string valor = carta.Substring(0, carta.Length - 1); // Extrai o valor da carta
-        //    return valor == "5" || valor == "6" || valor == "7";
-        //}
 
         private bool TemONaipe(string[] jogadasAtuais)
         {
@@ -476,7 +348,6 @@ namespace MagicTrick_Tirana
 
             if(jogadasAtuais.Length > 1)
             {
-
                 foreach (string rodadasAtuias in jogadasAtuais)
                 {
                     string[] auxiliar = rodadasAtuias.Split(',');
@@ -488,7 +359,7 @@ namespace MagicTrick_Tirana
                 }
             }
 
-            List<string> poss = new List<string>();
+            List<string> possibilidade = new List<string>();
 
             JogadorInfo jogadorInfo = jogadoresInfos[Id];
 
@@ -499,12 +370,12 @@ namespace MagicTrick_Tirana
                     string[] aux = carta.Split(',');
                     if (aux[1] == naipeRequerido)
                     {
-                        poss.Add(carta);
+                        possibilidade.Add(carta);
                     }
                 }
             }
-            possibilidades = poss.ToArray();
-            return poss.Count > 0;
+            possibilidades = possibilidade.ToArray();
+            return possibilidade.Count > 0;
         }
 
         private bool ExaminarJogadas(string[] jogadasAtuais)
@@ -529,8 +400,8 @@ namespace MagicTrick_Tirana
 
             foreach (var jogada in jogadasAtuais)
             {
-                string[] aux = jogada.Split(',');
-                if (aux[2] == primeiroNaipe)
+                string[] auxiliar = jogada.Split(',');
+                if (auxiliar[2] == primeiroNaipe)
                 {
                     i++;
                 }

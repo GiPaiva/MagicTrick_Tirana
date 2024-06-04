@@ -72,20 +72,16 @@ namespace MagicTrick_Tirana
             lsbPlayer1.Text = "";
             if (!t.Error(retorno))
             {
-                //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
-
                 if (apostar)
                 {
                     DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
                     if (decisao == DialogResult.Yes)
                     {
-                        //  MesaApostar();
                         apostar = false;
                     }
                     else
                     {
                         _ = Jogo.Apostar(IdJogador, DadosJogador[1], 0);
-                        //MessageBox.Show("Pulou aposta", "", MessageBoxButtons.OK);
                     }
                 }
             }
@@ -109,8 +105,6 @@ namespace MagicTrick_Tirana
             lsbPlayer1.Text = "";
             if (!t.Error(retorno))
             {
-                //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);
-
                 if (apostar)
                 {
                     resposta = bot.Apostar(pontos, VerificarJogadasArray);
@@ -124,18 +118,6 @@ namespace MagicTrick_Tirana
                     {
                         _ = Jogo.Apostar(IdJogador, DadosJogador[1], 0);
                     }
-                    /*
-                    DialogResult decisao = MessageBox.Show("Apostar?", "", MessageBoxButtons.YesNo);
-                    if (decisao == DialogResult.Yes)
-                    {
-                        MesaApostar();
-                        apostar = false;
-                    }
-                    else
-                    {
-                        _ = Jogo.Apostar(IdJogador, DadosJogador[1], 0);
-                        //MessageBox.Show("Pulou aposta", "", MessageBoxButtons.OK);
-                    }*/
                 }
             }
         }
@@ -155,9 +137,6 @@ namespace MagicTrick_Tirana
             string retorno = Jogo.Apostar(IdJogador, DadosJogador[1], posicao);
             posicaoDoJogador = c.localNaMesaCadaJogador[Convert.ToString(IdJogador)];
             labels[posicaoDoJogador].Text = retorno;
-            //MessageBox.Show(retorno, "Valor da Carta", MessageBoxButtons.OK);,
-            //ConsultarMao();
-
         }
     }
 }

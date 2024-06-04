@@ -47,7 +47,6 @@ namespace MagicTrick_Tirana
                 lstJogadores.Visible = false;
                 lblJogadoresTitulo.Visible = false;
             }
-
         }
 
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace MagicTrick_Tirana
         public List<List<Panel>> panelsDasCartasDeCadaJogador = new List<List<Panel>>();
 
         // Atributos
-        string pasta_imagens = "../../ImagensCartas/"; // Atualizar com o caminho correto se necessário
+        string pasta_imagens = "../../ImagensCartas/";
         bool preencher = true;
         public Dictionary<string, List<string>> cartasDaGalera = new Dictionary<string, List<string>>();
 
@@ -39,7 +39,6 @@ namespace MagicTrick_Tirana
         {
             this.p = partida;
 
-            // Carregar imagens no cache
             foreach (var naipe in NaipesDasCartasEImagens.Keys)
             {
                 string imagePath = Path.Combine(Application.StartupPath, pasta_imagens, NaipesDasCartasEImagens[naipe]);
@@ -102,7 +101,7 @@ namespace MagicTrick_Tirana
         {
             if (cacheImages.ContainsKey(naipe))
             {
-                panelsDasCartasDeCadaJogador[i][posicao - 1].Controls.Clear(); // Limpar controles existentes
+                panelsDasCartasDeCadaJogador[i][posicao - 1].Controls.Clear();
                 panelsDasCartasDeCadaJogador[i][posicao - 1].BackgroundImage = cacheImages[naipe];
                 panelsDasCartasDeCadaJogador[i][posicao - 1].BackgroundImageLayout = ImageLayout.Stretch;
                 panelsDasCartasDeCadaJogador[i][posicao - 1].Visible = true;
@@ -128,7 +127,7 @@ namespace MagicTrick_Tirana
             int posicaoDoJogador = localNaMesaCadaJogador[IdJogador];
 
             int posicaoMao = Convert.ToInt32(posicao) - 1;
-            panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Clear(); // Limpar controles existentes
+            panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Clear();
             panelsDasCartasDeCadaJogador[posicaoDoJogador][posicaoMao].Controls.Add(valor);
         }
 
@@ -139,7 +138,6 @@ namespace MagicTrick_Tirana
 
             p.pnlCartasMeio.Visible = true;
 
-            // Usar imagem em cache
             if (cacheImages.ContainsKey(naipe))
             {
                 panelCartasMeio[posicaoDoJogador].BackgroundImage = cacheImages[naipe];

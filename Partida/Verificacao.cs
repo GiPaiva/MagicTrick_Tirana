@@ -15,8 +15,6 @@ namespace MagicTrick_Tirana
         {
             string retorno = Jogo.VerificarVez2(IdPartida);
 
-            //label6.Text = retorno;
-
             string[] DadosRetornoVez = t.TratarDadosEmArray(retorno);
             string[] InfoRetorno = DadosRetornoVez[0].Split(',');
             estado = InfoRetorno[0];
@@ -36,11 +34,9 @@ namespace MagicTrick_Tirana
                 Pontos();
                 HouveAposta(DadosRetornoVez);
 
-
                 if (DadosRetornoVez.Length > 1)
                 {
                     MesaColocarJogadas(DadosRetornoVez);
-                    //cartasJogadas++;
                 }
 
                 VerificarJogadas(IdPartida);
@@ -112,7 +108,6 @@ namespace MagicTrick_Tirana
         {
             string jogadas = Jogo.ExibirJogadas2(IdPartida);
             label15.Text = jogadas;
-            //label15.Text = "";
             VerificarJogadasArray = t.TratarDadosEmArray(jogadas);
         }
 
@@ -127,16 +122,9 @@ namespace MagicTrick_Tirana
                     if (aux[0] == Convert.ToString(rodada))
                     {
                         VerificarJogadasNoRoundAtualArray.Add(s);
-                        //label6.Text += s + "\n";
                     }
                 }
-
-                //if (cartasJogadas == JogadoresAtuais.Count())
-                //{
-                //    RetirarCartasMeio();
-                //}
             }
-
         }
 
         public void VerificacaoDeCartasNaMesa(string[] InfoRetornoVerificarVez, int idPartida)
