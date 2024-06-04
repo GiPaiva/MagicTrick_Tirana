@@ -54,7 +54,7 @@ namespace MagicTrick_Tirana
         }
 
         string[] possibilidades = { };
-
+        /* Code 1 
         public string Jogar(string[] Jogadas)
         {
             //bool res;
@@ -117,8 +117,128 @@ namespace MagicTrick_Tirana
             }
             
             return cartaAJogar;
+        }*/
+
+        //public string Jogar(string[] Jogadas) Code 2
+        //{
+        //    //int opcao = 1;
+        //    string cartaAJogar = "";
+
+        //    AtualizarCartasMao(Jogadas);
+
+        //    bool primeirajogadadoRound = VerificarSeÉAPrimeiraJogada(Jogadas);
+
+        //    if (Jogadas.Length == 0 || Jogadas[0] == "" || primeirajogadadoRound)
+        //    {
+        //        // Você é o primeiro a jogar
+        //        cartaAJogar = JogarCartaMaisBaixa(jogadoresInfos[Id].Cartas);
+        //    }
+        //    else
+        //    {
+        //        // Você não é o primeiro
+
+        //        // Tem o Naipe verifica se dentro das cartas do jogador tem o naipe requerido
+        //        if (TemONaipe(Jogadas))
+        //        {
+        //            cartaAJogar = JogarCartaMenorPossivel(possibilidades);
+        //        }
+        //        else
+        //        {
+        //            // Se não tem o naipe, joga o maior trunfo ou a carta mais alta
+        //            cartaAJogar = JogarMaiorTrunfoOuMaisAlta(jogadoresInfos[Id].Cartas);
+        //        }
+        //    }
+
+        //    jogadoresInfos[Id].Cartas.Remove(cartaAJogar);
+
+        //    return cartaAJogar;
+        //}
+
+        //private string JogarCartaMaisBaixa(List<string> cartas)
+        //{
+        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        //}
+
+        //private string JogarCartaMenorPossivel(string[] cartas)
+        //{
+        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        //}
+
+        //private string JogarMaiorTrunfoOuMaisAlta(List<string> cartas)
+        //{
+        //    string maiorTrunfo = cartas
+        //        .Where(c => c.Contains("C")) // Supondo que o coração é identificado como "C"
+        //        .OrderByDescending(c => int.Parse(c.Split(',')[0]))
+        //        .FirstOrDefault();
+
+        //    if (maiorTrunfo != null)
+        //    {
+        //        return maiorTrunfo;
+        //    }
+
+        //    return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        //}
+
+        /*Code 3*/
+        public string Jogar(string[] Jogadas)
+        {
+            string cartaAJogar = "";
+
+            AtualizarCartasMao(Jogadas);
+
+            bool primeirajogadadoRound = VerificarSeÉAPrimeiraJogada(Jogadas);
+
+            if (Jogadas.Length == 0 || Jogadas[0] == "" || primeirajogadadoRound)
+            {
+                // Você é o primeiro a jogar, joga a carta mais baixa
+                cartaAJogar = JogarCartaMaisBaixa(jogadoresInfos[Id].Cartas);
+            }
+            else
+            {
+                // Você não é o primeiro
+
+                if (TemONaipe(Jogadas))
+                {
+                    // Tem o naipe da jogada
+                    cartaAJogar = JogarCartaMenorPossivel(possibilidades);
+                }
+                else
+                {
+                    // Não tem o naipe da jogada
+                    cartaAJogar = JogarMaiorTrunfoOuMaisAlta(jogadoresInfos[Id].Cartas);
+                }
+            }
+
+            jogadoresInfos[Id].Cartas.Remove(cartaAJogar);
+
+            return cartaAJogar;
         }
 
+        private string JogarCartaMaisBaixa(List<string> cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
+
+        private string JogarCartaMenorPossivel(string[] cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
+
+        private string JogarMaiorTrunfoOuMaisAlta(List<string> cartas)
+        {
+            string maiorTrunfo = cartas
+                .Where(c => c.Contains("C")) // Supondo que o coração é identificado como "C"
+                .OrderByDescending(c => int.Parse(c.Split(',')[0]))
+                .FirstOrDefault();
+
+            if (maiorTrunfo != null)
+            {
+                return maiorTrunfo;
+            }
+
+            return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        }
+        /*End of Code 3*/
         private bool VerificarSeÉAPrimeiraJogada(string[] Jogadas)
         {
             string[] dadosJogadasAtuais0 = Jogadas[Jogadas.Length - 1].Split(',');
@@ -142,7 +262,7 @@ namespace MagicTrick_Tirana
             }
             return false;
         }
-
+        /* Code 1
         public string Apostar(int pontos, string[] Jogadas)
         {
             int opcao = 0;
@@ -182,7 +302,99 @@ namespace MagicTrick_Tirana
             }
             return escolha;
             
+        }*/
+        //public string Apostar(int pontos, string[] Jogadas) Code 2
+        //{
+        //    int opcao = 0;
+        //    string escolha = "0";
+
+        //    if (jogadoresInfos[Id].Cartas.Count() == 1)
+        //    {
+        //        return ConferirCarta(jogadoresInfos[Id], opcao);
+        //    }
+        //    else if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
+        //    {
+        //        // Joga a menor carta  
+        //        escolha = JogarCartaMaisBaixa1(jogadoresInfos[Id].Cartas);
+        //    }
+        //    else if (pontos >= 2 && pontos <= 4)
+        //    {
+        //        // Joga a carta do meio
+        //        escolha = JogarCartaDoMeio(jogadoresInfos[Id].Cartas);
+        //    }
+        //    else if (pontos > 4)
+        //    {
+        //        // Joga a maior carta
+        //        escolha = JogarCartaMaisAlta(jogadoresInfos[Id].Cartas);
+        //    }
+
+        //    jogadoresInfos[Id].Cartas.Remove(escolha);
+
+        //    return escolha;
+        //}
+
+        //private string JogarCartaMaisBaixa1(List<string> cartas)
+        //{
+        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        //}
+
+        //private string JogarCartaDoMeio(List<string> cartas)
+        //{
+        //    int meio = cartas.Count / 2;
+        //    return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).ElementAt(meio);
+        //}
+
+        //private string JogarCartaMaisAlta(List<string> cartas)
+        //{
+        //    return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        //}
+        /*Code 3*/
+        public string Apostar(int pontos, string[] Jogadas)
+        {
+            int opcao = 0;
+            string escolha = "0";
+
+            if (jogadoresInfos[Id].Cartas.Count() == 1)
+            {
+                return ConferirCarta(jogadoresInfos[Id], opcao);
+            }
+            else if (pontos == 0 && (Jogadas.Count() / jogadoresInfos.Count() + 1 == quantidadeDeCartasNaMao))
+            {
+                // Joga a menor carta  
+                escolha = JogarCartaMaisBaixa1(jogadoresInfos[Id].Cartas);
+            }
+            else if (pontos >= 2 && pontos <= 4)
+            {
+                // Joga a carta do meio
+                escolha = JogarCartaDoMeio(jogadoresInfos[Id].Cartas);
+            }
+            else if (pontos > 4)
+            {
+                // Joga a maior carta
+                escolha = JogarCartaMaisAlta(jogadoresInfos[Id].Cartas);
+            }
+
+            jogadoresInfos[Id].Cartas.Remove(escolha);
+
+            return escolha;
         }
+
+        private string JogarCartaMaisBaixa1(List<string> cartas)
+        {
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).First();
+        }
+
+        private string JogarCartaDoMeio(List<string> cartas)
+        {
+            int meio = cartas.Count / 2;
+            return cartas.OrderBy(c => int.Parse(c.Split(',')[0])).ElementAt(meio);
+        }
+
+        private string JogarCartaMaisAlta(List<string> cartas)
+        {
+            return cartas.OrderByDescending(c => int.Parse(c.Split(',')[0])).First();
+        }
+        /*End of Code 3*/
 
         private void AtualizarCartasMao(string[] JogadasAtuais)
         {
