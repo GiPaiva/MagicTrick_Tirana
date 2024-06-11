@@ -13,13 +13,14 @@ namespace MagicTrick_Tirana
         public void LimparAMesa()
         {
             c.LimparAsCartas();
-            MesaDistribuirMao(0);
+            c.cartasDaGalera.Clear();
+            MesaDistribuirMao();
             RetirarCartasDoMeioDaMesa();
             primeiraVez = true;
             apostar = true;
         }
 
-        public void MesaComercar()
+        public void MesaComecar()
         {
             string[] DadosJogador = Jogador.Split(',');
             int IdJogador = Convert.ToInt32(DadosJogador[0]);
@@ -36,65 +37,59 @@ namespace MagicTrick_Tirana
             }
             estado = "J";
             btnComecar.Visible = false;
-            MesaDistribuirMao(0);
+            MesaDistribuirMao();
             grbPlayer1.Visible = true;
+            bot = new BotZob(c.cartasDaGalera, idJogador);
+            label23.Text = PartidaSelecionada;
         }
 
-        private void MesaDistribuirMao(int k)
+        private void MesaDistribuirMao()
         {
             string retorno = Jogo.ConsultarMao(Convert.ToInt32(PartidaAtual[0]));
             string[] DadosConsultarMao = t.TratarDadosEmArray(retorno);
 
             string[] DadosJogador = Jogador.Split(',');
-            MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais, k);
+            MostrarGalera(DadosJogador[0], DadosConsultarMao, JogadoresAtuais);
         }
 
-        public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais, int k)
+        public void MostrarGalera(string idDoJogador, string[] DadosConsultarMao, string[] JogadoresAtuais)
         {
-            bool primeiro = true;
             c.localNaMesaCadaJogador.Clear();
-            for (int i = 0; i < JogadoresAtuais.Length; i++)
+            int i = 0;
+            foreach(string idJogador in JogadoresAtuais)
             {
                 string[] aux = JogadoresAtuais[i].Split(',');
-
-                if (aux[0] != idDoJogador)
-                {
-                    if (i == 0)
-                    {
-                        i++;
-                        primeiro = false;
-                    }
-
-                    c.MostrarCartas(aux, DadosConsultarMao, i, "player");
-
-                    if (!primeiro)
-                    {
-                        i--;
-                    }
-                }
-                else
-                {
-                    c.MostrarCartas(aux, DadosConsultarMao, 0, idDoJogador);
-                }
+                c.MostrarCartas(aux, DadosConsultarMao, i, idJogador);
+                i++;
             }
         }
 
-        private void MesaApostar()
-        {
-            if (lsbPlayer1.SelectedItem == null)
-            {
-                //MessageBox.Show($"Selecione uma carta", "Apostar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+        private void MesaApostar(string posicaoResposta)
+        {           
+            List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
+            string[] DadosJogador = Jogador.Split(',');
 
+            string list = lsbPlayer1.Text;
+            string[] Dadoslist = list.Split('|');
+
+            //Posição
+            int posicao = Convert.ToInt32(posicaoResposta);
+            int IdJogador = Convert.ToInt32(DadosJogador[0]);
+
+            string retorno = Jogo.Apostar(IdJogador, DadosJogador[1], posicao);
+            posicaoDoJogador = c.localNaMesaCadaJogador[Convert.ToString(IdJogador)];
+            labels[posicaoDoJogador].Text = retorno;
+        }
 
         protected void MesaJogadorDaVez(string[] InfoRetorno)
         {
             string[] JogadorInfo = Jogador.Split(',');
+            idJogador = JogadorInfo[0];
 
             foreach (string itens in JogadoresAtuais)
             {
                 string[] infoJogador = itens.Split(',');
+
                 if (infoJogador[0] == InfoRetorno[1])
                 {
                     lblQJogadores.Text = "Jogador da Vez: " + infoJogador[1];
@@ -102,7 +97,6 @@ namespace MagicTrick_Tirana
                 if (InfoRetorno[1] == JogadorInfo[0])
                 {
                     vez = true;
-                    //ConsultarMao(0);
                 }
                 else
                 {
@@ -152,7 +146,6 @@ namespace MagicTrick_Tirana
         {
             List<Label> labels = new List<Label> { lblAposta, lblAposta2, lblAposta3, lblAposta4 };
 
-            //string[] InfoRetornoJogada = DadosRetornoVez[DadosRetornoVez.Length - 1].Split(',');
             foreach (string item in DadosRetornoVez)
             {
                 string[] aux = item.Split(':');
@@ -174,17 +167,17 @@ namespace MagicTrick_Tirana
 
             lblParticipantes.Visible = false;
 
-            label3.Text = "";
-
             foreach (string JogadoresAtuais in JogadoresAtuais)
             {
-                label3.Text += JogadoresAtuais + "\n";
-
                 string[] aux = JogadoresAtuais.Split(',');
                 posicaoDoJogador = c.localNaMesaCadaJogador[aux[0]];
 
                 PontosTotais[posicaoDoJogador].Text = aux[2];
                 PontosRodada[posicaoDoJogador].Text = aux[3];
+                if (aux[0] == idJogador)
+                {
+                    pontos = Convert.ToInt32(aux[3]);
+                }
             }
         }
     }

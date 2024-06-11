@@ -47,7 +47,6 @@ namespace MagicTrick_Tirana
                 lstJogadores.Visible = false;
                 lblJogadoresTitulo.Visible = false;
             }
-
         }
 
         private void lstPartidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +60,7 @@ namespace MagicTrick_Tirana
             {
                 PartidaSelecionada = lstPartidas.SelectedItem.ToString();
 
-                if (lobby.LobbyListarJogadores2(PartidaSelecionada) && PartidaSelecionada != "")
+                if (lobby.LobbyListarJogadores2(PartidaSelecionada, "0") && PartidaSelecionada != "")
                 {
                     for (int i = 0; i < lobby.Jogadores.Length; i++)
                     {
@@ -126,7 +125,7 @@ namespace MagicTrick_Tirana
                     txtNomeJogador.Clear();
                     txtSenhaDaPartida.Clear();
 
-                    lobby.LobbyListarJogadores2(PartidaEscolhida);
+                    lobby.LobbyListarJogadores2(PartidaEscolhida, "0");
 
                     Partida Partida = new Partida();
                     Partida.Versao = Jogo.Versao;

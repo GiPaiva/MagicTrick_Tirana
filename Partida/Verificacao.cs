@@ -15,12 +15,17 @@ namespace MagicTrick_Tirana
         {
             string retorno = Jogo.VerificarVez2(IdPartida);
 
-            //label6.Text = retorno;
-
             string[] DadosRetornoVez = t.TratarDadosEmArray(retorno);
             string[] InfoRetorno = DadosRetornoVez[0].Split(',');
             estado = InfoRetorno[0];
             rodada = Convert.ToInt32(InfoRetorno[2]);
+            
+            if (vez)
+            {
+                resposta = bot.Jogar(VerificarJogadasArray); 
+                Jogar();
+                vez = false;
+            }
 
             if (alteracao != retorno && InfoRetorno[3] == "C")
             {
@@ -28,21 +33,21 @@ namespace MagicTrick_Tirana
 
                 Pontos();
                 HouveAposta(DadosRetornoVez);
-                MesaJogadorDaVez(InfoRetorno);
 
                 if (DadosRetornoVez.Length > 1)
                 {
                     MesaColocarJogadas(DadosRetornoVez);
-                    //cartasJogadas++;
                 }
 
                 VerificarJogadas(IdPartida);
                 VerificarJogadasNoRoundAtual();
+                MesaJogadorDaVez(InfoRetorno);
 
                 //Se o round acabou, limpar a mesa se VerificarJogadasArray estiver vazio e não for a primeira vez
                 if (VerificarJogadasArray[0] == "" && !primeiraVez)
                 {
                     LimparAMesa();
+                    bot.BotZobNovaRodada(c.cartasDaGalera, idJogador);
                 }
                 primeiraVez = false;
             }
@@ -50,11 +55,11 @@ namespace MagicTrick_Tirana
             VerificacaoDeCartasNaMesa(InfoRetorno, IdPartida);
         }
 
-        public void VerficarJogadores()
+        public void VerificarJogadores()
         {
             int quantidade = 0;
 
-            lobby.LobbyListarJogadores2(PartidaSelecionada);
+            lobby.LobbyListarJogadores2(PartidaSelecionada, "1");
 
             lblQJogadores.Visible = true;
 
@@ -73,7 +78,7 @@ namespace MagicTrick_Tirana
         {
             int maior = 0;
             int i = 0;
-            VerficarJogadores();
+            VerificarJogadores();
             foreach (string JogadoresAtuais in JogadoresAtuais)
             {
                 string[] aux = JogadoresAtuais.Split(',');
@@ -117,16 +122,9 @@ namespace MagicTrick_Tirana
                     if (aux[0] == Convert.ToString(rodada))
                     {
                         VerificarJogadasNoRoundAtualArray.Add(s);
-                        label6.Text += s + "\n";
                     }
                 }
-
-                //if (cartasJogadas == JogadoresAtuais.Count())
-                //{
-                //    RetirarCartasMeio();
-                //}
             }
-
         }
 
         public void VerificacaoDeCartasNaMesa(string[] InfoRetornoVerificarVez, int idPartida)
